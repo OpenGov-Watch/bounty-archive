@@ -1,6 +1,15 @@
 # Polkadot Bounty Archive
 
-Archive of Polkadot bounty documentation.
+Archive of Polkadot bounty documentation with structured metadata and an interactive website.
+
+🌐 **[View the Interactive Website](https://opengov-watch.github.io/bounty-archive/)** (once deployed)
+
+## Overview
+
+This repository contains comprehensive documentation for all 20 active Polkadot Treasury bounties, including:
+- Detailed README files with bounty information
+- Structured YAML metadata for programmatic access
+- Interactive web interface for browsing all bounties
 
 ## Structure
 
@@ -36,3 +45,41 @@ bounties/
 - [#62 – Legal Bounty](https://polkadot.subsquare.io/treasury/bounties/62)
 - [#63 – Fast Grants Bounty](https://polkadot.subsquare.io/treasury/bounties/63)
 - [#64 – Rust Bounties](https://polkadot.subsquare.io/treasury/bounties/64)
+
+## Data Format
+
+Each bounty folder contains:
+- **README.md** - Human-readable documentation
+- **metadata.yml** - Structured data including:
+  - Funding information (remaining, total, grant ranges)
+  - Curator details (count, multisig, compensation)
+  - Links (website, GitHub, proposals, governance)
+  - Social channels (Twitter, Telegram, Discord, Matrix)
+  - Application details (process, timeline, status)
+  - Tags and notes
+
+See [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for the complete schema definition.
+
+## Website Features
+
+The interactive website (`index.html`) provides:
+- 🔍 **Search** - Filter bounties by name, tags, or keywords
+- 🏷️ **Category filters** - Development, Security, Infrastructure, Community, Grants, DeFi, UX, etc.
+- 📊 **Live statistics** - Total bounties, DOT allocated, categories
+- 📱 **Mobile-responsive** - Works on all devices
+- 🎨 **Polkadot branding** - Official color scheme and design
+
+## Deployment
+
+The website is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+
+## Contributing
+
+To update bounty information:
+1. Edit the relevant `README.md` and/or `metadata.yml` file
+2. Submit a pull request
+3. Changes will be automatically deployed once merged
+
+## License
+
+Data sourced from official Polkadot Treasury on-chain data and bounty documentation.
