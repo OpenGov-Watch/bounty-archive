@@ -1,8 +1,8 @@
 # Polkadot Bounty Archive
 
-Archive of Polkadot bounty documentation with structured metadata and an interactive website.
+> 🌐 **[View the Interactive Website →](https://opengov-watch.github.io/bounty-archive/)**
 
-🌐 **[View the Interactive Website](https://opengov-watch.github.io/bounty-archive/)** (once deployed)
+Archive of Polkadot bounty documentation with structured metadata and an interactive website.
 
 ## Overview
 
