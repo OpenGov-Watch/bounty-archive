@@ -1,12 +1,12 @@
 # Scraping System
 
-This directory contains the URL scraping system for archiving bounty documentation.
+URL scraping system for archiving bounty documentation using Claude subagents.
 
-## How It Works
+## Quick Start
 
 ### 1. Add URLs to Scrape
 
-Edit `scrape-queue.yml` and add URLs you want to scrape:
+Edit `scrape-queue.yml` and add URLs:
 
 ```yaml
 queue:
@@ -20,34 +20,42 @@ queue:
 - `single` - Scrape just this one page, extract outgoing links
 - `recursive` - Scrape this page and all pages under this URL path (respects max_depth)
 
-### 2. Run the Scraping Agent
+### 2. Invoke the Scraper Subagent
 
-Ask an AI agent (or run a script):
+Use the Task tool to invoke the scraper:
+
 ```
-"Please scrape the URLs in scrape-queue.yml"
+I need you to scrape the URLs in scrape-queue.yml. Use the general-purpose subagent and follow the instructions in SCRAPING_AGENT.md.
+
+Please:
+1. Read scrape-queue.yml for the list of URLs
+2. Fetch each URL using WebFetch
+3. Convert content to markdown with YAML frontmatter
+4. Save files to bounties/[id]-[slug]/scraped/[domain]/[path]/
+5. Extract and categorize outgoing links
+6. Update scrape-results.yml with results and discovered links
 ```
 
-The agent will:
-1. Read `scrape-queue.yml`
-2. Scrape each URL
-3. Convert content to markdown
-4. Save to `bounties/[id]-[name]/scraped/[domain]/[path]/`
-5. Extract all outgoing links
-6. Update `scrape-results.yml` with results
+Or more simply:
+```
+Please scrape the URLs in scrape-queue.yml following SCRAPING_AGENT.md instructions
+```
 
 ### 3. Review Results
 
 Check `scrape-results.yml` to see:
-- What was scraped
-- Where files were saved
-- List of outgoing URLs discovered
+- What was scraped successfully
+- Where markdown files were saved
+- Categorized outgoing URLs (internal/external/social)
+- Any errors encountered
+- Discovered URLs queue for next scraping round
 
-### 4. Add More URLs to Scrape
+### 4. Iterate
 
-Review the `outgoing_urls` in `scrape-results.yml`. If you want to scrape any of them:
-1. Copy the URL
-2. Add it to `scrape-queue.yml`
-3. Run the agent again
+Review `discovered_queue` in `scrape-results.yml`:
+1. Identify interesting URLs to scrape
+2. Add them to `scrape-queue.yml`
+3. Invoke the scraper again
 
 ## File Locations
 
