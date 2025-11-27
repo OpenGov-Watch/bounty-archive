@@ -73,12 +73,24 @@ The interactive website (`index.html`) provides:
 
 The website is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
 
+## For AI Agents
+
+If you're an AI agent working with this repository, see [CLAUDE.md](CLAUDE.md) for detailed instructions on updating bounties, maintaining metadata, and following the contribution workflow.
+
 ## Contributing
 
 To update bounty information:
-1. Edit the relevant `README.md` and/or `metadata.yml` file
-2. Submit a pull request
-3. Changes will be automatically deployed once merged
+1. Edit the relevant `README.md` and/or `metadata.yml` file in the bounty folder
+2. Ensure metadata follows the schema defined in [METADATA_SCHEMA.md](METADATA_SCHEMA.md)
+3. Submit a pull request to the repository
+4. Changes will be automatically deployed to the website once merged to `main`
+
+## Maintenance
+
+- Bounty data should be updated regularly to reflect current status
+- Check for new bounties on [Polkadot Subsquare](https://polkadot.subsquare.io/treasury/bounties)
+- Update funding amounts when significant changes occur
+- Archive closed bounties by updating their status in metadata.yml
 
 ## License
 
