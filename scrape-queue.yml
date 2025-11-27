@@ -1,0 +1,25 @@
+# URL Scraping Queue
+
+# Add URLs here that you want to scrape
+# The agent will process these and update scrape-results.yml
+
+queue:
+  # Example format:
+  # - bounty_id: 19
+  #   url: "https://use.ink/ubator/"
+  #   mode: "recursive"     # "single" = just this page | "recursive" = follow links under this URL
+  #   max_depth: 2          # Only for recursive mode (1 = just one level deep)
+
+  - bounty_id: 19
+    url: "https://use.ink/ubator/"
+    mode: "recursive"
+    max_depth: 2
+
+  - bounty_id: 11
+    url: "https://polkadot.antiscam.team/"
+    mode: "single"
+
+  - bounty_id: 22
+    url: "https://polkadotassurance.com/"
+    mode: "recursive"
+    max_depth: 1

@@ -1,0 +1,35 @@
+# Scraping Results
+
+# This file is automatically updated by the scraping agent
+# It tracks what has been scraped and lists discovered outgoing URLs
+
+version: "1.0"
+last_updated: null
+
+scraped:
+  # Results will appear here after scraping
+  # Format:
+  # - bounty_id: 19
+  #   url: "https://use.ink/ubator/"
+  #   mode: "recursive"
+  #   status: "completed"
+  #   scraped_at: "2025-11-27T10:00:00Z"
+  #   pages_scraped: 5
+  #   files_created:
+  #     - "bounties/19-inkubator/scraped/use.ink/ubator/index.md"
+  #     - "bounties/19-inkubator/scraped/use.ink/ubator/apply.md"
+  #   outgoing_urls:
+  #     internal:  # URLs under the same base URL
+  #       - "https://use.ink/ubator/apply/"
+  #       - "https://use.ink/ubator/faq/"
+  #     external:  # URLs to other sites
+  #       - "https://github.com/use-inkubator/Ecosystem-Grants"
+  #       - "https://polkadot.network/"
+  #     social:    # Social media links
+  #       - "https://twitter.com/ink_lang"
+  #   errors: []
+
+# Add discovered URLs here to scrape next
+discovered_queue:
+  # URLs discovered during scraping that you might want to scrape
+  # Review this list and move items to scrape-queue.yml if you want them scraped
