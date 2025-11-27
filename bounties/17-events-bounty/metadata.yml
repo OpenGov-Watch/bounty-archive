@@ -1,0 +1,60 @@
+id: 17
+name: Events Bounty
+status: active
+category: community
+
+funding:
+  remaining: 39610
+  total: 1000000
+  currency: DOT
+  grantRange: "Up to $2,500 for meetups"
+
+curators:
+  count: 6
+  multisigThreshold: null
+  compensation: "~70 EUR/hour"
+
+links:
+  website: https://dotevents.xyz/
+  notion: null
+  proposal: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/17
+  polkassembly: null
+  spreadsheet: https://docs.google.com/spreadsheets/d/1blwl0ajQRaB9S-Up45mwTSHUks0GeFSnxFZoW6dvTQE/edit?gid=662015819#gid=662015819
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: "@dotevents_"
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a
+
+application:
+  process: Submit before event via Monday.com form
+  maxAmount: "$2,500 for meetups"
+  timeline: "Review within 2 weeks"
+  status: open
+
+tags:
+  - events
+  - community
+  - meetups
+  - hackathons
+  - sponsorships
+
+notes:
+  - "183+ child bounties deployed"
+  - "Covers meetups, hackathons, industry sponsorships, and speaker travel"
+  - "Weekly office hours every Wednesday 3-4PM CET"
+  - "Curators: Tycho, Lolmcshizz, Elisa, Patrik, Anamarie, XyloDrone"

@@ -1,0 +1,61 @@
+id: 36
+name: DeFi Infrastructure and Tooling Bounty
+status: active
+category: defi
+
+funding:
+  remaining: 568950
+  total: 592973
+  currency: DOT
+  grantRange: "Average $98k per project"
+
+curators:
+  count: 7
+  multisigThreshold: "4/7"
+  compensation: null
+
+links:
+  website: https://www.velocitylabs.org/
+  notion: null
+  proposal: https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/36
+  polkassembly: null
+  spreadsheet: null
+  forum: https://forum.polkadot.network/t/defi-intrastructure-and-tooling-bounty-discussion/6000
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037
+
+application:
+  process: Submit via Monday.com form
+  maxAmount: "Average $98k"
+  timeline: null
+  status: open
+
+tags:
+  - defi
+  - infrastructure
+  - tooling
+  - cex-integrations
+
+notes:
+  - "Managed by Velocity Labs"
+  - "30+ projects funded averaging $98k per project"
+  - "Top-up of 1M DOT requested via Referendum #1743"
+  - "Lead Curator: Nicolas Arevalo (Velocity Labs CEO)"
+  - "Funded: KuCoin ($63k), Ramp Network ($60k), Zapper ($118k), Uniswap V3, Morpho Blue, Chainflip"
+  - "DeFi Builders Program: 12-week accelerator, 5 teams/cohort"

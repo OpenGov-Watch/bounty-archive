@@ -1,0 +1,60 @@
+id: 38
+name: Games Bounty (DOT Play)
+status: active
+category: gaming
+
+funding:
+  remaining: 99999
+  total: 100000
+  currency: DOT
+  grantRange: "Milestone-based grants"
+
+curators:
+  count: 21
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: https://polkadotplay.org
+  notion: null
+  proposal: null
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/38
+  polkassembly: https://polkadot.polkassembly.io/bounty/38
+  spreadsheet: null
+  forum: https://forum.polkadot.network/t/polkadot-games-bounty-dot-play-call-to-community-action-passing-the-torch/14406
+
+github:
+  organization: https://github.com/PolkadotPlay
+  applications: https://github.com/PolkadotPlay/GamesBounty
+  milestones: null
+  main: https://github.com/PolkadotPlay/GamesBounty
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Fork repo → Create application → Submit PR → Deliver milestones
+  maxAmount: null
+  timeline: "Respond to feedback within 2 weeks"
+  status: paused
+
+tags:
+  - gaming
+  - grants
+  - indie-developers
+
+notes:
+  - "Repository archived as of September 2, 2024 (read-only)"
+  - "Dot Play team's year as curators ended August 2025"
+  - "In transition to new curators"
+  - "21 curators including Angela Dalton (Signum Growth), Nicholas Douzinas (Ajuna Network)"
+  - "Milestone-based retroactive funding"
+  - "Required: Multi-sig wallet with min 3 signatories"

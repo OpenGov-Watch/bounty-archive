@@ -1,0 +1,58 @@
+id: 24
+name: Moderation Team Bounty
+status: active
+category: community
+
+funding:
+  remaining: 23260
+  total: 25004
+  currency: DOT
+  grantRange: "$112,320 for 6 months"
+
+curators:
+  count: 3
+  multisigThreshold: "3/3"
+  compensation: "$112,320 for 6 months"
+
+links:
+  website: null
+  notion: null
+  proposal: https://polkadot.subsquare.io/referenda/135
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/24
+  polkassembly: https://polkadot.polkassembly.io/bounty/24
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: null
+  maxAmount: null
+  timeline: null
+  status: null
+
+tags:
+  - community
+  - moderation
+  - security
+
+notes:
+  - "Rewards community moderators for ensuring a healthy community"
+  - "Multisig signatories: Abdulbee, Grizzly, Elodie"
+  - "Protects community from fraudulent activities"
+  - "Maintains respectful environment across Polkadot channels"

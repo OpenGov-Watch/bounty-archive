@@ -1,0 +1,58 @@
+id: 62
+name: Legal Bounty
+status: active
+category: legal
+
+funding:
+  remaining: null
+  total: null
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: null
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: https://www.polkadot.law/legalbounty
+  notion: null
+  proposal: https://polkadot.subsquare.io/referenda/1359
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/62
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: null
+  discord: "Available via polkadot.law"
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Contact via Discord through polkadot.law
+  maxAmount: null
+  timeline: null
+  status: null
+
+tags:
+  - legal
+  - research
+  - governance
+
+notes:
+  - "Treasury-funded legal research and resources for Polkadot DAO"
+  - "Academic research on blockchain governance, PCF structure, and legal frameworks"
+  - "May be closing soon based on recent proposals"
+  - "Professional legal consultation for ecosystem participants"

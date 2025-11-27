@@ -1,0 +1,61 @@
+id: 64
+name: Rust Bounties (OG Rust)
+status: active
+category: development
+
+funding:
+  remaining: null
+  total: 250000
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: 5
+  multisigThreshold: null
+  compensation: "$3,000/month (non-Fellowship curators)"
+
+links:
+  website: null
+  notion: null
+  proposal: https://polkadot.subsquare.io/referenda/1377
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/64
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: https://github.com/paritytech/polkadot-sdk
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Tasks from OpenGov/Fellowship → Curators publish CFPs → Developers submit proposals
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - development
+  - rust
+  - polkadot-sdk
+  - fellowship
+
+notes:
+  - "Approved early 2025 with 250,000 DOT"
+  - "Incentivizes Rust engineers for OpenGov/Fellowship requested tasks"
+  - "Targets code changes to Polkadot-SDK or system chain runtimes"
+  - "Curators: Valery Gantchev/cl0w (HydraDX), Jakub Panik (Galactic Council CTO), Bastian Köcher (Parity/Fellowship), Donal Murray (Parity), plus 1 open position"
+  - "Tasks originate from OpenGov Wish for Change or Technical Fellowship"
+  - "Selection based on quality, track record, and price competitiveness"

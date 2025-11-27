@@ -1,0 +1,60 @@
+id: 44
+name: Polkadot–Kusama Bridge Security Bounty
+status: active
+category: security
+
+funding:
+  remaining: 30581
+  total: 30581
+  currency: DOT
+  grantRange: "Up to $100,000 per vulnerability"
+
+curators:
+  count: 5
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: https://polkadot.com/bridges-bug-bounty/
+  notion: null
+  proposal: https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/44
+  polkassembly: null
+  spreadsheet: null
+  forum: https://forum.polkadot.network/t/bridges-security-bug-bounty-2024-update/11415
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: https://github.com/paritytech/polkadot-sdk/tree/master/bridges
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: bridgesbugbounty@polkadot.network
+  applicationForm: https://hackenproof.com/programs/polkadot-bridge
+
+application:
+  process: Submit via email or HackenProof platform
+  maxAmount: "$100,000 per vulnerability"
+  timeline: "Payment after vulnerability patch"
+  status: open
+
+tags:
+  - security
+  - bug-bounty
+  - bridges
+
+notes:
+  - "$500,000 total ($250k DOT + $250k KSM)"
+  - "Scope expanded in 2025 to include Snowbridge and Hyperbridge"
+  - "Rewards based on severity up to $100k"
+  - "KYC required for payment"
+  - "Top 5 contributors receive Polkadot Blockchain Academy priority consideration"
+  - "5 curators (reduced from 7)"

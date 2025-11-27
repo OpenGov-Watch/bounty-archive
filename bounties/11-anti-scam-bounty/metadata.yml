@@ -1,0 +1,59 @@
+id: 11
+name: Anti-Scam Bounty
+status: active
+category: security
+
+funding:
+  remaining: 7500
+  total: 65070
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: 5
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: https://polkadot.antiscam.team/
+  notion: null
+  proposal: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/11
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: https://github.com/polkadot-js/phishing
+
+social:
+  twitter: "@DotAntiscam"
+  telegram: null
+  discord: "#scam-check (official Polkadot Discord)"
+  matrix: null
+  element: null
+
+contact:
+  email: antiscam@polkadot.network
+  applicationForm: null
+
+application:
+  process: Report via email, Discord, or GitHub PR
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - security
+  - community-protection
+  - phishing
+
+notes:
+  - "First bounty to use the child bounties pallet on Polkadot"
+  - "5,524 scam sites flagged"
+  - "~14,000 entries in phishing blocklist"
+  - "Lead Curator: Michalis Fragkiadakis (W3F Anti-Scam Lead)"
+  - "Victim support: victimsupport@antiscam.team"

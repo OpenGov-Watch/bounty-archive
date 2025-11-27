@@ -1,0 +1,61 @@
+id: 43
+name: Meetups Bounty
+status: active
+category: community
+
+funding:
+  remaining: 4000
+  total: 5000
+  currency: DOT
+  grantRange: "Up to $1,000 per event"
+
+curators:
+  count: 18
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: http://dotmeetups.xyz/
+  notion: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  proposal: null
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/43
+  polkassembly: null
+  spreadsheet: https://docs.google.com/spreadsheets/d/1hNdflU8hB0J58Kv6VacVVItasnGga_JeOEuJ98eBkw4/edit
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: "@DOTmeetups"
+  telegram: "@dotmeetups"
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: https://forms.gle/3XCTyLZGaCf9hnah7
+
+application:
+  process: Submit form within 30 days after event
+  maxAmount: "$1,000 per event"
+  timeline: "Within 30 days post-event"
+  status: open
+
+tags:
+  - community
+  - meetups
+  - grassroots
+  - events
+
+notes:
+  - "Smallest Polkadot bounty at 5,000 DOT"
+  - "Retroactive (post-event) funding"
+  - "253+ child bounties created"
+  - "Strong representation: LATAM (27.5%), Asia (23.2%), Africa (23.2%)"
+  - "First-time organizers: ~$150 limited budget to demonstrate effectiveness"
+  - "Must have on-chain identity and active community participation"

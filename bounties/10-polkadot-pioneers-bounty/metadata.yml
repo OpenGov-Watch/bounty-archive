@@ -1,0 +1,57 @@
+id: 10
+name: Polkadot Pioneers Bounty
+status: active
+category: other
+
+funding:
+  remaining: 846050
+  total: 993286
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: null
+  multisigThreshold: null
+  compensation: null
+
+links:
+  website: null
+  notion: null
+  proposal: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/10
+  polkassembly: https://polkadot.polkassembly.io/bounty/10
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Child bounties implementations
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - prizes
+  - innovation
+  - talent
+
+notes:
+  - "Polkadot Pioneers Prize passed as 10th Bounty via Motion 146 on January 26th, 2022"
+  - "Bold effort to attract talent, attention, and innovation to Polkadot"
+  - "Curators include Alistair Stewart (W3F Head of Research)"

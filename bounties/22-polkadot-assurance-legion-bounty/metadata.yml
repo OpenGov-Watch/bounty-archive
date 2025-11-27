@@ -1,0 +1,60 @@
+id: 22
+name: Polkadot Assurance Legion (PAL)
+status: active
+category: security
+
+funding:
+  remaining: 382870
+  total: 540000
+  currency: DOT
+  grantRange: "Up to 80% parachain audit costs"
+
+curators:
+  count: 7
+  multisigThreshold: "5/7"
+  compensation: null
+
+links:
+  website: https://polkadotassurance.com/
+  notion: null
+  proposal: null
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/22
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: https://github.com/polkadot-assurance-legion
+  applications: https://github.com/polkadot-assurance-legion/pal-docs
+  milestones: null
+  main: https://github.com/dot-pal/pal-docs
+
+social:
+  twitter: null
+  telegram: null
+  discord: https://discord.gg/xDyGGcnCJw
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+
+application:
+  process: Submit application form → Curator review
+  maxAmount: "80% parachain audits, 50% smart contracts, $80k/year bug bounties"
+  timeline: null
+  status: open
+
+tags:
+  - security
+  - audits
+  - bug-bounties
+  - parachains
+
+notes:
+  - "Covers up to 80% of parachain Rust audit costs"
+  - "50% for smart contract audits"
+  - "Bug bounty reimbursement up to $80,000/year per project"
+  - "16 approved auditing firms onboarded"
+  - "H1 2024: 157,155 DOT paid, 175,000+ lines audited, 18 high-risk vulnerabilities found"
