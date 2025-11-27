@@ -1,0 +1,59 @@
+id: 37
+name: Paseo Testnet Bounty
+status: active
+category: infrastructure
+
+funding:
+  remaining: 92770
+  total: 125018
+  currency: DOT
+  grantRange: "$850,000 (2024), $653,500 (2025)"
+
+curators:
+  count: 4
+  multisigThreshold: "3/4"
+  compensation: null
+
+links:
+  website: https://paseo.network
+  notion: null
+  proposal: https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/37
+  polkassembly: null
+  spreadsheet: https://docs.google.com/spreadsheets/d/1FiwJjrRY8EAIFjMs1-NHKf83xCiLaoZKLksJ_SR-M4E/edit?gid=1687247661#gid=1687247661
+  forum: https://forum.polkadot.network/t/the-new-polkadot-community-testnet/4956
+
+github:
+  organization: https://github.com/paseo-network
+  applications: https://github.com/paseo-network/paseo-action-submission
+  milestones: null
+  main: https://github.com/paseo-network/runtimes
+
+social:
+  twitter: "@paseo_network"
+  telegram: null
+  discord: null
+  matrix: "#paseo-testnet-support:parity.io"
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Submit via GitHub
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - infrastructure
+  - testnet
+  - development
+
+notes:
+  - "Official Polkadot community testnet (replaced Rococo)"
+  - "Launched December 22, 2023"
+  - "Curators: Birdo, Wil Wade (Frequency), Erin Grasmick (Parity Devops), ChaosDao Multisig"
+  - "Core Orgs: Portico, R0GUE, Amforc, Dwellir, Paradox, StakePlus, Zondax"
+  - "Subscan explorer: https://paseo.subscan.io/"

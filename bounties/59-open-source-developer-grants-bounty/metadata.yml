@@ -1,0 +1,60 @@
+id: 59
+name: Open Source Developer Grants Bounty
+status: active
+category: grants
+
+funding:
+  remaining: null
+  total: 96000
+  currency: DOT
+  grantRange: "Up to $30,000"
+
+curators:
+  count: 5
+  multisigThreshold: null
+  compensation: "5% of bounty amount (excluding W3F employees)"
+
+links:
+  website: null
+  notion: null
+  proposal: https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/59
+  polkassembly: null
+  spreadsheet: null
+  forum: https://forum.polkadot.network/t/bounty-proposal-open-source-developer-grants-program/9445
+
+github:
+  organization: https://github.com/PolkadotOpenSourceGrants
+  applications: https://github.com/PolkadotOpenSourceGrants/apply
+  milestones: https://github.com/PolkadotOpenSourceGrants/delivery
+  main: https://github.com/PolkadotOpenSourceGrants
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: "#OSDGP:matrix.org"
+  element: "#OSDGP:matrix.org"
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Fork repo → Copy template → Submit PR → KYC/KYB verification
+  maxAmount: "$30,000"
+  timeline: "Continuous processing"
+  status: open
+
+tags:
+  - grants
+  - open-source
+  - development
+
+notes:
+  - "Targeting ~15 projects with 96,000 DOT total funding"
+  - "Curators: Diogo Mendonca (W3F), Otar Shakarishvili (JUST Open Source), Sebastian Müller (W3F), Niklas Jurij Plessing, Abhiraj Mengade"
+  - "Code must be open-sourced (OSI-approved licenses)"
+  - "No successful token sales allowed"
+  - "Changed from cohort-based to continuous processing"
+  - "11 applications received, 2 approved as of April 2025"

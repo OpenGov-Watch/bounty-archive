@@ -1,0 +1,59 @@
+id: 32
+name: System Parachains Collator Bounty
+status: active
+category: infrastructure
+
+funding:
+  remaining: 7130
+  total: 15883
+  currency: DOT
+  grantRange: "$300/month per collator"
+
+curators:
+  count: 3
+  multisigThreshold: "2/3"
+  compensation: null
+
+links:
+  website: null
+  notion: null
+  proposal: https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/32
+  polkassembly: null
+  spreadsheet: https://docs.google.com/spreadsheets/d/115s_6a6aMQaQFRKEr9w6XWdZ5aNxnkqwi7H0-8SKLcI/edit?gid=102052289#gid=102052289
+  forum: https://forum.polkadot.network/t/economic-model-for-system-para-collators/1010
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: null
+  maxAmount: "$300/month per collator"
+  timeline: null
+  status: open
+
+tags:
+  - infrastructure
+  - collators
+  - system-chains
+
+notes:
+  - "Funds collators on Polkadot system chains"
+  - "Chains: AssetHub, BridgeHub, Collectives, Coretime, People Chain"
+  - "14 child bounties active"
+  - "Curators: FrankyWild, Tim Jansen, Husni (pastaMan)"
+  - "Operators: Paranodes, StakePlus, Turboflakes, Peter Mensik, SIK"

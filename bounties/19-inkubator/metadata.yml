@@ -1,0 +1,60 @@
+id: 19
+name: Ink!ubator (Wasm Smart Contracts)
+status: active
+category: development
+
+funding:
+  remaining: 135890
+  total: 361990
+  currency: DOT
+  grantRange: "$50,000-$60,000"
+
+curators:
+  count: 6
+  multisigThreshold: "4/6"
+  compensation: null
+
+links:
+  website: https://use.ink/ubator/
+  notion: https://inkubatordocs.notion.site/
+  proposal: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/19
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: https://github.com/use-inkubator
+  applications: https://github.com/use-inkubator/Ecosystem-Grants
+  milestones: https://github.com/use-inkubator/Grant-Milestone-Delivery
+  main: https://github.com/use-ink/ink
+
+social:
+  twitter: "@ink_lang"
+  telegram: null
+  discord: null
+  matrix: "#sm-bounty-support:matrix.org"
+  element: "#sm-bounty-support:matrix.org"
+
+contact:
+  email: null
+  applicationForm: https://form.typeform.com/to/NDn5L7Nn
+
+application:
+  process: Fork repo → Create from template → Submit PR → Curator review
+  maxAmount: "$50,000-$60,000"
+  timeline: null
+  status: closed
+
+tags:
+  - development
+  - smart-contracts
+  - wasm
+  - grants
+  - ink
+
+notes:
+  - "Version 2.0 currently active"
+  - "Cohort-based program"
+  - "Temporarily closed to new applications"
+  - "Approval requires 4 curator votes"

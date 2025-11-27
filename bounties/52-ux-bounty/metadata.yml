@@ -1,0 +1,62 @@
+id: 52
+name: UX Bounty
+status: active
+category: ux
+
+funding:
+  remaining: null
+  total: 67678
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: 6
+  multisigThreshold: "4/6"
+  compensation: null
+
+links:
+  website: https://www.uxbounty.xyz/
+  notion: https://polkadot-ux-bounty.notion.site/
+  proposal: null
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/52
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: "@PolkadotUX"
+  telegram: "https://t.me/polkadot_ux_guild"
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: https://calendar.app.google/mBpAmbXzvNBQstYn9
+
+application:
+  process: Apply via UX Audit Grants Program
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - ux
+  - user-experience
+  - audits
+  - standards
+
+notes:
+  - "Improving Polkadot user experience through audits, unified standards, and tooling"
+  - "Initial funding ~$500,000 with Q3 2025 refill approved (Ref #1662)"
+  - "Curators: OpenGovWatch, Parity, Apillon, SubWallet, Velocity Labs representatives"
+  - "Bounty Operator: Braille"
+  - "Active projects: Unified Address Format, DOT as Gas Token, CEX Transfer Protection, UX Glossary, Bridge UX Research"
+  - "First batch audits: SubSquare, Mimir, Polkassembly, SubWallet, Polimec, Kylix"
+  - "Community feedback portal: https://report.uxbounty.xyz/"

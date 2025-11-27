@@ -1,0 +1,62 @@
+id: 63
+name: Fast Grants Bounty
+status: active
+category: grants
+
+funding:
+  remaining: null
+  total: null
+  currency: DOT
+  grantRange: "$10,000-$15,000"
+
+curators:
+  count: 6
+  multisigThreshold: "3/5"
+  compensation: null
+
+links:
+  website: null
+  notion: null
+  proposal: https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/63
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: https://github.com/Polkadot-Fast-Grants
+  applications: https://github.com/Polkadot-Fast-Grants/apply
+  milestones: null
+  main: https://github.com/Polkadot-Fast-Grants
+
+social:
+  twitter: null
+  telegram: "https://t.me/+WWETkbjk_WAwYjVk"
+  discord: null
+  matrix: null
+  element: null
+
+contact:
+  email: null
+  applicationForm: null
+
+application:
+  process: Fork repo → Create from template → Submit PR
+  maxAmount: "$10,000-$15,000 ($5k per milestone)"
+  timeline: "3-10 working days, as fast as 72 hours"
+  status: closed
+
+tags:
+  - grants
+  - fast-track
+  - games
+  - defi
+
+notes:
+  - "Rapid-approval grants with decisions in 3-10 working days"
+  - "Milestone-based payments capped at $5,000 per milestone"
+  - "Curators: Otar Shakarishvili (JUST Open Source), Sacha Lansky (WebZero), Nikos Kontakis (PBA), Filip Filipovic (NFT Mozaic), Phil & Dom Kwok (EasyA)"
+  - "Priority: Projects on Plaza/Polkadot Hub, Games, DeFi"
+  - "Retroactive funding possible"
+  - "Application intake currently CLOSED (Nov 2025)"
+  - "Partner: EasyA x Polkadot University"

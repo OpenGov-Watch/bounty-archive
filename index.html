@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polkadot Bounty Archive</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #E6007A 0%, #552BBF 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .filters {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #E6007A;
+            background: white;
+            color: #E6007A;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #E6007A;
+            color: white;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #E6007A;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .bounty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bounty-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .bounty-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .bounty-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .bounty-id {
+            background: #E6007A;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .bounty-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-closed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-paused {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .bounty-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .funding-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .funding-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+
+        .funding-label {
+            color: #666;
+        }
+
+        .funding-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .links-section, .contact-section {
+            margin: 1rem 0;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .link-btn {
+            padding: 0.4rem 0.8rem;
+            background: #E6007A;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .link-btn:hover {
+            background: #c10066;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 0.4rem 0.8rem;
+            background: #552BBF;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .social-btn:hover {
+            background: #442099;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.25rem 0.6rem;
+            background: #e9ecef;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #495057;
+        }
+
+        .notes {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+        }
+
+        .note-item {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0.25rem 0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .bounty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Polkadot Bounty Archive</h1>
+        <p>Complete documentation of all active Polkadot Treasury bounties</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="total-bounties">20</div>
+                <div class="stat-label">Total Bounties</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="total-dot">~3.5M</div>
+                <div class="stat-label">Total DOT</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="categories">10</div>
+                <div class="stat-label">Categories</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filters">
+        <div class="filter-group">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="development">Development</button>
+            <button class="filter-btn" data-category="security">Security</button>
+            <button class="filter-btn" data-category="infrastructure">Infrastructure</button>
+            <button class="filter-btn" data-category="community">Community</button>
+            <button class="filter-btn" data-category="grants">Grants</button>
+            <button class="filter-btn" data-category="defi">DeFi</button>
+            <button class="filter-btn" data-category="ux">UX</button>
+        </div>
+        <input type="text" class="search-box" id="search" placeholder="🔍 Search bounties by name, tags, or description...">
+    </div>
+
+    <div class="container">
+        <div id="loading" class="loading">Loading bounties...</div>
+        <div id="bounties" class="bounty-grid" style="display: none;"></div>
+    </div>
+
+    <div class="footer">
+        <p>Data sourced from Polkadot Treasury on-chain data and official bounty documentation</p>
+        <p>Last updated: <span id="last-updated"></span></p>
+    </div>
+
+    <script>
+        const bountyIds = [10, 11, 17, 19, 22, 24, 31, 32, 33, 36, 37, 38, 43, 44, 50, 52, 59, 62, 63, 64];
+        let allBounties = [];
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        async function loadBounties() {
+            const promises = bountyIds.map(async (id) => {
+                try {
+                    const response = await fetch(`bounties/${id}-${getBountySlug(id)}/metadata.yml`);
+                    const yamlText = await response.text();
+                    const data = jsyaml.load(yamlText);
+                    return data;
+                } catch (error) {
+                    console.error(`Error loading bounty ${id}:`, error);
+                    return null;
+                }
+            });
+
+            allBounties = (await Promise.all(promises)).filter(b => b !== null);
+            renderBounties();
+            updateStats();
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('bounties').style.display = 'grid';
+            document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+        }
+
+        function getBountySlug(id) {
+            const slugs = {
+                10: 'polkadot-pioneers-bounty',
+                11: 'anti-scam-bounty',
+                17: 'events-bounty',
+                19: 'inkubator',
+                22: 'polkadot-assurance-legion-bounty',
+                24: 'moderation-team-bounty',
+                31: 'public-rpcs-for-relay-and-system-chains',
+                32: 'system-parachains-collator-bounty',
+                33: 'marketing-bounty',
+                36: 'defi-infrastructure-and-tooling-bounty',
+                37: 'paseo-testnet-bounty',
+                38: 'games-bounty',
+                43: 'meetups-bounty',
+                44: 'polkadot-kusama-bridge-security-bounty',
+                50: 'infrastructure-builders-program',
+                52: 'ux-bounty',
+                59: 'open-source-developer-grants-bounty',
+                62: 'legal-bounty',
+                63: 'fast-grants-bounty',
+                64: 'rust-bounties'
+            };
+            return slugs[id];
+        }
+
+        function renderBounties() {
+            const filtered = allBounties.filter(bounty => {
+                const matchesCategory = currentFilter === 'all' || bounty.category === currentFilter;
+                const matchesSearch = searchTerm === '' ||
+                    bounty.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    (bounty.tags && bounty.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
+                return matchesCategory && matchesSearch;
+            });
+
+            const container = document.getElementById('bounties');
+            container.innerHTML = filtered.map(bounty => createBountyCard(bounty)).join('');
+        }
+
+        function createBountyCard(bounty) {
+            const funding = bounty.funding || {};
+            const links = bounty.links || {};
+            const social = bounty.social || {};
+            const contact = bounty.contact || {};
+            const github = bounty.github || {};
+
+            return `
+                <div class="bounty-card">
+                    <div class="bounty-header">
+                        <span class="bounty-id">#${bounty.id}</span>
+                        <span class="bounty-status status-${bounty.status || 'active'}">${bounty.status || 'active'}</span>
+                    </div>
+
+                    <h2 class="bounty-name">${bounty.name}</h2>
+                    <span class="category-badge">${bounty.category}</span>
+
+                    ${funding.total || funding.remaining ? `
+                    <div class="funding-info">
+                        ${funding.remaining ? `
+                        <div class="funding-row">
+                            <span class="funding-label">Remaining:</span>
+                            <span class="funding-value">${funding.remaining.toLocaleString()} ${funding.currency || 'DOT'}</span>
+                        </div>
+                        ` : ''}
+                        ${funding.total ? `
+                        <div class="funding-row">
+                            <span class="funding-label">Total:</span>
+                            <span class="funding-value">${funding.total.toLocaleString()} ${funding.currency || 'DOT'}</span>
+                        </div>
+                        ` : ''}
+                        ${funding.grantRange ? `
+                        <div class="funding-row">
+                            <span class="funding-label">Grant Range:</span>
+                            <span class="funding-value">${funding.grantRange}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+
+                    ${hasLinks(links, github) ? `
+                    <div class="links-section">
+                        <div class="section-title">Links</div>
+                        <div class="links">
+                            ${links.website ? `<a href="${links.website}" target="_blank" class="link-btn">Website</a>` : ''}
+                            ${links.subsquare ? `<a href="${links.subsquare}" target="_blank" class="link-btn">Subsquare</a>` : ''}
+                            ${links.notion ? `<a href="${links.notion}" target="_blank" class="link-btn">Notion</a>` : ''}
+                            ${github.organization ? `<a href="${github.organization}" target="_blank" class="link-btn">GitHub</a>` : ''}
+                            ${github.applications ? `<a href="${github.applications}" target="_blank" class="link-btn">Apply</a>` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    ${hasSocial(social, contact) ? `
+                    <div class="contact-section">
+                        <div class="section-title">Contact</div>
+                        <div class="social-links">
+                            ${contact.email ? `<a href="mailto:${contact.email}" class="social-btn">✉️ Email</a>` : ''}
+                            ${social.twitter ? `<a href="https://twitter.com/${social.twitter.replace('@', '')}" target="_blank" class="social-btn">🐦 Twitter</a>` : ''}
+                            ${social.telegram ? `<a href="${social.telegram.startsWith('http') ? social.telegram : 'https://t.me/' + social.telegram.replace('@', '')}" target="_blank" class="social-btn">📱 Telegram</a>` : ''}
+                            ${social.discord ? `<a href="${social.discord}" target="_blank" class="social-btn">💬 Discord</a>` : ''}
+                            ${social.matrix ? `<span class="social-btn">Matrix: ${social.matrix}</span>` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    ${bounty.tags && bounty.tags.length > 0 ? `
+                    <div class="tags">
+                        ${bounty.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    ` : ''}
+
+                    ${bounty.notes && bounty.notes.length > 0 ? `
+                    <div class="notes">
+                        ${bounty.notes.slice(0, 3).map(note => `<div class="note-item">• ${note}</div>`).join('')}
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function hasLinks(links, github) {
+            return links.website || links.subsquare || links.notion || github.organization || github.applications;
+        }
+
+        function hasSocial(social, contact) {
+            return contact.email || social.twitter || social.telegram || social.discord || social.matrix;
+        }
+
+        function updateStats() {
+            const totalDot = allBounties.reduce((sum, b) => {
+                return sum + (b.funding?.total || 0);
+            }, 0);
+
+            document.getElementById('total-dot').textContent =
+                totalDot > 0 ? `${(totalDot / 1000000).toFixed(1)}M DOT` : 'N/A';
+
+            const categories = new Set(allBounties.map(b => b.category));
+            document.getElementById('categories').textContent = categories.size;
+        }
+
+        // Event listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilter = e.target.dataset.category;
+                renderBounties();
+            });
+        });
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            renderBounties();
+        });
+
+        // Load bounties on page load
+        loadBounties();
+    </script>
+</body>
+</html>

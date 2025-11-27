@@ -1,0 +1,59 @@
+id: 33
+name: Marketing Bounty
+status: active
+category: marketing
+
+funding:
+  remaining: 429660
+  total: 90000
+  currency: DOT
+  grantRange: "200,000 DOT monthly budget"
+
+curators:
+  count: 8
+  multisigThreshold: "4/8"
+  compensation: null
+
+links:
+  website: https://www.marketing-bounty.com/
+  notion: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+  proposal: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/33
+  polkassembly: null
+  spreadsheet: null
+  forum: https://forum.polkadot.network/t/marketing-bounty-deep-dive/15848
+
+github:
+  organization: null
+  applications: null
+  milestones: null
+  main: null
+
+social:
+  twitter: null
+  telegram: "@Buythedip_Eric"
+  discord: null
+  matrix: "ericki:matrix.org"
+  element: null
+
+contact:
+  email: marketingbounty@polkadot.network
+  applicationForm: null
+
+application:
+  process: null
+  maxAmount: null
+  timeline: null
+  status: null
+
+tags:
+  - marketing
+  - promotion
+  - influencers
+
+notes:
+  - "CRITICAL STATUS: Facing closure via Referendum #1791"
+  - "Submitted by W3F Governance Team (their first official OpenGov action)"
+  - "Monthly budget of 200,000 DOT with high burn rate and questioned ROI"
+  - "Curators include Crane (GM), Eric Buythedip_Eric (Distractive), Katie Butler & Nate Hamilton (Moonbeam)"
+  - "Major spending: Nova Wallet x Blast Premier (~$1.5M), Kaito/KOL Campaign (~$1.1M), The Kus Weekly (~$500k)"

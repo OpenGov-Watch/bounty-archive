@@ -1,0 +1,62 @@
+id: 50
+name: Infrastructure Builders Program (IBP)
+status: active
+category: infrastructure
+
+funding:
+  remaining: 415860
+  total: 461054
+  currency: DOT
+  grantRange: null
+
+curators:
+  count: 5
+  multisigThreshold: "3/5"
+  compensation: null
+
+links:
+  website: https://wiki.ibp.network/
+  notion: null
+  proposal: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  subsquare: https://polkadot.subsquare.io/treasury/bounties/50
+  polkassembly: null
+  spreadsheet: null
+  forum: null
+
+github:
+  organization: https://github.com/ibp-network
+  applications: https://github.com/ibp-network/ChildBounties
+  milestones: null
+  main: https://github.com/ibp-network
+
+social:
+  twitter: null
+  telegram: null
+  discord: null
+  matrix: "#ibp-network:matrix.org"
+  element: "#ibp-network:matrix.org"
+
+contact:
+  email: null
+  applicationForm: https://forms.gle/pqgSc2QJ7XUznveu5
+
+application:
+  process: Submit application form
+  maxAmount: null
+  timeline: null
+  status: open
+
+tags:
+  - infrastructure
+  - rpc
+  - nodes
+  - validators
+
+notes:
+  - "Premier infrastructure collective"
+  - "1,140+ RPC nodes across 15 datacenters"
+  - "Handles 37 billion requests/month"
+  - "Curators: anaelleltd (Parity), bLd (Astar), CoinStudio (exec), Otar (Parity), will (Parity)"
+  - "Members: StakePlus, LuckyFriday, Gatotech, STKD, Helikon, RadiumBlock, Rotko, Amforc, interweb, Turboflakes"
+  - "CompareNodes rated IBP as best public Polkadot RPC"
+  - "RPC: wss://rpc.ibp.network/polkadot"
