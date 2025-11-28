@@ -298,6 +298,193 @@
             color: #666;
         }
 
+        .scraped-section {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border: 2px solid #4caf50;
+        }
+
+        .scraped-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .scraped-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2e7d32;
+            text-transform: uppercase;
+        }
+
+        .scraped-count {
+            font-size: 0.85rem;
+            color: #558b2f;
+            font-weight: 600;
+        }
+
+        .scraped-domains {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .domain-chip {
+            padding: 0.4rem 0.8rem;
+            background: white;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .domain-chip:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .view-all-btn {
+            padding: 0.4rem 0.8rem;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .view-all-btn:hover {
+            background: #388e3c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 85vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+        }
+
+        .modal-close:hover {
+            opacity: 0.8;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .domain-section {
+            margin-bottom: 2rem;
+        }
+
+        .domain-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2e7d32;
+            padding: 0.75rem;
+            background: #f1f8e9;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .file-tree {
+            margin-left: 1rem;
+        }
+
+        .file-item {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            background: #fafafa;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .file-item:hover {
+            background: #e8f5e9;
+        }
+
+        .file-name {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .file-link {
+            color: #4caf50;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .file-link:hover {
+            background: #e8f5e9;
+        }
+
+        .file-title {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
         .footer {
             text-align: center;
             padding: 2rem;
@@ -364,13 +551,42 @@
         <p>Last updated: <span id="last-updated"></span></p>
     </div>
 
+    <!-- Modal for scraped content -->
+    <div id="scrapedModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Scraped Content</h2>
+                <button class="modal-close" onclick="closeScrapedModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically populated -->
+            </div>
+        </div>
+    </div>
+
     <script>
         const bountyIds = [10, 11, 17, 19, 22, 24, 31, 32, 33, 36, 37, 38, 43, 44, 50, 52, 59, 62, 63, 64];
         let allBounties = [];
+        let scrapedIndex = {};
         let currentFilter = 'all';
         let searchTerm = '';
 
+        async function loadScrapedIndex() {
+            try {
+                const response = await fetch('scraped-index.json');
+                const data = await response.json();
+                scrapedIndex = data.bounties || {};
+                console.log('Loaded scraped index:', Object.keys(scrapedIndex).length, 'bounties');
+            } catch (error) {
+                console.warn('Could not load scraped index:', error);
+                scrapedIndex = {};
+            }
+        }
+
         async function loadBounties() {
+            // Load scraped index first
+            await loadScrapedIndex();
+
             const promises = bountyIds.map(async (id) => {
                 try {
                     const response = await fetch(`bounties/${id}-${getBountySlug(id)}/metadata.yml`);
@@ -507,9 +723,83 @@
                         ${bounty.notes.slice(0, 3).map(note => `<div class="note-item">• ${note}</div>`).join('')}
                     </div>
                     ` : ''}
+
+                    ${createScrapedSection(bounty.id)}
                 </div>
             `;
         }
+
+        function createScrapedSection(bountyId) {
+            const scraped = scrapedIndex[bountyId];
+            if (!scraped || !scraped.domains || scraped.domains.length === 0) {
+                return '';
+            }
+
+            const totalFiles = scraped.domains.reduce((sum, d) => sum + d.file_count, 0);
+            const domainCount = scraped.domains.length;
+
+            return `
+                <div class="scraped-section">
+                    <div class="scraped-header">
+                        <span class="scraped-title">📄 Scraped Documentation</span>
+                        <span class="scraped-count">${domainCount} domain${domainCount > 1 ? 's' : ''}, ${totalFiles} file${totalFiles > 1 ? 's' : ''}</span>
+                    </div>
+                    <div class="scraped-domains">
+                        ${scraped.domains.slice(0, 3).map(d => `
+                            <span class="domain-chip" onclick="openScrapedModal(${bountyId})">${d.domain}</span>
+                        `).join('')}
+                        ${scraped.domains.length > 3 ? `
+                            <button class="view-all-btn" onclick="openScrapedModal(${bountyId})">
+                                View All (${scraped.domains.length})
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function openScrapedModal(bountyId) {
+            const scraped = scrapedIndex[bountyId];
+            if (!scraped) return;
+
+            const bounty = allBounties.find(b => b.id === bountyId);
+            const bountyName = bounty ? bounty.name : `Bounty #${bountyId}`;
+
+            document.getElementById('modalTitle').textContent = `Scraped Content - ${bountyName}`;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = scraped.domains.map(domain => `
+                <div class="domain-section">
+                    <div class="domain-header">
+                        🌐 ${domain.domain} (${domain.file_count} file${domain.file_count > 1 ? 's' : ''})
+                    </div>
+                    <div class="file-tree">
+                        ${domain.files.map(file => `
+                            <div class="file-item">
+                                <div>
+                                    <div class="file-name">📄 ${file.path}</div>
+                                    ${file.title ? `<div class="file-title">${file.title}</div>` : ''}
+                                </div>
+                                ${file.url ? `<a href="${file.url}" target="_blank" class="file-link">🔗 Original</a>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('scrapedModal').classList.add('active');
+        }
+
+        function closeScrapedModal() {
+            document.getElementById('scrapedModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('scrapedModal').addEventListener('click', (e) => {
+            if (e.target.id === 'scrapedModal') {
+                closeScrapedModal();
+            }
+        });
 
         function hasLinks(links, github) {
             return links.website || links.subsquare || links.notion || github.organization || github.applications;
