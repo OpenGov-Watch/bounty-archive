@@ -12,6 +12,7 @@ import yaml
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
+from urllib.parse import urlparse
 
 
 class SuggestionReviewer:
@@ -23,11 +24,31 @@ class SuggestionReviewer:
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
         self.ignore_file = self.scraping_dir / "scrape-ignore.yml"
         self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
+        self.config_file = self.scraping_dir / "scrape-config.yml"
+
+        # Load configuration
+        self.config = self.load_config()
 
         # Track changes
         self.accepted = []
+        self.auto_accepted = []
         self.ignored = []
         self.modified = []
+
+    def load_config(self) -> Dict:
+        """Load scraping configuration"""
+        if not self.config_file.exists():
+            print(f"Error: Configuration file not found: {self.config_file}")
+            print("Please create scrape-config.yml in the scraping directory.")
+            print("See SCRAPING.md for the required format.")
+            sys.exit(1)
+
+        with open(self.config_file, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+            if config is None:
+                print(f"Error: Configuration file is empty: {self.config_file}")
+                sys.exit(1)
+            return config
 
     def load_yaml_file(self, file_path: Path) -> Dict:
         """Load and parse YAML file"""
@@ -171,6 +192,43 @@ class SuggestionReviewer:
         ignore_data['ignored'].append(entry)
         self.save_yaml_file(self.ignore_file, ignore_data)
 
+    def check_auto_accept(self, url: str) -> Optional[tuple[str, int]]:
+        """Check if URL matches auto-accept rules. Returns (mode, max_depth) if matched, None otherwise"""
+        auto_accept_rules = self.config.get('auto_accept', [])
+        if not auto_accept_rules:
+            return None
+
+        parsed = urlparse(url)
+        domain = parsed.netloc.lower()
+        path = parsed.path.lower()
+
+        for rule in auto_accept_rules:
+            if not rule:
+                continue
+
+            rule_domain = rule.get('domain', '').lower()
+            rule_path = rule.get('path', '').lower()
+
+            # Check domain match (exact or subdomain)
+            domain_match = domain == rule_domain or domain.endswith('.' + rule_domain)
+
+            # Check path match if specified
+            if rule_path:
+                path_match = path.startswith(rule_path)
+            else:
+                path_match = True
+
+            if domain_match and path_match:
+                # Return mode and max_depth from rule
+                mode = rule.get('mode', 'single')
+                if mode == 'recursive':
+                    max_depth = rule.get('max_depth', self.config.get('recursive_defaults', {}).get('max_depth', 2))
+                else:
+                    max_depth = rule.get('max_depth', self.config.get('single_defaults', {}).get('max_depth', 1))
+                return mode, max_depth
+
+        return None
+
     def review_suggestions(self):
         """Main review loop"""
         print("=" * 60)
@@ -192,6 +250,21 @@ class SuggestionReviewer:
         remaining_suggestions = []
 
         for i, suggestion in enumerate(suggestions):
+            # Check if URL matches auto-accept rules
+            auto_accept_result = self.check_auto_accept(suggestion['url'])
+
+            if auto_accept_result:
+                # Auto-accept: apply matched mode and add to queue
+                mode, max_depth = auto_accept_result
+                suggestion['mode'] = mode
+                suggestion['max_depth'] = max_depth
+                self.add_to_queue(suggestion)
+                self.auto_accepted.append(suggestion['url'])
+                print(f"\n[AUTO-ACCEPTED {i + 1}/{len(suggestions)}] {suggestion['url']}")
+                print(f"  Mode: {mode}, Max Depth: {max_depth}")
+                continue
+
+            # Manual review required
             self.display_suggestion(suggestion, i, len(suggestions))
             choice = self.get_user_choice()
 
@@ -199,7 +272,7 @@ class SuggestionReviewer:
                 # Accept
                 self.add_to_queue(suggestion)
                 self.accepted.append(suggestion['url'])
-                print(f"\n✓ Added to scrape queue")
+                print(f"\n[+] Added to scrape queue")
 
             elif choice == 'M':
                 # Modify
@@ -207,9 +280,9 @@ class SuggestionReviewer:
                 if modified:
                     self.add_to_queue(modified)
                     self.modified.append(suggestion['url'])
-                    print(f"\n✓ Modified and added to scrape queue")
+                    print(f"\n[+] Modified and added to scrape queue")
                 else:
-                    print(f"\n✗ Modification cancelled. Keeping in suggestions.")
+                    print(f"\n[-] Modification cancelled. Keeping in suggestions.")
                     remaining_suggestions.append(suggestion)
 
             elif choice == 'I':
@@ -217,16 +290,16 @@ class SuggestionReviewer:
                 reason = input("\nOptional reason for ignoring (press Enter to skip): ").strip()
                 self.add_to_ignore(suggestion, reason if reason else None)
                 self.ignored.append(suggestion['url'])
-                print(f"\n✓ Added to ignore list")
+                print(f"\n[+] Added to ignore list")
 
             elif choice == 'S':
                 # Skip
                 remaining_suggestions.append(suggestion)
-                print(f"\n→ Skipped. Will remain in suggestions.")
+                print(f"\n-> Skipped. Will remain in suggestions.")
 
             elif choice == 'Q':
                 # Quit
-                print("\n→ Exiting reviewer...")
+                print("\n-> Exiting reviewer...")
                 # Keep all remaining suggestions
                 remaining_suggestions.extend(suggestions[i+1:])
                 break
@@ -253,13 +326,14 @@ class SuggestionReviewer:
         print("\n" + "=" * 60)
         print("REVIEW SUMMARY")
         print("=" * 60)
-        print(f"Accepted:  {len(self.accepted)}")
-        print(f"Modified:  {len(self.modified)}")
-        print(f"Ignored:   {len(self.ignored)}")
-        print(f"Remaining: {remaining}")
+        print(f"Auto-accepted: {len(self.auto_accepted)}")
+        print(f"Accepted:      {len(self.accepted)}")
+        print(f"Modified:      {len(self.modified)}")
+        print(f"Ignored:       {len(self.ignored)}")
+        print(f"Remaining:     {remaining}")
         print("=" * 60)
 
-        if self.accepted or self.modified:
+        if self.accepted or self.modified or self.auto_accepted:
             print(f"\nNext step: Run 'python scraper.py' to scrape queued URLs")
 
 

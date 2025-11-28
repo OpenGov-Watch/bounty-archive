@@ -16,3 +16,19 @@ recursive_defaults:
 # Settings for single page mode
 single_defaults:
   max_depth: 1
+
+# Auto-accept rules: URLs matching these patterns are auto-accepted during review
+# Format: domain can be exact match or subdomain pattern, path is optional
+auto_accept:
+  # Example: Auto-accept all Notion sites as recursive
+  # - domain: "notion.site"
+  #   mode: "recursive"
+  #   max_depth: 2
+
+  # Example: Auto-accept specific paths
+  # - domain: "polkadot.network"
+  #   path: "/wiki/"
+  #   mode: "recursive"
+  #   max_depth: 2
+
+  # Add your auto-accept rules below:

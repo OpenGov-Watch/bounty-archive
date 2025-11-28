@@ -1,5 +1,5 @@
 version: '1.0'
-last_generated: '2025-11-28T11:39:36.587096Z'
+last_generated: '2025-11-28T11:49:15.863109Z'
 suggestions:
 - bounty_id: 10
   url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
@@ -36,11 +36,6 @@ suggestions:
   mode: single
   max_depth: 1
   source: metadata.links.website
-- bounty_id: 19
-  url: https://inkubatordocs.notion.site/
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
 - bounty_id: 19
   url: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
   mode: single
@@ -82,11 +77,6 @@ suggestions:
   max_depth: 1
   source: metadata.links.website
 - bounty_id: 33
-  url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
-- bounty_id: 33
   url: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
   mode: single
   max_depth: 1
@@ -127,11 +117,6 @@ suggestions:
   max_depth: 1
   source: metadata.links.website
 - bounty_id: 43
-  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
-- bounty_id: 43
   url: https://forms.gle/3XCTyLZGaCf9hnah7
   mode: single
   max_depth: 1
@@ -171,11 +156,6 @@ suggestions:
   mode: single
   max_depth: 1
   source: metadata.links.website
-- bounty_id: 52
-  url: https://polkadot-ux-bounty.notion.site/
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
 - bounty_id: 52
   url: https://calendar.app.google/mBpAmbXzvNBQstYn9
   mode: single

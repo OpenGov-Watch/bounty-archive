@@ -12,7 +12,6 @@ import yaml
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Set
-from urllib.parse import urlparse
 
 
 class SuggestionGenerator:
@@ -188,7 +187,7 @@ class SuggestionGenerator:
                     stats['already_processed'] += 1
                     continue
 
-                # Add to suggestions
+                # Add to suggestions for review
                 all_suggestions.append(suggestion)
                 stats['new_suggestions'] += 1
 
@@ -230,6 +229,10 @@ class SuggestionGenerator:
         print(f"URLs found: {stats['urls_found']}")
         print(f"  Already processed: {stats['already_processed']}")
         print(f"  New suggestions: {stats['new_suggestions']}")
+        print("=" * 60)
+
+        if stats['new_suggestions'] > 0:
+            print(f"\nNext step: Run 'python review.py' to review suggestions")
         print("=" * 60)
 
         return all_suggestions

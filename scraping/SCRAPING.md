@@ -29,13 +29,7 @@ python suggest.py
 This scans all `bounties/*/metadata.yml` files and:
 - Extracts URLs from all fields in `links` section and `contact.applicationForm`
 - Skips already queued/scraped/ignored/suggested URLs
-- Uses default mode from `scrape-config.yml` (typically "single")
-- Saves suggestions to `scrape-suggestions.yml`
-
-**Note:** All URLs are suggested with default settings. Use `review.py` to:
-- Change mode from single → recursive (or vice versa)
-- Modify max_depth
-- Ignore unwanted URLs
+- Adds new URLs to `scrape-suggestions.yml` with default mode
 
 ### 3. Review Suggestions
 
@@ -45,8 +39,22 @@ Interactively process suggestions:
 python review.py
 ```
 
-For each suggestion, choose:
-- **[A]ccept** - Add to scrape queue
+The reviewer automatically checks each URL against auto-accept rules in `scrape-config.yml`:
+
+**Auto-Accept:**
+Configure trusted domains to skip manual review:
+```yaml
+auto_accept:
+  - domain: "notion.site"
+    mode: "recursive"
+    max_depth: 2
+```
+
+URLs matching auto-accept rules are automatically added to the queue.
+
+**Manual Review:**
+For URLs requiring manual review, choose:
+- **[A]ccept** - Add to scrape queue with current settings
 - **[M]odify** - Edit bounty_id/url/mode/depth, then add to queue
 - **[I]gnore** - Add to ignore list (won't be suggested again)
 - **[S]kip** - Leave in suggestions for later review
