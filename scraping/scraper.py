@@ -526,7 +526,15 @@ class PolkadotBountyScraper:
     def clear_queue(self, results: List[Dict]):
         """Remove successfully scraped URLs from scrape-queue.yml"""
         # Load current queue
-        queue_data = self.load_yaml_file(self.queue_file)
+        if not self.queue_file.exists():
+            return
+
+        with open(self.queue_file, 'r', encoding='utf-8') as f:
+            queue_data = yaml.safe_load(f)
+
+        if queue_data is None:
+            queue_data = {}
+
         if 'queue' not in queue_data or queue_data['queue'] is None:
             queue_data['queue'] = []
 
