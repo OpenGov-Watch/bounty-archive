@@ -106,9 +106,17 @@ Interactively review suggestions:
 ```bash
 python scraper.py
 ```
-Scrapes all URLs in the queue and saves content. Successful scrapes are automatically removed from the queue.
+Scrapes all URLs in the queue and saves content. Extracts and categorizes all links found on each page. Successful scrapes are automatically removed from the queue.
 
-**4. Push Changes**
+**4. Discover New URLs**
+```bash
+python discover.py
+```
+Analyzes extracted links from scraped pages and generates new suggestions. Filters out already scraped, queued, ignored, and suggested URLs. Found URLs are added to suggestions.
+
+**5. Repeat or Push**
+- Repeat from step 2 to scrape discovered URLs, or
+- Push changes when done:
 ```bash
 git add bounties/ scraping/
 git commit -m "Add scraped documentation for bounties #X, #Y"
@@ -121,7 +129,8 @@ git push
 - 🔄 **Auto-suggestions** - Extracts URLs from bounty metadata automatically
 - ✅ **Auto-accept rules** - Configure trusted domains to skip manual review
 - 📄 **Original format preservation** - Saves HTML, PDF, JSON, etc. as-is with metadata
-- 🔗 **Link extraction** - Categorizes internal, external, and social links
+- 🔗 **Link extraction & categorization** - Automatically extracts and categorizes links (social, github, documentation, governance, forms)
+- 🔍 **Link discovery** - Generates new scraping suggestions from extracted links
 - 🗂️ **Organized storage** - Saves to `bounties/[id]-[slug]/scraped/[domain]/`
 - 🌐 **Website integration** - Scraped content appears on bounty cards automatically
 

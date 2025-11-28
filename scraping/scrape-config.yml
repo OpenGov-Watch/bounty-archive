@@ -33,3 +33,30 @@ auto_accept:
 - domain: "form.typeform.com"
 - domain: "forms.monday.com"
 - domain: "forms.gle"
+
+# Link categorization: domains are matched to categorize extracted links
+link_categories:
+  social:
+    - "twitter.com"
+    - "x.com"
+    - "telegram.org"
+    - "t.me"
+    - "discord.gg"
+    - "discord.com"
+    - "matrix.to"
+  documentation:
+    - "docs."
+    - "wiki."
+    - "notion.site"
+    - ".gitbook.io"
+  governance:
+    - "subsquare.io"
+    - "polkassembly.io"
+  github:
+    - "github.com"
+  forms:
+    - "forms.gle"
+    - "google.com/forms"
+    - "typeform.com"
+    - "forms.monday.com"
+    - "airtable.com/shr"

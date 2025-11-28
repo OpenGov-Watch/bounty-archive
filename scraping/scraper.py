@@ -62,12 +62,54 @@ class PolkadotBountyScraper:
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
         self.results_file = self.scraping_dir / "scrape-results.yml"
         self.index_file = self.scraping_dir / "scrape-index.yml"
+        self.links_file = self.scraping_dir / "scrape-links.yml"
+        self.config_file = self.scraping_dir / "scrape-config.yml"
+
+        # Load configuration
+        self.config = self.load_config()
+        self.link_categories = self.config.get('link_categories', {})
 
         # Session for requests with proper headers
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (compatible; PolkadotBountyArchiver/1.0)'
         })
+
+    def load_config(self) -> Dict:
+        """Load scraping configuration from YAML file"""
+        if not self.config_file.exists():
+            print(f"Warning: Config file not found: {self.config_file}")
+            return {}
+
+        with open(self.config_file, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+
+        return config or {}
+
+    def categorize_link(self, url: str) -> List[str]:
+        """Categorize a URL based on configured link_categories"""
+        categories = []
+        parsed = urlparse(url)
+        domain = parsed.netloc
+
+        for category_name, patterns in self.link_categories.items():
+            for pattern in patterns:
+                # Check if pattern matches domain
+                if pattern.startswith('.'):
+                    # Pattern like ".gitbook.io" matches any subdomain
+                    if domain.endswith(pattern[1:]):
+                        categories.append(category_name)
+                        break
+                elif pattern in domain:
+                    # Pattern like "docs." matches anywhere in domain
+                    categories.append(category_name)
+                    break
+
+        # If no categories matched, mark as "other"
+        if not categories:
+            categories.append('other')
+
+        return categories
 
     def load_queue(self) -> List[ScrapeJob]:
         """Load scraping queue from YAML file"""
@@ -559,6 +601,68 @@ class PolkadotBountyScraper:
         if removed_count > 0:
             print(f"Queue cleared: removed {removed_count} completed job(s)")
 
+    def save_links(self, results: List[Dict]):
+        """Save extracted links to scrape-links.yml"""
+        # Load existing links if any
+        if self.links_file.exists():
+            with open(self.links_file, 'r', encoding='utf-8') as f:
+                links_data = yaml.safe_load(f) or {}
+        else:
+            links_data = {}
+
+        # Initialize structure
+        if 'discovered_links' not in links_data or links_data['discovered_links'] is None:
+            links_data['discovered_links'] = []
+
+        # Extract and categorize links from results
+        for result in results:
+            if result.get('status') not in ('completed', 'partial'):
+                continue
+
+            source_url = result['url']
+            bounty_id = result['bounty_id']
+            outgoing = result.get('outgoing_urls', {})
+
+            # Collect all links from all categories (internal, external, social)
+            all_links = set()
+            all_links.update(outgoing.get('internal', []))
+            all_links.update(outgoing.get('external', []))
+            all_links.update(outgoing.get('social', []))
+
+            # Categorize each link and add to discovered_links
+            for url in all_links:
+                # Check if this link was already discovered from this source
+                existing = next(
+                    (item for item in links_data['discovered_links']
+                     if item['url'] == url and item['source_url'] == source_url),
+                    None
+                )
+
+                if not existing:
+                    # Categorize the link
+                    categories = self.categorize_link(url)
+
+                    links_data['discovered_links'].append({
+                        'url': url,
+                        'source_url': source_url,
+                        'bounty_id': bounty_id,
+                        'categories': categories,
+                        'discovered_at': result.get('scraped_at', '')
+                    })
+
+        # Update metadata
+        links_data['version'] = "1.0"
+        links_data['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+        links_data['total_links'] = len(links_data['discovered_links'])
+
+        # Save links
+        with open(self.links_file, 'w', encoding='utf-8') as f:
+            yaml.dump(links_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+
+        new_links = len([item for item in links_data['discovered_links']
+                         if any(r['url'] == item['source_url'] for r in results)])
+        print(f"Links saved: {new_links} new links discovered")
+
     def run(self):
         """Main execution"""
         print("=" * 60)
@@ -585,6 +689,9 @@ class PolkadotBountyScraper:
 
         # Update index
         self.update_index(results)
+
+        # Save extracted links
+        self.save_links(results)
 
         # Clear successfully scraped jobs from queue
         self.clear_queue(results)

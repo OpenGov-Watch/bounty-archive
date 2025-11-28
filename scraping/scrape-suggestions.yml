@@ -1,3 +1,2219 @@
 version: '1.0'
-last_generated: null
-suggestions: []
+last_generated: '2025-11-28T14:51:20.703845Z'
+suggestions:
+- url: https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://github.com/paritytech/substrate/pull/10309
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://github.com/opensquare-network/subsquare/issues
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/council/motions
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/techcomm/members
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/democracy/externals
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/treasury/tips
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/14mwSGdhdrAA3pGoKSX1tWguFREswWucAsr7kcHbdsf7fU7Q
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.polkassembly.io/motion/146
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://app.element.io
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/12NLgzqfhuJkc9mZ5XUTTG85N8yhhzfptwqF1xVhtK3ZX7f6
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/democracy/referenda
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.polkassembly.io/bounty/10
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/council/members
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/techcomm/proposals
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://polkadot.subsquare.io/democracy/proposals
+  bounty_id: 10
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:48.005953+00:00Z
+- url: https://wiki.polkadot.network
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://twitter.com/DotAntiscam
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/blog
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/bounty
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/guides/security-in-smart-contracts
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/collective
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/privacy-policy
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://discord.com/invite/RrWBd9aj9v
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/tracks
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://medium.com/@DotAntiScam
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://discord.gg/RrWBd9aj9v
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://github.com/Polkadot-Anti-scam-Team
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://github.com/polkadot-js/phishing
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://www.youtube.com/@PolkadotAntiscamTeam
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/contact
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://polkadot.antiscam.team/sitemap
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.antiscam.team/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:49.275871+00:00Z
+- url: https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://polkadot.subsquare.io/user/14DQEq1XtPvntMyUFbgcDCSce79s1CBum3rBYrEeB66qgTqG
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://polkadot.polkassembly.io/motion/151
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://docs.google.com/forms/d/e/1FAIpQLSf2iXCCvdkQ70WrfDPtG5uQA3RrCfvb0VDlZjti26q0yb17sg/viewform?pli=1
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+  bounty_id: 11
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:49.448574+00:00Z
+- url: https://dotevents.xyz/about/1
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://polkadot.polkassembly.io/motion/228
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: http://meet.google.com/vgu-jaqc-rpi
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://polkadot.polkassembly.io/referenda/775
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://polkadot.polkassembly.io/motion/245
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://dotevents.xyz
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://polkadot.polkassembly.io/referenda/236
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:50.477516+00:00Z
+- url: https://docs.google.com/document?usp=docs_web
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:51.848904+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&followup=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:51.848904+00:00Z
+- url: https://docs.google.com/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S-198531685:1764341394372090&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1ZiaFLLww3oiE6Z76PbMYwoaRss9K45ZwAkKoVLUeYtMEZOaCXjFS5yH5KGU9V-JiW7NOW3g&ltmpl=forms&osid=1&service=wise
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://docs.google.com/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S-198531685:1764341394372090&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1ZiaFLLww3oiE6Z76PbMYwoaRss9K45ZwAkKoVLUeYtMEZOaCXjFS5yH5KGU9V-JiW7NOW3g&ltmpl=forms&osid=1&service=wise
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://support.google.com/accounts?hl=en-US&p=account_iph
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US&privacy=true
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:53.315986+00:00Z
+- url: https://polkadot.subsquare.io/treasury/burn
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.polkassembly.io/post/1875
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.polkassembly.io/referenda/135
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/proxies
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit?usp=sharing
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/assets
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury/proposals
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/referenda
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury/bounties/24
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/techcomm
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury/bounties
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/preimages
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subscan.io/referenda_v2/135
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://kusama.polkassembly.io/motion/528
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/discussions
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/democracy
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury/child-bounties
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/user/13YWynHAu8F8uKZFbQwvPgJ67xizvo21HCEQU3Ke8z1XHoyT
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://kusama.subsquare.io/referenda/referendum/29
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://voting.opensquare.io/space/polkadot
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/treasury/spends
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://wiki.polkadot.network/learn/learn-polkadot-opengov
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/whitelist
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/calendar
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/council
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/referenda/tracks/33
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://polkadot.subsquare.io/delegation
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://kusama.polkassembly.io/bounty/14
+  bounty_id: 24
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/135
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:49:54.327585+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&followup=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 31
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:55.607127+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&followup=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 32
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:56.781533+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&followup=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 33
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:57.372571+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&followup=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:57.871292+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&followup=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 37
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:58.683155+00:00Z
+- url: https://policies.google.com/terms
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://www.google.com/forms/about?utm_source=product&utm_medium=forms_logo&utm_campaign=forms
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://policies.google.com/privacy
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://drive.google.com/abuse?id=AKkXjoyWGjVhy6dm2X70wDOFBh4vF-EF0SUALyE3EDZ0h_BwcSDNJQG6L1F2oLRkIprxWU60eafA6WAeH47iNic:0&docurl=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://docs.google.com/document/d/1ET7lOb91316T_F10PbJ6HuntVq_dHUjc/edit
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://accounts.google.com/AccountChooser?continue=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form&service=wise
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/3XCTyLZGaCf9hnah7
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:49:59.813624+00:00Z
+- url: https://polkadot.com/blockchain-academy
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started/dapps
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/newsroom
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/about
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started/staking
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/platform/chain
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/developers/courses
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/contact
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started/dot-token
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/legal-disclosures
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/platform
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started/wallets
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/paritytech/polkadot-sdk/tree/master/bridges
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/platform/dao
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases/depin
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://www.parity.io/bug-bounty
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/paritytech/polkadot-sdk/tree/master/cumulus/parachains/runtimes/bridge-hubs
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/platform/sdk
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/blog
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/decentralized-jobs
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://www.reddit.com/r/Polkadot
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/paritytech/polkadot-sdk
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/platform/hub
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/cookie-policy
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases/ai
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/ambassador-program
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/privacy
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases/gaming
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/paritytech/parity-bridges-common
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://twitter.com/Polkadot
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/developers
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://www.instagram.com/polkadotnetwork
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/events
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/polkadot-fellows/runtimes/tree/main/system-parachains/bridge-hubs
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/case-studies
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/papers
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/community/brand-hub
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/developers/grants
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot-discord.w3f.tools
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/get-started/bridges
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/business
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://www.youtube.com/channel/UCB7PbjuZLEba_znc7mEGNgw
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://t.me/PolkadotOfficial
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://docs.polkadot.com
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://github.com/Distractive/polkadotcom
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases/real-world-assets
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://web3.foundation
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/use-cases/defi
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/smart-contracts
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://polkadot.com/government
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.com/bridges-bug-bounty/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.493684+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&followup=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 44
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:00.816052+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&followup=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:02.109939+00:00Z
+- url: https://forms.gle/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1861943141:1764341404738256&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU0BxaHIyG7lDJC5dx4ANElrdHwjBx5xsjkx9ehRMYw150-B4MKlV-pmjNDiXabFWDxNdCXOZg&ltmpl=forms&osid=1&service=wise
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/pqgSc2QJ7XUznveu5
+  categories:
+  - forms
+  discovered_at: 2025-11-28T14:50:03.195865+00:00Z
+- url: https://forms.gle/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1861943141:1764341404738256&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU0BxaHIyG7lDJC5dx4ANElrdHwjBx5xsjkx9ehRMYw150-B4MKlV-pmjNDiXabFWDxNdCXOZg&ltmpl=forms&osid=1&service=wise
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://forms.gle/pqgSc2QJ7XUznveu5
+  categories:
+  - forms
+  discovered_at: 2025-11-28T14:50:03.195865+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&followup=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 59
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:04.681456+00:00Z
+- url: https://docs.google.com/document/d/1eHSn1wD5sgIERqsO7sB6iu7z30O3k6FPSXKjkAHK0Ek/edit?usp=sharing
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://polkadot.polkassembly.io/referenda/1359
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://polkadot.subsquare.io/user/1eGtATyy4ayn77dsrhdW8N3Vs1yjqjzJcintksNmScqy31j
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://polkadot.subscan.io/referenda_v2/1359
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://discord.gg/sYw7WkZVzV
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://polkadot.subsquare.io/treasury/bounties/62
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1359
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:05.271155+00:00Z
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&followup=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&ltmpl=docs&ec=GAZAGQ
+  bounty_id: 63
+  mode: single
+  max_depth: 1
+  source: discovered from https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:06.708913+00:00Z
+- url: https://github.com/vgantchev
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.subsquare.io/referenda/tracks/34
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://github.com/bkchr
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.subscan.io/referenda_v2/1377
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://github.com/seadanda
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.subsquare.io/treasury/bounties/64
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://github.com/jak-pan
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.polkassembly.io/referenda/1377
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.subsquare.io/user/15BERoWxrWC61cAb4JjpUdM7sy8FAS9uduismDbZ7PURZLto
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadot.subsquare.io/referenda/712
+  bounty_id: 64
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot.subsquare.io/referenda/1377
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:07.376785+00:00Z
+- url: https://polkadotassurance.com/community_reports
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/funding/common_good
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/funding/security_tooling
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/security_tooling
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/funding/parachains
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/funding/smart_contracts
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://securityalliance.org
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://github.com/dot-pal/pal-homepage/blob/main/docs/01_intro.md
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://x.com/dotpal_
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://github.com/dot-pal/pal-homepage
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/contact
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/audits
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/funding
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://discord.gg/xDyGGcnCJw
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://polkadotassurance.com/rfp
+  bounty_id: 22
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadotassurance.com/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:08.957877+00:00Z
+- url: https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://www.velocitylabs.org/defi-builders
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://github.com/velocitylabs-org
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://x.com/v_labs
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://turtle.cool
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://turtle.cool/widget
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037?r=euc1
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - forms
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://ch.linkedin.com/company/velocity-labs-org
+  bounty_id: 36
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.velocitylabs.org/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.508936+00:00Z
+- url: https://www.godaddy.com/forsale/paseo.network
+  bounty_id: 37
+  mode: single
+  max_depth: 1
+  source: discovered from https://paseo.network
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:12.871634+00:00Z
+- url: https://dotmeetups.notion.site/Accepted-Costs-Reasons-for-Rejection-15507b74873a80168b18cad8e5d19990
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://x.com/DOTmeetups
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/15a07b74873a8072b077d08bca64621e
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://t.me/+geMjZwe7IddmYzQ0
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/The-process-17507b74873a80968af6cfec4372853b
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Organizer-rewards-15607b74873a80688db6ced72730e24e
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Collaborations-19c07b74873a80cf9f91db9d3a9c2d5f
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Meetups-Bounty-Reports-13407b74873a8084b19ff4cd71b084da
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Conditions-15507b74873a8000a98bddb8c7b78da3
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://drive.google.com/drive/folders/1cJJzaVsc4NvfkcrNnZxW8dREAuYNz2Wt?usp=sharing
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Your-Polkadot-presentation-1ed07b74873a801bb495d37621aa1a7f
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/General-information-15607b74873a80b7b162cbacf22ddf26
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Your-Submission-15507b74873a808f997bfd8b1db1ae73
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/1cf07b74873a8039b192fa8b048fb252
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/d6e782e9fd614487a80ee73b1ba94ccf
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Branding-Design-1ed07b74873a80b08714f44c3a62ca1b
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Creative-Merch-Designs-1ed07b74873a809c9e50cd644ea9f525
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Curators-Contacts-11407b74873a8002876fca5f7ef38900
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://polkadot.subsquare.io/treasury/bounties/43
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/How-to-claim-your-child-bounty-15507b74873a80b19518eafe528cb55a
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://dotmeetups.notion.site/Learn-Polkadot-1a807b74873a80308fdffb111f663919
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://drive.google.com/drive/folders/1Amt-eKUSFPe7J0_NLwS_gh_oSMcPF1az?usp=sharing
+  bounty_id: 43
+  mode: single
+  max_depth: 1
+  source: discovered from http://dotmeetups.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:13.880224+00:00Z
+- url: https://github.com/ibp-network/wiki
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://www.youtube.com/@ibp.network
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://github.com/ibp-network
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://wiki.ibp.network/docs
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://matrix.to
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://wiki.ibp.network/blog
+  bounty_id: 50
+  mode: single
+  max_depth: 1
+  source: discovered from https://wiki.ibp.network/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:14.676959+00:00Z
+- url: https://discord.gg/artCCVuy
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://polkadot.subsquare.io/referenda/1676
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://polkadot.network
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://www.polkadot.law/pcf
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://wiki.polkadot.com
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://www.polkadot.law/research
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://www.soft.law
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://github.com/soft-law/polkadot-law
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - github
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://www.polkadot.law
+  bounty_id: 62
+  mode: single
+  max_depth: 1
+  source: discovered from https://www.polkadot.law/legalbounty
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.192919+00:00Z
+- url: https://dotevents.xyz/guidelines/stepbystep
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - forms
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - forms
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://x.com/PolkadotEB
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://dotevents.xyz/submissions/submissions
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://meet.google.com/vgu-jaqc-rpi
+  bounty_id: 17
+  mode: single
+  max_depth: 1
+  source: discovered from https://dotevents.xyz/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.463039+00:00Z
+- url: https://polkadot.subsquare.io/treasury/child-bounties/1850
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://inkubatordocs.notion.site/
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:16.908250+00:00Z
+- url: https://polkadot.subsquare.io/treasury/child-bounties/1419
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://inkubatordocs.notion.site/
+  categories:
+  - governance
+  discovered_at: 2025-11-28T14:50:16.908250+00:00Z
+- url: https://docs.google.com/document/d/14_oZUN1YcbD4nGpVvcFnIAbgOOYshuxPOotasEGGr-s/edit?usp=sharing
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://inkubatordocs.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:16.908250+00:00Z
+- url: https://use.ink/ubator
+  bounty_id: 19
+  mode: single
+  max_depth: 1
+  source: discovered from https://inkubatordocs.notion.site/
+  categories:
+  - other
+  discovered_at: 2025-11-28T14:50:16.908250+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Curator-TaskForce-1e5e1c2781f380598042de337d0cc911
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/fbcad88983884dffaa74cdb76c4d8fa5
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Tasks-Projects-DB-1e5e1c2781f38095997be3cddc67d4be
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://t.me/polkadot_ux_guild
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/General-Information-b9315d81f67041ca8266a92aeddda4ac
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Payouts-19de29ff5d474a068b1ee67e13a934c1
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/cdn-cgi/l/email-protection
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/UX-Audits-RFPs-Submissions-1e5e1c2781f380fe99abe7fa3fe5c362
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Time-Tracking-ba882e5a6b194949a695e7e70983d4a3
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Quarter-Reports-1e4e1c2781f380788afeefedaad7ba29
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: http://t.me/houdz
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - social
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Work-Reportings-3471dafbbf154d78b350cad3343fe58a
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Vendors-List-1a8e1c2781f38015a6eeec2fcb55158a
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Best-Practices-and-Standards-7a7812f05619493e9ba9175a011cea12
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/UAP-UX-Audits-Program-184e1c2781f3800782dcdff236b0f5b5
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/61a11d1953fa4981b112f298d5a7a8ea
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Job-Descriptions-18ce1c2781f380899e3ece54eb99303a
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/1a4e1c2781f3809c9292c6764804fa74
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Figma-Boards-a4743691ed02456fa7645b4e3adff981
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
+- url: https://polkadot-ux-bounty.notion.site/Budget-Reportings-14be1c2781f3809396b4ddc6b344b6e0
+  bounty_id: 52
+  mode: single
+  max_depth: 1
+  source: discovered from https://polkadot-ux-bounty.notion.site/
+  categories:
+  - documentation
+  discovered_at: 2025-11-28T14:50:17.448834+00:00Z
