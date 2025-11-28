@@ -764,6 +764,7 @@
 
             const bounty = allBounties.find(b => b.id === bountyId);
             const bountyName = bounty ? bounty.name : `Bounty #${bountyId}`;
+            const bountySlug = getBountySlug(bountyId);
 
             document.getElementById('modalTitle').textContent = `Scraped Content - ${bountyName}`;
 
@@ -774,15 +775,21 @@
                         🌐 ${domain.domain} (${domain.file_count} file${domain.file_count > 1 ? 's' : ''})
                     </div>
                     <div class="file-tree">
-                        ${domain.files.map(file => `
+                        ${domain.files.map(file => {
+                            const scrapedPath = `bounties/${bountyId}-${bountySlug}/scraped/${domain.domain}/${file.path}`;
+                            return `
                             <div class="file-item">
                                 <div>
                                     <div class="file-name">📄 ${file.path}</div>
                                     ${file.title ? `<div class="file-title">${file.title}</div>` : ''}
                                 </div>
-                                ${file.url ? `<a href="${file.url}" target="_blank" class="file-link">🔗 Original</a>` : ''}
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <a href="${scrapedPath}" target="_blank" class="file-link">📄 View Scraped</a>
+                                    ${file.url ? `<a href="${file.url}" target="_blank" class="file-link">🔗 Original</a>` : ''}
+                                </div>
                             </div>
-                        `).join('')}
+                            `;
+                        }).join('')}
                     </div>
                 </div>
             `).join('');
