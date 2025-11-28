@@ -1,26 +1,6 @@
 version: '1.0'
-last_generated: '2025-11-28T11:49:15.863109Z'
+last_generated: '2025-11-28T12:00:39.127412Z'
 suggestions:
-- bounty_id: 10
-  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
-  mode: single
-  max_depth: 1
-  source: metadata.links.proposal
-- bounty_id: 11
-  url: https://polkadot.antiscam.team/
-  mode: single
-  max_depth: 1
-  source: metadata.links.website
-- bounty_id: 11
-  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
-  mode: single
-  max_depth: 1
-  source: metadata.links.proposal
-- bounty_id: 17
-  url: https://dotevents.xyz/
-  mode: single
-  max_depth: 1
-  source: metadata.links.website
 - bounty_id: 17
   url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
   mode: single

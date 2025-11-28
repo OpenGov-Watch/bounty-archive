@@ -1,28 +1,10 @@
-# URL Scraping Queue
-
-# Add URLs here that you want to scrape
-# A subagent will process these and update scrape-results.yml
-# See SCRAPING.md for usage instructions
-
 queue:
-  # Example format:
-  # - bounty_id: 19
-  #   url: "https://use.ink/ubator/"
-  #   mode: "recursive"     # "single" = just this page | "recursive" = follow internal links
-  #   max_depth: 2          # Only for recursive mode (depth 1 = one level, 2 = two levels, etc.)
-
-  # Uncomment and customize these examples, or add your own:
-
-  # - bounty_id: 19
-  #   url: "https://use.ink/ubator/"
-  #   mode: "recursive"
-  #   max_depth: 2
-
-  # - bounty_id: 11
-  #   url: "https://polkadot.antiscam.team/"
-  #   mode: "single"
-
-  # - bounty_id: 22
-  #   url: "https://polkadotassurance.com/"
-  #   mode: "recursive"
-  #   max_depth: 1
+- bounty_id: 10
+  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  mode: single
+- bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+- bounty_id: 11
+  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  mode: single

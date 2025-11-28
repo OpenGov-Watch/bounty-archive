@@ -25,10 +25,11 @@ auto_accept:
   #   mode: "recursive"
   #   max_depth: 2
 
-  # Example: Auto-accept specific paths
-  # - domain: "polkadot.network"
-  #   path: "/wiki/"
-  #   mode: "recursive"
-  #   max_depth: 2
+- domain: "subsquare.io"
+- domain: "docs.google.com"
+- domain: "polkadot.com"
 
-  # Add your auto-accept rules below:
+# Forms
+- domain: "form.typeform.com"
+- domain: "forms.monday.com"
+- domain: "forms.gle"
