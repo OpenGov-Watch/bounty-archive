@@ -102,7 +102,10 @@ class SuggestionReviewer:
         print("\n" + "=" * 60)
         print(f"SUGGESTION {index + 1} of {total}")
         print("=" * 60)
+        # Determine type: check 'type' field first, fallback to checking categories
         suggestion_type = suggestion.get('type', 'scrape')
+        if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
+            suggestion_type = 'social'
         print(f"Type:       {suggestion_type.upper()}")
         print(f"Bounty ID:  {suggestion['bounty_id']}")
         print(f"URL:        {suggestion['url']}")
@@ -410,7 +413,13 @@ class SuggestionReviewer:
 
         for i, suggestion in enumerate(suggestions):
             # Skip social links in auto-accept (they need manual review for metadata)
-            if suggestion.get('type') == 'social':
+            # Check type field or fallback to categories
+            suggestion_type = suggestion.get('type', 'scrape')
+            if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
+                suggestion_type = 'social'
+                suggestion['type'] = 'social'  # Update for consistency
+
+            if suggestion_type == 'social':
                 manual_review_suggestions.append(suggestion)
                 continue
 
@@ -456,7 +465,11 @@ class SuggestionReviewer:
 
         for i, suggestion in enumerate(manual_review_suggestions):
             self.display_suggestion(suggestion, i, len(manual_review_suggestions))
+            # Determine type: check 'type' field first, fallback to checking categories
             suggestion_type = suggestion.get('type', 'scrape')
+            if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
+                suggestion_type = 'social'
+                suggestion['type'] = 'social'  # Update for consistency
             choice = self.get_user_choice(suggestion_type)
 
             if choice == 'A':
