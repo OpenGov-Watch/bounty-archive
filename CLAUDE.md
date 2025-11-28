@@ -18,10 +18,21 @@ bounty-archive/
 ├── CLAUDE.md                       # This file (AI agent guide)
 ├── METADATA_SCHEMA.md              # YAML schema definition
 ├── .github/workflows/pages.yml     # GitHub Pages deployment
+├── .claude/
+│   └── agents/
+│       └── scraper.md              # URL scraper subagent
+├── scraping/
+│   ├── SCRAPING.md                 # Scraping system documentation
+│   ├── scrape-queue.yml            # URLs to scrape (input)
+│   └── scrape-results.yml          # Scraping results (output)
 └── bounties/
     ├── [id]-[name]/
     │   ├── README.md               # Human-readable docs
-    │   └── metadata.yml            # Structured data
+    │   ├── metadata.yml            # Structured data
+    │   └── scraped/                # Scraped documentation (optional)
+    │       └── [domain]/
+    │           └── [path]/
+    │               └── *.md
     └── ...
 ```
 
@@ -154,7 +165,23 @@ When researching bounties:
 - Always push to branches ending with session ID
 - Push before completing your work (hooks will verify)
 
-### 7. Common Tasks
+### 7. Scraping Bounty Documentation
+
+The repository includes a scraping system for archiving bounty documentation:
+
+**To scrape URLs:**
+
+1. Add URLs to `scraping/scrape-queue.yml`
+2. Invoke the scraper subagent:
+   ```
+   Please use the scraper subagent (.claude/agents/scraper.md) to scrape the URLs in scraping/scrape-queue.yml
+   ```
+3. Review results in `scraping/scrape-results.yml`
+4. Check scraped content in `bounties/[id]-[slug]/scraped/`
+
+**See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.**
+
+### 8. Common Tasks
 
 #### Task: Update funding amounts for all bounties
 
@@ -175,7 +202,7 @@ When researching bounties:
 3. Update `README.md` with closure information
 4. Commit: `"Mark Bounty #[id] as closed"`
 
-### 8. Quality Checklist
+### 9. Quality Checklist
 
 Before committing:
 - [ ] YAML syntax is valid (no tabs, proper indentation)
@@ -189,7 +216,7 @@ Before committing:
 - [ ] No personally identifiable information beyond public curator names
 - [ ] Links have been verified (not 404)
 
-### 9. Testing
+### 10. Testing
 
 After making changes:
 1. Verify YAML parses correctly (use js-yaml or similar)
@@ -198,7 +225,7 @@ After making changes:
 4. Test search and filtering functionality
 5. Ensure no JavaScript console errors
 
-### 10. Automation Opportunities
+### 11. Automation Opportunities
 
 Consider automating:
 - Funding amount updates from on-chain data
@@ -207,7 +234,7 @@ Consider automating:
 - Schema validation
 - Duplicate detection
 
-### 11. Important Notes
+### 12. Important Notes
 
 **DO:**
 - Keep metadata and README in sync
@@ -225,7 +252,7 @@ Consider automating:
 - Commit unverified information
 - Push to wrong branch names
 
-### 12. Getting Help
+### 13. Getting Help
 
 If you encounter issues:
 1. Check [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for schema reference
@@ -233,7 +260,7 @@ If you encounter issues:
 3. Validate YAML syntax online if needed
 4. Ask the user for clarification on uncertain data
 
-### 13. Future Enhancements
+### 14. Future Enhancements
 
 Areas for improvement:
 - Automated on-chain data syncing

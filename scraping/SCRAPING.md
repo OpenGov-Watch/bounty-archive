@@ -6,7 +6,7 @@ URL scraping system for archiving bounty documentation using Claude subagents.
 
 ### 1. Add URLs to Scrape
 
-Edit `scrape-queue.yml` and add URLs:
+Edit `scraping/scrape-queue.yml` and add URLs:
 
 ```yaml
 queue:
@@ -22,28 +22,24 @@ queue:
 
 ### 2. Invoke the Scraper Subagent
 
-Use the Task tool to invoke the scraper:
+Use the Task tool to invoke the scraper subagent:
 
 ```
-I need you to scrape the URLs in scrape-queue.yml. Use the general-purpose subagent and follow the instructions in SCRAPING_AGENT.md.
-
-Please:
-1. Read scrape-queue.yml for the list of URLs
-2. Fetch each URL using WebFetch
-3. Convert content to markdown with YAML frontmatter
-4. Save files to bounties/[id]-[slug]/scraped/[domain]/[path]/
-5. Extract and categorize outgoing links
-6. Update scrape-results.yml with results and discovered links
+Task(
+  subagent_type: "general-purpose",
+  description: "Scrape bounty documentation URLs",
+  prompt: "Read the prompt from .claude/agents/scraper.md and execute the scraping tasks defined in scraping/scrape-queue.yml"
+)
 ```
 
-Or more simply:
+Or ask Claude directly:
 ```
-Please scrape the URLs in scrape-queue.yml following SCRAPING_AGENT.md instructions
+Please use the scraper subagent (.claude/agents/scraper.md) to scrape the URLs in scraping/scrape-queue.yml
 ```
 
 ### 3. Review Results
 
-Check `scrape-results.yml` to see:
+Check `scraping/scrape-results.yml` to see:
 - What was scraped successfully
 - Where markdown files were saved
 - Categorized outgoing URLs (internal/external/social)
@@ -52,9 +48,9 @@ Check `scrape-results.yml` to see:
 
 ### 4. Iterate
 
-Review `discovered_queue` in `scrape-results.yml`:
+Review `discovered_queue` in `scraping/scrape-results.yml`:
 1. Identify interesting URLs to scrape
-2. Add them to `scrape-queue.yml`
+2. Add them to `scraping/scrape-queue.yml`
 3. Invoke the scraper again
 
 ## File Locations
@@ -79,10 +75,10 @@ bounties/19-inkubator/scraped/github.com/use-inkubator/Ecosystem-Grants/README.m
 
 ## Agent Instructions
 
-See [SCRAPING_AGENT.md](SCRAPING_AGENT.md) for detailed instructions for AI agents performing the scraping.
+See [.claude/agents/scraper.md](../.claude/agents/scraper.md) for detailed instructions for AI agents performing the scraping.
 
 ## Files
 
-- **scrape-queue.yml** - URLs to scrape (you edit this)
-- **scrape-results.yml** - Results and discovered URLs (agent updates this)
-- **SCRAPING_AGENT.md** - Instructions for AI agents
+- **scraping/scrape-queue.yml** - URLs to scrape (you edit this)
+- **scraping/scrape-results.yml** - Results and discovered URLs (agent updates this)
+- **.claude/agents/scraper.md** - Claude subagent definition for scraping
