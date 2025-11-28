@@ -246,8 +246,12 @@ class SuggestionReviewer:
 
         print(f"\nFound {len(suggestions)} suggestion(s) to review.")
 
-        # Review each suggestion
-        remaining_suggestions = []
+        # FIRST PASS: Auto-accept matching URLs
+        print("\n" + "=" * 60)
+        print("PASS 1: Auto-Accept")
+        print("=" * 60)
+
+        manual_review_suggestions = []
 
         for i, suggestion in enumerate(suggestions):
             # Check if URL matches auto-accept rules
@@ -262,10 +266,36 @@ class SuggestionReviewer:
                 self.auto_accepted.append(suggestion['url'])
                 print(f"\n[AUTO-ACCEPTED {i + 1}/{len(suggestions)}] {suggestion['url']}")
                 print(f"  Mode: {mode}, Max Depth: {max_depth}")
-                continue
+            else:
+                # Add to manual review queue
+                manual_review_suggestions.append(suggestion)
 
-            # Manual review required
-            self.display_suggestion(suggestion, i, len(suggestions))
+        if self.auto_accepted:
+            print(f"\n{len(self.auto_accepted)} URL(s) auto-accepted and added to queue.")
+        else:
+            print("\nNo URLs matched auto-accept rules.")
+
+        # SECOND PASS: Manual review for remaining suggestions
+        if not manual_review_suggestions:
+            print("\nAll suggestions processed via auto-accept. No manual review needed.")
+            # Clear suggestions file since everything was auto-accepted
+            suggestions_data = {
+                'version': "1.0",
+                'last_generated': None,
+                'suggestions': []
+            }
+            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            self.print_summary(0)
+            return
+
+        print("\n" + "=" * 60)
+        print(f"PASS 2: Manual Review ({len(manual_review_suggestions)} remaining)")
+        print("=" * 60)
+
+        remaining_suggestions = []
+
+        for i, suggestion in enumerate(manual_review_suggestions):
+            self.display_suggestion(suggestion, i, len(manual_review_suggestions))
             choice = self.get_user_choice()
 
             if choice == 'A':
@@ -300,8 +330,8 @@ class SuggestionReviewer:
             elif choice == 'Q':
                 # Quit
                 print("\n-> Exiting reviewer...")
-                # Keep all remaining suggestions
-                remaining_suggestions.extend(suggestions[i+1:])
+                # Keep all remaining suggestions from manual review
+                remaining_suggestions.extend(manual_review_suggestions[i+1:])
                 break
 
         # Update suggestions file with remaining suggestions
