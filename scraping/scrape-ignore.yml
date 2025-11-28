@@ -17,8 +17,10 @@ ignored:
 
   # Sites that block scrapers or have technical issues
   - url: "https://www.marketing-bounty.com/"
-    reason: "HTTP 403 - blocks automated access"
+    reason: "Taken down"
+  - url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+    reason: "Taken down"
   - url: "https://polkadotplay.org"
     reason: "SSL certificate error - hostname mismatch"
   - url: "https://hackenproof.com/programs/polkadot-bridge"
-    reason: "HTTP 403 - blocks automated access"
+    reason: "HTTP 403 - blocked for agents?"

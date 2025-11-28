@@ -1,5 +1,5 @@
 version: '1.0'
-last_updated: '2025-11-28T14:17:50.270098Z'
+last_updated: '2025-11-28T14:32:20.971701Z'
 index:
 - url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
   bounty_id: 10
@@ -180,4 +180,9 @@ index:
   bounty_id: 52
   scraped_at: 2025-11-28T14:17:49.473331+00:00Z
   location: bounties/52-ux-bounty/scraped/polkadot-ux-bounty.notion.site/
+  pages: 1
+- url: https://dotmeetups.notion.site/
+  bounty_id: 43
+  scraped_at: 2025-11-28T14:32:20.421756+00:00Z
+  location: bounties/43-meetups-bounty/scraped/dotmeetups.notion.site/
   pages: 1

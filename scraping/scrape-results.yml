@@ -1,5 +1,5 @@
 version: '1.0'
-last_updated: '2025-11-28T14:17:50.224563Z'
+last_updated: '2025-11-28T14:32:20.924126Z'
 scraped:
 - status: completed
   pages_scraped: 1
@@ -1955,6 +1955,49 @@ scraped:
   mode: single
   max_depth: null
   scraped_at: 2025-11-28T14:17:49.473331+00:00Z
+- status: failed
+  error: Failed to fetch https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  bounty_id: 43
+  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:30:38.142417+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\43-meetups-bounty\scraped\dotmeetups.notion.site\index.html
+  outgoing_urls:
+    internal:
+    - https://dotmeetups.notion.site/15a07b74873a8072b077d08bca64621e
+    - https://dotmeetups.notion.site/1cf07b74873a8039b192fa8b048fb252
+    - https://dotmeetups.notion.site/Accepted-Costs-Reasons-for-Rejection-15507b74873a80168b18cad8e5d19990
+    - https://dotmeetups.notion.site/Branding-Design-1ed07b74873a80b08714f44c3a62ca1b
+    - https://dotmeetups.notion.site/Collaborations-19c07b74873a80cf9f91db9d3a9c2d5f
+    - https://dotmeetups.notion.site/Conditions-15507b74873a8000a98bddb8c7b78da3
+    - https://dotmeetups.notion.site/Creative-Merch-Designs-1ed07b74873a809c9e50cd644ea9f525
+    - https://dotmeetups.notion.site/Curators-Contacts-11407b74873a8002876fca5f7ef38900
+    - https://dotmeetups.notion.site/General-information-15607b74873a80b7b162cbacf22ddf26
+    - https://dotmeetups.notion.site/How-to-claim-your-child-bounty-15507b74873a80b19518eafe528cb55a
+    - https://dotmeetups.notion.site/Learn-Polkadot-1a807b74873a80308fdffb111f663919
+    - https://dotmeetups.notion.site/Meetups-Bounty-Reports-13407b74873a8084b19ff4cd71b084da
+    - https://dotmeetups.notion.site/Organizer-rewards-15607b74873a80688db6ced72730e24e
+    - https://dotmeetups.notion.site/The-process-17507b74873a80968af6cfec4372853b
+    - https://dotmeetups.notion.site/Your-Polkadot-presentation-1ed07b74873a801bb495d37621aa1a7f
+    - https://dotmeetups.notion.site/Your-Submission-15507b74873a808f997bfd8b1db1ae73
+    - https://dotmeetups.notion.site/d6e782e9fd614487a80ee73b1ba94ccf
+    external:
+    - https://drive.google.com/drive/folders/1Amt-eKUSFPe7J0_NLwS_gh_oSMcPF1az?usp=sharing
+    - https://drive.google.com/drive/folders/1cJJzaVsc4NvfkcrNnZxW8dREAuYNz2Wt?usp=sharing
+    - https://polkadot.subsquare.io/treasury/bounties/43
+    social:
+    - https://t.me/+geMjZwe7IddmYzQ0
+    - https://x.com/DOTmeetups
+  errors: []
+  bounty_id: 43
+  url: https://dotmeetups.notion.site/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:32:20.421756+00:00Z
 discovered_queue:
 - url: https://github.com/Polkadot-Anti-scam-Team
   found_on: https://polkadot.antiscam.team/
