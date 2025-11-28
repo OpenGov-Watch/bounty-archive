@@ -1,35 +1,131 @@
-# Scraping Results
-
-# This file is automatically updated by the scraping agent
-# It tracks what has been scraped and lists discovered outgoing URLs
-
-version: "1.0"
-last_updated: null
-
+version: '1.0'
+last_updated: '2025-11-28T11:10:07.069280Z'
 scraped:
-  # Results will appear here after scraping
-  # Format:
-  # - bounty_id: 19
-  #   url: "https://use.ink/ubator/"
-  #   mode: "recursive"
-  #   status: "completed"
-  #   scraped_at: "2025-11-27T10:00:00Z"
-  #   pages_scraped: 5
-  #   files_created:
-  #     - "bounties/19-inkubator/scraped/use.ink/ubator/index.md"
-  #     - "bounties/19-inkubator/scraped/use.ink/ubator/apply.md"
-  #   outgoing_urls:
-  #     internal:  # URLs under the same base URL
-  #       - "https://use.ink/ubator/apply/"
-  #       - "https://use.ink/ubator/faq/"
-  #     external:  # URLs to other sites
-  #       - "https://github.com/use-inkubator/Ecosystem-Grants"
-  #       - "https://polkadot.network/"
-  #     social:    # Social media links
-  #       - "https://twitter.com/ink_lang"
-  #   errors: []
-
-# Add discovered URLs here to scrape next
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.md
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    external:
+    - https://github.com/Polkadot-Anti-scam-Team
+    - https://github.com/polkadot-js/phishing
+    - https://medium.com/@DotAntiScam
+    - https://wiki.polkadot.network
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T10:37:49.014469+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.md
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    external:
+    - https://github.com/Polkadot-Anti-scam-Team
+    - https://github.com/polkadot-js/phishing
+    - https://medium.com/@DotAntiScam
+    - https://wiki.polkadot.network
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T10:38:16.092738+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\index.md
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 50
+  url: https://wiki.ibp.network/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T11:01:32.814777+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\17-events-bounty\scraped\dotevents.xyz\index.html
+  outgoing_urls:
+    internal:
+    - https://dotevents.xyz/about/1
+    - https://dotevents.xyz/guidelines/stepbystep
+    - https://dotevents.xyz/submissions/submissions
+    external:
+    - https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+    - https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+    - https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+    - https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+    - https://meet.google.com/vgu-jaqc-rpi
+    social:
+    - https://x.com/PolkadotEB
+  errors: []
+  bounty_id: 17
+  url: https://dotevents.xyz/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T11:10:06.592866+00:00Z
 discovered_queue:
-  # URLs discovered during scraping that you might want to scrape
-  # Review this list and move items to scrape-queue.yml if you want them scraped
+- url: https://github.com/Polkadot-Anti-scam-Team
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://github.com/polkadot-js/phishing
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://medium.com/@DotAntiScam
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://wiki.polkadot.network
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://www.youtube.com/@PolkadotAntiscamTeam
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://meet.google.com/vgu-jaqc-rpi
+  found_on: https://dotevents.xyz/
+  bounty_id: 17

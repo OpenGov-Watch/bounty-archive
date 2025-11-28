@@ -2,7 +2,7 @@
 """
 Polkadot Bounty Archive - URL Scraper
 
-Scrapes documentation URLs for bounties and saves them as markdown files.
+Scrapes documentation URLs for bounties and saves them in their original format.
 Reads configuration from scrape-queue.yml and outputs results to scrape-results.yml.
 """
 
@@ -11,7 +11,7 @@ import re
 import sys
 import time
 import yaml
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple
 from urllib.parse import urlparse, urljoin
@@ -19,7 +19,6 @@ from dataclasses import dataclass, field
 
 import requests
 from bs4 import BeautifulSoup
-import html2text
 
 
 @dataclass
@@ -62,12 +61,7 @@ class PolkadotBountyScraper:
         self.scraping_dir = project_root / "scraping"
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
         self.results_file = self.scraping_dir / "scrape-results.yml"
-
-        # Initialize HTML to Markdown converter
-        self.html_converter = html2text.HTML2Text()
-        self.html_converter.ignore_links = False
-        self.html_converter.ignore_images = False
-        self.html_converter.body_width = 0  # Don't wrap lines
+        self.index_file = self.scraping_dir / "scrape-index.yml"
 
         # Session for requests with proper headers
         self.session = requests.Session()
@@ -84,8 +78,17 @@ class PolkadotBountyScraper:
         with open(self.queue_file, 'r', encoding='utf-8') as f:
             data = yaml.safe_load(f)
 
+        # Handle empty YAML file (returns None)
+        if data is None:
+            data = {}
+
         jobs = []
-        for item in data.get('queue', []):
+        queue = data.get('queue', [])
+        # Handle case where queue key exists but is None
+        if queue is None:
+            queue = []
+
+        for item in queue:
             if not item:  # Skip None/empty items
                 continue
             jobs.append(ScrapeJob(
@@ -104,8 +107,8 @@ class PolkadotBountyScraper:
             return matches[0].name
         return None
 
-    def fetch_url(self, url: str) -> Optional[Tuple[str, int, BeautifulSoup]]:
-        """Fetch URL and return content, status code, and parsed HTML"""
+    def fetch_url(self, url: str) -> Optional[requests.Response]:
+        """Fetch URL and return response object"""
         try:
             print(f"  Fetching: {url}")
             response = self.session.get(url, timeout=30, allow_redirects=True)
@@ -115,18 +118,17 @@ class PolkadotBountyScraper:
                 print(f"  Warning: Redirected to different host: {response.url}")
 
             if response.status_code == 200:
-                soup = BeautifulSoup(response.content, 'html.parser')
-                return response.text, response.status_code, soup
+                return response
             else:
                 print(f"  Error: HTTP {response.status_code}")
-                return None, response.status_code, None
+                return None
 
         except requests.exceptions.Timeout:
             print(f"  Error: Timeout")
-            return None, 0, None
+            return None
         except requests.exceptions.RequestException as e:
             print(f"  Error: {str(e)}")
-            return None, 0, None
+            return None
 
     def extract_title(self, soup: BeautifulSoup, url: str) -> str:
         """Extract page title from HTML"""
@@ -141,33 +143,6 @@ class PolkadotBountyScraper:
         # Fallback to URL path
         path = urlparse(url).path
         return path.strip('/').split('/')[-1] or 'index'
-
-    def convert_to_markdown(self, html: str, soup: BeautifulSoup) -> str:
-        """Convert HTML to clean markdown"""
-        # Remove script and style elements
-        for element in soup(['script', 'style', 'nav', 'footer', 'header']):
-            element.decompose()
-
-        # Try to find main content area
-        main_content = (
-            soup.find('main') or
-            soup.find('article') or
-            soup.find('div', class_=re.compile(r'content|main|article', re.I)) or
-            soup.find('body')
-        )
-
-        if main_content:
-            html_content = str(main_content)
-        else:
-            html_content = html
-
-        # Convert to markdown
-        markdown = self.html_converter.handle(html_content)
-
-        # Clean up excessive newlines
-        markdown = re.sub(r'\n{3,}', '\n\n', markdown)
-
-        return markdown.strip()
 
     def extract_links(self, soup: BeautifulSoup, base_url: str) -> Tuple[Set[str], Set[str], Set[str]]:
         """Extract and categorize links from page"""
@@ -210,40 +185,91 @@ class PolkadotBountyScraper:
 
         return internal_links, external_links, social_links
 
-    def scrape_page(self, url: str, base_url: str) -> Optional[ScrapedPage]:
-        """Scrape a single page"""
-        html, status_code, soup = self.fetch_url(url)
+    def get_file_extension(self, response: requests.Response, url: str) -> str:
+        """Determine file extension from content-type or URL"""
+        content_type = response.headers.get('content-type', '').lower()
 
-        if not html or not soup:
+        # Map content-type to extension
+        if 'text/html' in content_type:
+            return '.html'
+        elif 'application/pdf' in content_type:
+            return '.pdf'
+        elif 'application/json' in content_type:
+            return '.json'
+        elif 'text/plain' in content_type:
+            return '.txt'
+        elif 'text/xml' in content_type or 'application/xml' in content_type:
+            return '.xml'
+        elif 'text/markdown' in content_type:
+            return '.md'
+        else:
+            # Try to infer from URL
+            parsed = urlparse(url)
+            path = parsed.path
+            if '.' in path:
+                ext = Path(path).suffix
+                if ext:
+                    return ext
+            # Default to .html for web pages
+            return '.html'
+
+    def scrape_page(self, url: str, base_url: str) -> Optional[Tuple[ScrapedPage, str]]:
+        """Scrape a single page and return page + file extension"""
+        response = self.fetch_url(url)
+
+        if not response:
             return None
 
-        title = self.extract_title(soup, url)
-        markdown = self.convert_to_markdown(html, soup)
-        internal, external, social = self.extract_links(soup, base_url)
+        # Get file extension
+        extension = self.get_file_extension(response, url)
 
-        return ScrapedPage(
+        # Get content type and determine if we can extract links
+        content_type = response.headers.get('content-type', '').lower()
+        can_parse_links = 'text/html' in content_type
+
+        # Parse HTML if applicable
+        if can_parse_links:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            title = self.extract_title(soup, url)
+            internal, external, social = self.extract_links(soup, base_url)
+        else:
+            soup = None
+            title = Path(urlparse(url).path).name or url
+            internal, external, social = set(), set(), set()
+
+        # Store original content (text for text-based, bytes for binary)
+        if content_type.startswith('text/') or 'json' in content_type or 'xml' in content_type:
+            content = response.text
+        else:
+            content = response.content
+
+        page = ScrapedPage(
             url=url,
             title=title,
-            content=markdown,
-            status_code=status_code,
+            content=content,
+            status_code=response.status_code,
             internal_links=internal,
             external_links=external,
             social_links=social
         )
 
-    def url_to_filepath(self, url: str, bounty_slug: str) -> Path:
-        """Convert URL to file path"""
+        return page, extension
+
+    def url_to_filepath(self, url: str, bounty_slug: str, extension: str) -> Path:
+        """Convert URL to file path with appropriate extension"""
         parsed = urlparse(url)
         domain = parsed.netloc
         path = parsed.path.strip('/')
 
         # Determine filename
         if not path or path.endswith('/'):
-            filename = 'index.md'
+            filename = f'index{extension}'
             filepath = path.rstrip('/')
         else:
             parts = path.split('/')
-            filename = f"{parts[-1]}.md"
+            # Remove existing extension if present
+            base_name = Path(parts[-1]).stem
+            filename = f"{base_name}{extension}"
             filepath = '/'.join(parts[:-1])
 
         # Build full path
@@ -251,27 +277,32 @@ class PolkadotBountyScraper:
         return full_path
 
     def save_page(self, page: ScrapedPage, filepath: Path):
-        """Save scraped page to file with YAML frontmatter"""
+        """Save scraped page in original format with metadata in companion .meta.yml file"""
         # Create directory
         filepath.parent.mkdir(parents=True, exist_ok=True)
 
-        # Build frontmatter
-        frontmatter = {
+        # Save original content
+        if isinstance(page.content, bytes):
+            # Binary content (PDFs, images, etc.)
+            with open(filepath, 'wb') as f:
+                f.write(page.content)
+        else:
+            # Text content (HTML, JSON, XML, etc.)
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(page.content)
+
+        # Save metadata in companion file
+        meta_filepath = filepath.with_suffix(filepath.suffix + '.meta.yml')
+        metadata = {
             'url': page.url,
-            'scraped_at': datetime.utcnow().isoformat() + 'Z',
+            'scraped_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             'title': page.title,
-            'status_code': page.status_code
+            'status_code': page.status_code,
+            'original_file': filepath.name
         }
 
-        # Build content
-        content = "---\n"
-        content += yaml.dump(frontmatter, default_flow_style=False, allow_unicode=True)
-        content += "---\n\n"
-        content += page.content
-
-        # Write file
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(content)
+        with open(meta_filepath, 'w', encoding='utf-8') as f:
+            yaml.dump(metadata, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
         print(f"  Saved: {filepath.relative_to(self.project_root)}")
 
@@ -302,11 +333,12 @@ class PolkadotBountyScraper:
             visited.add(normalized_url)
 
             # Scrape page
-            page = self.scrape_page(url, job.url)
+            result = self.scrape_page(url, job.url)
 
-            if page:
+            if result:
+                page, extension = result
                 # Save page
-                filepath = self.url_to_filepath(url, bounty_slug)
+                filepath = self.url_to_filepath(url, bounty_slug, extension)
                 self.save_page(page, filepath)
                 files_created.append(str(filepath.relative_to(self.project_root)))
 
@@ -347,16 +379,18 @@ class PolkadotBountyScraper:
                 'error': f'Bounty folder not found for ID {job.bounty_id}'
             }
 
-        page = self.scrape_page(job.url, job.url)
+        result = self.scrape_page(job.url, job.url)
 
-        if not page:
+        if not result:
             return {
                 'status': 'failed',
                 'error': f'Failed to fetch {job.url}'
             }
 
+        page, extension = result
+
         # Save page
-        filepath = self.url_to_filepath(job.url, bounty_slug)
+        filepath = self.url_to_filepath(job.url, bounty_slug, extension)
         self.save_page(page, filepath)
 
         return {
@@ -376,7 +410,7 @@ class PolkadotBountyScraper:
         print(f"\nScraping Bounty #{job.bounty_id}: {job.url}")
         print(f"Mode: {job.mode}" + (f", max_depth: {job.max_depth}" if job.mode == "recursive" else ""))
 
-        start_time = datetime.utcnow()
+        start_time = datetime.now(timezone.utc)
 
         if job.mode == "recursive":
             result = self.scrape_recursive(job)
@@ -404,14 +438,14 @@ class PolkadotBountyScraper:
             existing = {}
 
         # Initialize structure
-        if 'scraped' not in existing:
+        if 'scraped' not in existing or existing['scraped'] is None:
             existing['scraped'] = []
-        if 'discovered_queue' not in existing:
+        if 'discovered_queue' not in existing or existing['discovered_queue'] is None:
             existing['discovered_queue'] = []
 
         # Add new results
         existing['scraped'].extend(results)
-        existing['last_updated'] = datetime.utcnow().isoformat() + 'Z'
+        existing['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
         existing['version'] = "1.0"
 
         # Build discovered queue
@@ -432,6 +466,62 @@ class PolkadotBountyScraper:
             yaml.dump(existing, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
         print(f"\nResults saved to: {self.results_file.relative_to(self.project_root)}")
+
+    def update_index(self, results: List[Dict]):
+        """Update scrape-index.yml with successfully scraped URLs"""
+        # Load existing index
+        if self.index_file.exists():
+            with open(self.index_file, 'r', encoding='utf-8') as f:
+                index_data = yaml.safe_load(f) or {}
+        else:
+            index_data = {}
+
+        # Initialize structure
+        if 'index' not in index_data or index_data['index'] is None:
+            index_data['index'] = []
+
+        # Add new successful scrapes to index
+        for result in results:
+            if result.get('status') in ('completed', 'partial'):
+                # Extract location from first file created
+                location = None
+                if result.get('files_created'):
+                    # Get the directory path from the first file
+                    first_file = result['files_created'][0]
+                    # Extract path like "bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/"
+                    if '/scraped/' in first_file or '\\scraped\\' in first_file:
+                        parts = first_file.replace('\\', '/').split('/scraped/')
+                        if len(parts) == 2:
+                            location = parts[0] + '/scraped/' + parts[1].rsplit('/', 1)[0] + '/'
+
+                # Check if URL already in index
+                existing_entry = next((item for item in index_data['index'] if item['url'] == result['url']), None)
+
+                if existing_entry:
+                    # Update existing entry
+                    existing_entry['scraped_at'] = result.get('scraped_at', '')
+                    existing_entry['pages'] = result.get('pages_scraped', 0)
+                    if location:
+                        existing_entry['location'] = location
+                else:
+                    # Add new entry
+                    index_data['index'].append({
+                        'url': result['url'],
+                        'bounty_id': result['bounty_id'],
+                        'scraped_at': result.get('scraped_at', ''),
+                        'location': location or '',
+                        'pages': result.get('pages_scraped', 0)
+                    })
+
+        # Update metadata
+        index_data['version'] = "1.0"
+        index_data['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+
+        # Save index
+        with open(self.index_file, 'w', encoding='utf-8') as f:
+            yaml.dump(index_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+
+        print(f"Index updated: {self.index_file.relative_to(self.project_root)}")
 
     def run(self):
         """Main execution"""
@@ -457,6 +547,9 @@ class PolkadotBountyScraper:
         # Save results
         self.save_results(results)
 
+        # Update index
+        self.update_index(results)
+
         # Print summary
         print("\n" + "=" * 60)
         print("SUMMARY")
@@ -468,8 +561,8 @@ class PolkadotBountyScraper:
         failed = sum(1 for r in results if r.get('status') == 'failed')
 
         print(f"Jobs processed: {len(results)}")
-        print(f"  ✓ Completed: {completed}")
-        print(f"  ✗ Failed: {failed}")
+        print(f"  [+] Completed: {completed}")
+        print(f"  [-] Failed: {failed}")
         print(f"\nPages scraped: {total_pages}")
         print(f"Errors: {total_errors}")
 

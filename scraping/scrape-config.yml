@@ -1,0 +1,18 @@
+# Scraping Configuration
+
+# Default scraping settings for suggestions
+
+version: "1.0"
+
+# Default mode for all suggestions
+# "single" = scrape just the URL
+# "recursive" = scrape the URL and follow internal links
+default_mode: "single"
+
+# Settings for recursive mode (when you change mode to "recursive" in review.py)
+recursive_defaults:
+  max_depth: 2
+
+# Settings for single page mode
+single_defaults:
+  max_depth: 1

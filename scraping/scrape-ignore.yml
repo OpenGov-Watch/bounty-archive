@@ -1,0 +1,16 @@
+# URL Ignore List
+
+# URLs that should never be scraped or suggested
+# Add URLs here that you've reviewed and decided not to scrape
+# You can also add domain patterns using wildcards
+
+ignored:
+  # Example format:
+  # - url: "https://example.com/page"
+  #   reason: "Not useful content"  # Optional reason
+
+  # Blockchain explorers (not documentation)
+  - url: "https://polkassembly.io"
+    reason: "On-chain data - not documentation"
+  - url: "https://polkadot.js.org"
+    reason: "App interface - not documentation"

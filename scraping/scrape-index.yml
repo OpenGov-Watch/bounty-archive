@@ -1,0 +1,16 @@
+# Scraping Index
+
+# Index of all successfully scraped URLs
+# Auto-updated by scraper.py - DO NOT EDIT MANUALLY
+
+version: "1.0"
+last_updated: null
+
+index:
+  # URLs that have been successfully scraped will appear here
+  # Format:
+  # - url: "https://example.com/"
+  #   bounty_id: 19
+  #   scraped_at: "2025-11-28T10:38:16Z"
+  #   location: "bounties/19-inkubator/scraped/example.com/"
+  #   pages: 5
