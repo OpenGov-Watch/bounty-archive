@@ -57,6 +57,7 @@ Each bounty folder contains:
   - Social channels (Twitter, Telegram, Discord, Matrix)
   - Application details (process, timeline, status)
   - Tags and notes
+- **scraped/** (optional) - Archived documentation from bounty websites
 
 See [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for the complete schema definition.
 
@@ -68,6 +69,28 @@ The interactive website (`index.html`) provides:
 - 📊 **Live statistics** - Total bounties, DOT allocated, categories
 - 📱 **Mobile-responsive** - Works on all devices
 - 🎨 **Polkadot branding** - Official color scheme and design
+
+## Documentation Scraper
+
+The repository includes a Python scraper for archiving bounty documentation:
+
+```bash
+# Install dependencies
+cd scraping
+pip install -r requirements.txt
+
+# Add URLs to scrape-queue.yml, then run
+python scraper.py
+```
+
+**Features:**
+- 📥 **Single & recursive scraping** - Fetch individual pages or entire documentation sites
+- 📝 **HTML to Markdown** - Clean conversion with YAML frontmatter
+- 🔗 **Link extraction** - Categorizes internal, external, and social links
+- 🗂️ **Organized storage** - Saves to `bounties/[id]-[slug]/scraped/[domain]/`
+- 📊 **Results tracking** - Outputs discovered URLs for iterative scraping
+
+See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.
 
 ## Deployment
 
