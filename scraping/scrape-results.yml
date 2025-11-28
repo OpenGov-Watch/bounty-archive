@@ -1,0 +1,323 @@
+version: '1.0'
+last_updated: '2025-11-28T12:18:27.255455Z'
+scraped:
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.md
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    external:
+    - https://github.com/Polkadot-Anti-scam-Team
+    - https://github.com/polkadot-js/phishing
+    - https://medium.com/@DotAntiScam
+    - https://wiki.polkadot.network
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T10:37:49.014469+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.md
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    external:
+    - https://github.com/Polkadot-Anti-scam-Team
+    - https://github.com/polkadot-js/phishing
+    - https://medium.com/@DotAntiScam
+    - https://wiki.polkadot.network
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T10:38:16.092738+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\index.md
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 50
+  url: https://wiki.ibp.network/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T11:01:32.814777+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\17-events-bounty\scraped\dotevents.xyz\index.html
+  outgoing_urls:
+    internal:
+    - https://dotevents.xyz/about/1
+    - https://dotevents.xyz/guidelines/stepbystep
+    - https://dotevents.xyz/submissions/submissions
+    external:
+    - https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+    - https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+    - https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+    - https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+    - https://meet.google.com/vgu-jaqc-rpi
+    social:
+    - https://x.com/PolkadotEB
+  errors: []
+  bounty_id: 17
+  url: https://dotevents.xyz/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T11:10:06.592866+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\10-polkadot-pioneers-bounty\scraped\polkadot.subsquare.io\council\motions\8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca.html
+  outgoing_urls:
+    internal: []
+    external:
+    - https://app.element.io
+    - https://github.com/opensquare-network/subsquare/issues
+    - https://github.com/paritytech/substrate/pull/10309
+    - https://polkadot.polkassembly.io/bounty/10
+    - https://polkadot.polkassembly.io/motion/146
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/council/members
+    - https://polkadot.subsquare.io/council/motions
+    - https://polkadot.subsquare.io/democracy/externals
+    - https://polkadot.subsquare.io/democracy/proposals
+    - https://polkadot.subsquare.io/democracy/referenda
+    - https://polkadot.subsquare.io/techcomm/members
+    - https://polkadot.subsquare.io/techcomm/proposals
+    - https://polkadot.subsquare.io/treasury/tips
+    - https://polkadot.subsquare.io/user/12NLgzqfhuJkc9mZ5XUTTG85N8yhhzfptwqF1xVhtK3ZX7f6
+    - https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+    - https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+    - https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+    - https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+    - https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+    - https://polkadot.subsquare.io/user/14mwSGdhdrAA3pGoKSX1tWguFREswWucAsr7kcHbdsf7fU7Q
+    - https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+    social: []
+  errors: []
+  bounty_id: 10
+  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T12:18:24.774923+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.html
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/blog
+    - https://polkadot.antiscam.team/bounty
+    - https://polkadot.antiscam.team/collective
+    - https://polkadot.antiscam.team/contact
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    - https://polkadot.antiscam.team/privacy-policy
+    - https://polkadot.antiscam.team/sitemap
+    - https://polkadot.antiscam.team/tracks
+    external:
+    - https://github.com/Polkadot-Anti-scam-Team
+    - https://github.com/polkadot-js/phishing
+    - https://medium.com/@DotAntiScam
+    - https://wiki.polkadot.network
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T12:18:25.971065+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.subsquare.io\council\motions\8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109.html
+  outgoing_urls:
+    internal: []
+    external:
+    - https://app.element.io
+    - https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+    - https://docs.google.com/forms/d/e/1FAIpQLSf2iXCCvdkQ70WrfDPtG5uQA3RrCfvb0VDlZjti26q0yb17sg/viewform?pli=1
+    - https://github.com/opensquare-network/subsquare/issues
+    - https://polkadot.polkassembly.io/motion/151
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/council/members
+    - https://polkadot.subsquare.io/council/motions
+    - https://polkadot.subsquare.io/democracy/externals
+    - https://polkadot.subsquare.io/democracy/proposals
+    - https://polkadot.subsquare.io/democracy/referenda
+    - https://polkadot.subsquare.io/techcomm/members
+    - https://polkadot.subsquare.io/techcomm/proposals
+    - https://polkadot.subsquare.io/treasury/tips
+    - https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+    - https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+    - https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+    - https://polkadot.subsquare.io/user/14DQEq1XtPvntMyUFbgcDCSce79s1CBum3rBYrEeB66qgTqG
+    - https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+    - https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+    - https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+    - https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+    social: []
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T12:18:26.198777+00:00Z
+discovered_queue:
+- url: https://github.com/Polkadot-Anti-scam-Team
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://github.com/polkadot-js/phishing
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://medium.com/@DotAntiScam
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://wiki.polkadot.network
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://www.youtube.com/@PolkadotAntiscamTeam
+  found_on: https://polkadot.antiscam.team/
+  bounty_id: 11
+- url: https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://meet.google.com/vgu-jaqc-rpi
+  found_on: https://dotevents.xyz/
+  bounty_id: 17
+- url: https://app.element.io
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://github.com/opensquare-network/subsquare/issues
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://github.com/paritytech/substrate/pull/10309
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.polkassembly.io/bounty/10
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.polkassembly.io/motion/146
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/council/members
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/council/motions
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/democracy/externals
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/democracy/proposals
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/democracy/referenda
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/techcomm/members
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/techcomm/proposals
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/treasury/tips
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/12NLgzqfhuJkc9mZ5XUTTG85N8yhhzfptwqF1xVhtK3ZX7f6
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/14mwSGdhdrAA3pGoKSX1tWguFREswWucAsr7kcHbdsf7fU7Q
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+  found_on: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+- url: https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://docs.google.com/forms/d/e/1FAIpQLSf2iXCCvdkQ70WrfDPtG5uQA3RrCfvb0VDlZjti26q0yb17sg/viewform?pli=1
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://polkadot.polkassembly.io/motion/151
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://polkadot.subsquare.io/user/14DQEq1XtPvntMyUFbgcDCSce79s1CBum3rBYrEeB66qgTqG
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+- url: https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+  found_on: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11

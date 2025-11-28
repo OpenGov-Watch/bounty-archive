@@ -1,0 +1,13 @@
+# Polkadot Bounty Archive - Scraper Dependencies
+
+# HTTP requests
+requests>=2.31.0
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+
+# HTML to Markdown conversion
+html2text>=2020.1.16
+
+# YAML parsing
+PyYAML>=6.0.1

@@ -1,0 +1,35 @@
+# Scraping Configuration
+
+# Default scraping settings for suggestions
+
+version: "1.0"
+
+# Default mode for all suggestions
+# "single" = scrape just the URL
+# "recursive" = scrape the URL and follow internal links
+default_mode: "single"
+
+# Settings for recursive mode (when you change mode to "recursive" in review.py)
+recursive_defaults:
+  max_depth: 2
+
+# Settings for single page mode
+single_defaults:
+  max_depth: 1
+
+# Auto-accept rules: URLs matching these patterns are auto-accepted during review
+# Format: domain can be exact match or subdomain pattern, path is optional
+auto_accept:
+  # Example: Auto-accept all Notion sites as recursive
+  # - domain: "notion.site"
+  #   mode: "recursive"
+  #   max_depth: 2
+
+- domain: "subsquare.io"
+- domain: "docs.google.com"
+- domain: "polkadot.com"
+
+# Forms
+- domain: "form.typeform.com"
+- domain: "forms.monday.com"
+- domain: "forms.gle"

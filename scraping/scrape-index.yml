@@ -1,0 +1,18 @@
+version: '1.0'
+last_updated: '2025-11-28T12:18:27.267819Z'
+index:
+- url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  scraped_at: 2025-11-28T12:18:24.774923+00:00Z
+  location: bounties/10-polkadot-pioneers-bounty/scraped/polkadot.subsquare.io/council/motions/
+  pages: 1
+- url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  scraped_at: 2025-11-28T12:18:25.971065+00:00Z
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  pages: 1
+- url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  scraped_at: 2025-11-28T12:18:26.198777+00:00Z
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.subsquare.io/council/motions/
+  pages: 1

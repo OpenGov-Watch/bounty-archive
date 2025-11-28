@@ -1,0 +1,10 @@
+queue:
+- bounty_id: 10
+  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  mode: single
+- bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+- bounty_id: 11
+  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  mode: single
