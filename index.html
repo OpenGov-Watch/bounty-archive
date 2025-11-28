@@ -211,7 +211,7 @@
             color: #333;
         }
 
-        .links-section, .contact-section {
+        .links-section, .contact-section, .associated-socials-section {
             margin: 1rem 0;
         }
 
@@ -244,6 +244,24 @@
         }
 
         .social-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .platform-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 0.3rem;
+            text-transform: capitalize;
+        }
+
+        .platform-links {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
@@ -646,12 +664,53 @@
             container.innerHTML = filtered.map(bounty => createBountyCard(bounty)).join('');
         }
 
+        function createAssociatedSocialsSection(associatedSocials) {
+            if (!associatedSocials || Object.keys(associatedSocials).length === 0) {
+                return '';
+            }
+
+            const platformUrls = {
+                twitter: (handle) => `https://twitter.com/${handle.replace('@', '')}`,
+                github: (path) => `https://github.com/${path}`,
+                discord: (invite) => invite.startsWith('http') ? invite : `https://discord.gg/${invite}`,
+                telegram: (path) => path.startsWith('http') ? path : `https://t.me/${path}`,
+                matrix: (url) => url,
+                other: (url) => url
+            };
+
+            const platforms = Object.entries(associatedSocials)
+                .filter(([platform, items]) => items && items.length > 0)
+                .map(([platform, items]) => {
+                    const urlBuilder = platformUrls[platform] || platformUrls.other;
+                    return `
+                        <div class="platform-group">
+                            <div class="platform-name">${platform}</div>
+                            <div class="platform-links">
+                                ${items.map(item => {
+                                    const url = urlBuilder(item);
+                                    const displayText = item.startsWith('http') ? new URL(item).pathname.slice(1) || item : item;
+                                    return `<a href="${url}" target="_blank" class="social-btn">${displayText}</a>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+            return `
+                <div class="associated-socials-section">
+                    <div class="section-title">Associated Socials</div>
+                    ${platforms}
+                </div>
+            `;
+        }
+
         function createBountyCard(bounty) {
             const funding = bounty.funding || {};
             const links = bounty.links || {};
             const social = bounty.social || {};
             const contact = bounty.contact || {};
             const github = bounty.github || {};
+            const associatedSocials = bounty.associated_socials || {};
 
             return `
                 <div class="bounty-card">
@@ -711,6 +770,8 @@
                         </div>
                     </div>
                     ` : ''}
+
+                    ${createAssociatedSocialsSection(associatedSocials)}
 
                     ${bounty.tags && bounty.tags.length > 0 ? `
                     <div class="tags">
