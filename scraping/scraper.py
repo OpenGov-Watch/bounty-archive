@@ -404,6 +404,7 @@ class PolkadotBountyScraper:
             'status': 'completed' if not errors or files_created else 'partial' if files_created else 'failed',
             'pages_scraped': len(files_created),
             'files_created': files_created,
+            'visited_urls': sorted(visited),
             'outgoing_urls': {
                 'internal': sorted(all_internal),
                 'external': sorted(all_external),
@@ -536,24 +537,29 @@ class PolkadotBountyScraper:
                         if len(parts) == 2:
                             location = parts[0] + '/scraped/' + parts[1].rsplit('/', 1)[0] + '/'
 
-                # Check if URL already in index
-                existing_entry = next((item for item in index_data['index'] if item['url'] == result['url']), None)
+                # For recursive scrapes, index all visited URLs
+                urls_to_index = result.get('visited_urls', [result['url']])
+                if not urls_to_index:
+                    urls_to_index = [result['url']]
 
-                if existing_entry:
-                    # Update existing entry
-                    existing_entry['scraped_at'] = result.get('scraped_at', '')
-                    existing_entry['pages'] = result.get('pages_scraped', 0)
-                    if location:
-                        existing_entry['location'] = location
-                else:
-                    # Add new entry
-                    index_data['index'].append({
-                        'url': result['url'],
-                        'bounty_id': result['bounty_id'],
-                        'scraped_at': result.get('scraped_at', ''),
-                        'location': location or '',
-                        'pages': result.get('pages_scraped', 0)
-                    })
+                for url in urls_to_index:
+                    # Check if URL already in index
+                    existing_entry = next((item for item in index_data['index'] if item['url'] == url), None)
+
+                    if existing_entry:
+                        # Update existing entry
+                        existing_entry['scraped_at'] = result.get('scraped_at', '')
+                        if location:
+                            existing_entry['location'] = location
+                    else:
+                        # Add new entry (pages count is for the whole job, not per URL)
+                        index_data['index'].append({
+                            'url': url,
+                            'bounty_id': result['bounty_id'],
+                            'scraped_at': result.get('scraped_at', ''),
+                            'location': location or '',
+                            'pages': 1  # Each URL is 1 page
+                        })
 
         # Update metadata
         index_data['version'] = "1.0"
