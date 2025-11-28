@@ -25,6 +25,7 @@ class SuggestionReviewer:
         self.ignore_file = self.scraping_dir / "scrape-ignore.yml"
         self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
         self.config_file = self.scraping_dir / "scrape-config.yml"
+        self.index_file = self.scraping_dir / "scrape-index.yml"
 
         # Load configuration
         self.config = self.load_config()
@@ -34,6 +35,7 @@ class SuggestionReviewer:
         self.auto_accepted = []
         self.ignored = []
         self.modified = []
+        self.skipped_already_scraped = []
 
     def load_config(self) -> Dict:
         """Load scraping configuration"""
@@ -58,6 +60,37 @@ class SuggestionReviewer:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = yaml.safe_load(f)
             return data if data is not None else {}
+
+    def load_scraped_urls(self) -> set:
+        """Load URLs that have already been scraped from scrape-index.yml"""
+        index_data = self.load_yaml_file(self.index_file)
+        if not index_data or 'index' not in index_data:
+            return set()
+
+        # Store both normalized and original versions for matching
+        urls = set()
+        for item in index_data['index']:
+            if 'url' in item:
+                url = item['url']
+                urls.add(url)
+                urls.add(url.rstrip('/'))
+                # Also add http/https variants
+                if url.startswith('https://'):
+                    urls.add(url.replace('https://', 'http://'))
+                    urls.add(url.replace('https://', 'http://').rstrip('/'))
+                elif url.startswith('http://'):
+                    urls.add(url.replace('http://', 'https://'))
+                    urls.add(url.replace('http://', 'https://').rstrip('/'))
+        return urls
+
+    def is_already_scraped(self, url: str, scraped_urls: set) -> bool:
+        """Check if a URL has already been scraped"""
+        # Check original and normalized versions
+        if url in scraped_urls:
+            return True
+        if url.rstrip('/') in scraped_urls:
+            return True
+        return False
 
     def save_yaml_file(self, file_path: Path, data: Dict):
         """Save data to YAML file"""
@@ -237,14 +270,42 @@ class SuggestionReviewer:
 
         # Load suggestions
         suggestions_data = self.load_yaml_file(self.suggestions_file)
-        suggestions = suggestions_data.get('suggestions', [])
+        all_suggestions = suggestions_data.get('suggestions', [])
 
-        if not suggestions:
+        if not all_suggestions:
             print("\nNo suggestions to review.")
             print("Run: python suggest.py to generate suggestions.")
             return
 
-        print(f"\nFound {len(suggestions)} suggestion(s) to review.")
+        print(f"\nFound {len(all_suggestions)} suggestion(s) to review.")
+
+        # Load already-scraped URLs
+        scraped_urls = self.load_scraped_urls()
+        print(f"Already scraped: {len(scraped_urls)} URL(s)")
+
+        # Filter out already-scraped suggestions
+        suggestions = []
+        for suggestion in all_suggestions:
+            if self.is_already_scraped(suggestion['url'], scraped_urls):
+                self.skipped_already_scraped.append(suggestion['url'])
+            else:
+                suggestions.append(suggestion)
+
+        if self.skipped_already_scraped:
+            print(f"\nSkipping {len(self.skipped_already_scraped)} already-scraped URL(s).")
+
+        if not suggestions:
+            print("\nAll suggestions have already been scraped. Nothing to review.")
+            # Clear suggestions file
+            suggestions_data = {
+                'version': "1.0",
+                'last_generated': None,
+                'suggestions': []
+            }
+            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            return
+
+        print(f"Remaining to review: {len(suggestions)} suggestion(s).")
 
         # FIRST PASS: Auto-accept matching URLs
         print("\n" + "=" * 60)
@@ -356,11 +417,12 @@ class SuggestionReviewer:
         print("\n" + "=" * 60)
         print("REVIEW SUMMARY")
         print("=" * 60)
-        print(f"Auto-accepted: {len(self.auto_accepted)}")
-        print(f"Accepted:      {len(self.accepted)}")
-        print(f"Modified:      {len(self.modified)}")
-        print(f"Ignored:       {len(self.ignored)}")
-        print(f"Remaining:     {remaining}")
+        print(f"Already scraped (skipped): {len(self.skipped_already_scraped)}")
+        print(f"Auto-accepted:             {len(self.auto_accepted)}")
+        print(f"Accepted:                  {len(self.accepted)}")
+        print(f"Modified:                  {len(self.modified)}")
+        print(f"Ignored:                   {len(self.ignored)}")
+        print(f"Remaining:                 {remaining}")
         print("=" * 60)
 
         if self.accepted or self.modified or self.auto_accepted:
