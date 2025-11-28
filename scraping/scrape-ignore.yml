@@ -14,3 +14,11 @@ ignored:
     reason: "On-chain data - not documentation"
   - url: "https://polkadot.js.org"
     reason: "App interface - not documentation"
+
+  # Sites that block scrapers or have technical issues
+  - url: "https://www.marketing-bounty.com/"
+    reason: "HTTP 403 - blocks automated access"
+  - url: "https://polkadotplay.org"
+    reason: "SSL certificate error - hostname mismatch"
+  - url: "https://hackenproof.com/programs/polkadot-bridge"
+    reason: "HTTP 403 - blocks automated access"

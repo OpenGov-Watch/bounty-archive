@@ -58,6 +58,9 @@ Each bounty folder contains:
   - Application details (process, timeline, status)
   - Tags and notes
 - **scraped/** (optional) - Archived documentation from bounty websites
+  - Preserved in original format (HTML, PDF, JSON, etc.)
+  - Organized by domain: `scraped/[domain]/[path]`
+  - Metadata stored in companion `.meta.yml` files
 
 See [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for the complete schema definition.
 
@@ -67,34 +70,75 @@ The interactive website (`index.html`) provides:
 - 🔍 **Search** - Filter bounties by name, tags, or keywords
 - 🏷️ **Category filters** - Development, Security, Infrastructure, Community, Grants, DeFi, UX, etc.
 - 📊 **Live statistics** - Total bounties, DOT allocated, categories
+- 📄 **Scraped content viewer** - Browse archived documentation with modal file tree
 - 📱 **Mobile-responsive** - Works on all devices
 - 🎨 **Polkadot branding** - Official color scheme and design
 
-## Documentation Scraper
+## Scraping & Archiving Documentation
 
-The repository includes a Python scraper for archiving bounty documentation:
+The repository includes an automated workflow for archiving bounty documentation from official websites:
+
+### Quick Start
 
 ```bash
-# Install dependencies
 cd scraping
 pip install -r requirements.txt
-
-# Add URLs to scrape-queue.yml, then run
-python scraper.py
 ```
 
-**Features:**
+### Workflow
+
+**1. Generate Suggestions**
+```bash
+python suggest.py
+```
+Extracts URLs from all bounty metadata files and generates suggestions for scraping.
+
+**2. Review Suggestions**
+```bash
+python review.py
+```
+Interactively review suggestions:
+- Auto-accepts URLs matching rules in `scrape-config.yml`
+- Prompts for manual review of other URLs
+- Options: Accept, Modify, Ignore, Skip, Quit
+
+**3. Scrape URLs**
+```bash
+python scraper.py
+```
+Scrapes all URLs in the queue and saves content. Successful scrapes are automatically removed from the queue.
+
+**4. Push Changes**
+```bash
+git add bounties/ scraping/
+git commit -m "Add scraped documentation for bounties #X, #Y"
+git push
+```
+
+### Features
+
 - 📥 **Single & recursive scraping** - Fetch individual pages or entire documentation sites
-- 📝 **HTML to Markdown** - Clean conversion with YAML frontmatter
+- 🔄 **Auto-suggestions** - Extracts URLs from bounty metadata automatically
+- ✅ **Auto-accept rules** - Configure trusted domains to skip manual review
+- 📄 **Original format preservation** - Saves HTML, PDF, JSON, etc. as-is with metadata
 - 🔗 **Link extraction** - Categorizes internal, external, and social links
 - 🗂️ **Organized storage** - Saves to `bounties/[id]-[slug]/scraped/[domain]/`
-- 📊 **Results tracking** - Outputs discovered URLs for iterative scraping
+- 🌐 **Website integration** - Scraped content appears on bounty cards automatically
 
 See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.
 
 ## Deployment
 
 The website is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+
+### Build Pipeline
+
+On each deployment:
+1. **Build scraped index** - `website/build_scraped_index.py` generates `scraped-index.json`
+2. **Deploy to GitHub Pages** - All content including scraped files is published
+3. **Website displays scraped content** - Bounty cards show archived documentation with interactive viewer
+
+The website at [opengov-watch.github.io/bounty-archive](https://opengov-watch.github.io/bounty-archive/) updates automatically within 1-2 minutes of pushing to `main`.
 
 ## For AI Agents
 
