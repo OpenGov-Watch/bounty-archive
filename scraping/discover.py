@@ -175,21 +175,33 @@ class LinkDiscoverer:
             # This is a new URL!
             seen_urls.add(url)
 
-            # Get default mode from config
+            # Check if this is a social link
+            categories = link.get('categories', ['other'])
+            is_social = 'social' in categories
+
+            # Get default mode from config (socials don't get scraped)
             default_mode = self.config.get('default_mode', 'single')
             default_depth = 1
             if default_mode == 'recursive':
                 default_depth = self.config.get('recursive_defaults', {}).get('max_depth', 2)
 
-            new_suggestions.append({
+            suggestion = {
                 'url': url,
                 'bounty_id': link['bounty_id'],
                 'mode': default_mode,
                 'max_depth': default_depth,
                 'source': f"discovered from {link['source_url']}",
-                'categories': link.get('categories', ['other']),
+                'categories': categories,
                 'discovered_at': link.get('discovered_at', '')
-            })
+            }
+
+            # Mark social links with special type
+            if is_social:
+                suggestion['type'] = 'social'
+            else:
+                suggestion['type'] = 'scrape'
+
+            new_suggestions.append(suggestion)
 
         print(f"\n{Fore.GREEN}New URLs discovered: {len(new_suggestions)}{Style.RESET_ALL}" if len(new_suggestions) > 0 else f"\nNew URLs discovered: {len(new_suggestions)}")
 

@@ -102,29 +102,41 @@ class SuggestionReviewer:
         print("\n" + "=" * 60)
         print(f"SUGGESTION {index + 1} of {total}")
         print("=" * 60)
+        suggestion_type = suggestion.get('type', 'scrape')
+        print(f"Type:       {suggestion_type.upper()}")
         print(f"Bounty ID:  {suggestion['bounty_id']}")
         print(f"URL:        {suggestion['url']}")
-        print(f"Mode:       {suggestion['mode']}")
-        print(f"Max Depth:  {suggestion.get('max_depth', 'N/A')}")
+        if suggestion_type != 'social':
+            print(f"Mode:       {suggestion['mode']}")
+            print(f"Max Depth:  {suggestion.get('max_depth', 'N/A')}")
+        print(f"Categories: {', '.join(suggestion.get('categories', ['other']))}")
         print(f"Source:     {suggestion.get('source', 'Unknown')}")
         print("=" * 60)
 
-    def get_user_choice(self) -> str:
+    def get_user_choice(self, suggestion_type: str = 'scrape') -> str:
         """Get user's choice for a suggestion"""
         while True:
             print("\nActions:")
-            print("  [A] Accept - Add to scrape queue")
-            print("  [M] Modify - Edit and add to queue")
-            print("  [I] Ignore - Add to ignore list")
-            print("  [S] Skip - Leave for later")
-            print("  [Q] Quit - Exit reviewer")
+            if suggestion_type == 'social':
+                print("  [A] Accept - Add to bounty metadata")
+                print("  [I] Ignore - Add to ignore list")
+                print("  [S] Skip - Leave for later")
+                print("  [Q] Quit - Exit reviewer")
+                valid_choices = ['A', 'I', 'S', 'Q']
+            else:
+                print("  [A] Accept - Add to scrape queue")
+                print("  [M] Modify - Edit and add to queue")
+                print("  [I] Ignore - Add to ignore list")
+                print("  [S] Skip - Leave for later")
+                print("  [Q] Quit - Exit reviewer")
+                valid_choices = ['A', 'M', 'I', 'S', 'Q']
 
             choice = input("\nYour choice: ").strip().upper()
 
-            if choice in ['A', 'M', 'I', 'S', 'Q']:
+            if choice in valid_choices:
                 return choice
 
-            print("Invalid choice. Please enter A, M, I, S, or Q.")
+            print(f"Invalid choice. Please enter {', '.join(valid_choices)}.")
 
     def modify_suggestion(self, suggestion: Dict) -> Optional[Dict]:
         """Allow user to modify a suggestion"""
@@ -225,6 +237,88 @@ class SuggestionReviewer:
         ignore_data['ignored'].append(entry)
         self.save_yaml_file(self.ignore_file, ignore_data)
 
+    def parse_social_url(self, url: str) -> tuple[str, str]:
+        """Parse social URL into (platform, handle/identifier)"""
+        from urllib.parse import urlparse
+
+        parsed = urlparse(url)
+        domain = parsed.netloc.lower()
+        path = parsed.path.strip('/')
+
+        # Twitter / X
+        if 'twitter.com' in domain or 'x.com' in domain:
+            handle = path.split('/')[0] if path else url
+            return ('twitter', f"@{handle}" if not handle.startswith('@') else handle)
+
+        # GitHub
+        elif 'github.com' in domain:
+            return ('github', path if path else url)
+
+        # Discord
+        elif 'discord' in domain:
+            return ('discord', path if path else url)
+
+        # Telegram
+        elif 't.me' in domain or 'telegram' in domain:
+            return ('telegram', path if path else url)
+
+        # Matrix
+        elif 'matrix' in domain:
+            return ('matrix', url)
+
+        # Unknown - return full URL
+        else:
+            return ('other', url)
+
+    def add_to_metadata(self, suggestion: Dict):
+        """Add social link to bounty metadata.yml under associated_socials"""
+        bounty_id = suggestion['bounty_id']
+        url = suggestion['url']
+
+        # Find bounty folder
+        pattern = f"{bounty_id}-*"
+        bounties_dir = self.project_root / "bounties"
+        matches = list(bounties_dir.glob(pattern))
+
+        if not matches:
+            print(f"\n[!] Error: Bounty folder not found for ID {bounty_id}")
+            return False
+
+        bounty_folder = matches[0]
+        metadata_file = bounty_folder / "metadata.yml"
+
+        if not metadata_file.exists():
+            print(f"\n[!] Error: metadata.yml not found in {bounty_folder}")
+            return False
+
+        # Load metadata
+        metadata = self.load_yaml_file(metadata_file)
+
+        # Initialize associated_socials if needed
+        if 'associated_socials' not in metadata:
+            metadata['associated_socials'] = {}
+
+        # Parse social URL
+        platform, identifier = self.parse_social_url(url)
+
+        # Initialize platform list if needed
+        if platform not in metadata['associated_socials']:
+            metadata['associated_socials'][platform] = []
+
+        # Check if already exists
+        if identifier in metadata['associated_socials'][platform]:
+            print(f"\n[!] Social link already in metadata: {platform} - {identifier}")
+            return False
+
+        # Add to metadata
+        metadata['associated_socials'][platform].append(identifier)
+
+        # Save metadata
+        self.save_yaml_file(metadata_file, metadata)
+
+        print(f"\n[+] Added to metadata: {platform} - {identifier}")
+        return True
+
     def check_auto_accept(self, url: str) -> Optional[tuple[str, int]]:
         """Check if URL matches auto-accept rules. Returns (mode, max_depth) if matched, None otherwise"""
         auto_accept_rules = self.config.get('auto_accept', [])
@@ -315,6 +409,11 @@ class SuggestionReviewer:
         manual_review_suggestions = []
 
         for i, suggestion in enumerate(suggestions):
+            # Skip social links in auto-accept (they need manual review for metadata)
+            if suggestion.get('type') == 'social':
+                manual_review_suggestions.append(suggestion)
+                continue
+
             # Check if URL matches auto-accept rules
             auto_accept_result = self.check_auto_accept(suggestion['url'])
 
@@ -357,24 +456,32 @@ class SuggestionReviewer:
 
         for i, suggestion in enumerate(manual_review_suggestions):
             self.display_suggestion(suggestion, i, len(manual_review_suggestions))
-            choice = self.get_user_choice()
+            suggestion_type = suggestion.get('type', 'scrape')
+            choice = self.get_user_choice(suggestion_type)
 
             if choice == 'A':
                 # Accept
-                self.add_to_queue(suggestion)
-                self.accepted.append(suggestion['url'])
-                print(f"\n[+] Added to scrape queue")
+                if suggestion_type == 'social':
+                    # Add to metadata
+                    if self.add_to_metadata(suggestion):
+                        self.accepted.append(suggestion['url'])
+                else:
+                    # Add to scrape queue
+                    self.add_to_queue(suggestion)
+                    self.accepted.append(suggestion['url'])
+                    print(f"\n[+] Added to scrape queue")
 
             elif choice == 'M':
-                # Modify
-                modified = self.modify_suggestion(suggestion)
-                if modified:
-                    self.add_to_queue(modified)
-                    self.modified.append(suggestion['url'])
-                    print(f"\n[+] Modified and added to scrape queue")
-                else:
-                    print(f"\n[-] Modification cancelled. Keeping in suggestions.")
-                    remaining_suggestions.append(suggestion)
+                # Modify (only for scrape type)
+                if suggestion_type == 'scrape':
+                    modified = self.modify_suggestion(suggestion)
+                    if modified:
+                        self.add_to_queue(modified)
+                        self.modified.append(suggestion['url'])
+                        print(f"\n[+] Modified and added to scrape queue")
+                    else:
+                        print(f"\n[-] Modification cancelled. Keeping in suggestions.")
+                        remaining_suggestions.append(suggestion)
 
             elif choice == 'I':
                 # Ignore
