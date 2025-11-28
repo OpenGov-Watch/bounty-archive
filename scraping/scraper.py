@@ -523,6 +523,34 @@ class PolkadotBountyScraper:
 
         print(f"Index updated: {self.index_file.relative_to(self.project_root)}")
 
+    def clear_queue(self, results: List[Dict]):
+        """Remove successfully scraped URLs from scrape-queue.yml"""
+        # Load current queue
+        queue_data = self.load_yaml_file(self.queue_file)
+        if 'queue' not in queue_data or queue_data['queue'] is None:
+            queue_data['queue'] = []
+
+        # Get URLs that were successfully scraped
+        successful_urls = set()
+        for result in results:
+            if result.get('status') in ('completed', 'partial'):
+                successful_urls.add(result['url'])
+
+        # Filter out successful URLs from queue
+        original_count = len(queue_data['queue'])
+        queue_data['queue'] = [
+            job for job in queue_data['queue']
+            if job.get('url') not in successful_urls
+        ]
+        removed_count = original_count - len(queue_data['queue'])
+
+        # Save updated queue
+        with open(self.queue_file, 'w', encoding='utf-8') as f:
+            yaml.dump(queue_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+
+        if removed_count > 0:
+            print(f"Queue cleared: removed {removed_count} completed job(s)")
+
     def run(self):
         """Main execution"""
         print("=" * 60)
@@ -549,6 +577,9 @@ class PolkadotBountyScraper:
 
         # Update index
         self.update_index(results)
+
+        # Clear successfully scraped jobs from queue
+        self.clear_queue(results)
 
         # Print summary
         print("\n" + "=" * 60)
