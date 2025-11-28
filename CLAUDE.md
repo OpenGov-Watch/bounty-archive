@@ -18,11 +18,10 @@ bounty-archive/
 ├── CLAUDE.md                       # This file (AI agent guide)
 ├── METADATA_SCHEMA.md              # YAML schema definition
 ├── .github/workflows/pages.yml     # GitHub Pages deployment
-├── .claude/
-│   └── agents/
-│       └── scraper.md              # URL scraper subagent
 ├── scraping/
-│   ├── SCRAPING.md                 # Scraping system documentation
+│   ├── scraper.py                  # Python URL scraper
+│   ├── requirements.txt            # Python dependencies
+│   ├── SCRAPING.md                 # Scraping documentation
 │   ├── scrape-queue.yml            # URLs to scrape (input)
 │   └── scrape-results.yml          # Scraping results (output)
 └── bounties/
@@ -167,17 +166,15 @@ When researching bounties:
 
 ### 7. Scraping Bounty Documentation
 
-The repository includes a scraping system for archiving bounty documentation:
+The repository includes a Python scraper for archiving bounty documentation:
 
 **To scrape URLs:**
 
-1. Add URLs to `scraping/scrape-queue.yml`
-2. Invoke the scraper subagent:
-   ```
-   Please use the scraper subagent (.claude/agents/scraper.md) to scrape the URLs in scraping/scrape-queue.yml
-   ```
-3. Review results in `scraping/scrape-results.yml`
-4. Check scraped content in `bounties/[id]-[slug]/scraped/`
+1. Install dependencies: `cd scraping && pip install -r requirements.txt`
+2. Add URLs to `scraping/scrape-queue.yml`
+3. Run the scraper: `python scraping/scraper.py`
+4. Review results in `scraping/scrape-results.yml`
+5. Check scraped content in `bounties/[id]-[slug]/scraped/`
 
 **See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.**
 
