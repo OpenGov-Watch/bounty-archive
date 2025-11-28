@@ -1,5 +1,5 @@
 version: '1.0'
-last_updated: '2025-11-28T14:11:44.692540Z'
+last_updated: '2025-11-28T14:17:50.224563Z'
 scraped:
 - status: completed
   pages_scraped: 1
@@ -1864,6 +1864,97 @@ scraped:
   mode: single
   max_depth: null
   scraped_at: 2025-11-28T14:11:44.551161+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\17-events-bounty\scraped\dotevents.xyz\index.html
+  outgoing_urls:
+    internal:
+    - https://dotevents.xyz/about/1
+    - https://dotevents.xyz/guidelines/stepbystep
+    - https://dotevents.xyz/submissions/submissions
+    external:
+    - https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+    - https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+    - https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+    - https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+    - https://meet.google.com/vgu-jaqc-rpi
+    social:
+    - https://x.com/PolkadotEB
+  errors: []
+  bounty_id: 17
+  url: https://dotevents.xyz/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:17:46.744797+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\19-inkubator\scraped\inkubatordocs.notion.site\index.html
+  outgoing_urls:
+    internal: []
+    external:
+    - https://docs.google.com/document/d/14_oZUN1YcbD4nGpVvcFnIAbgOOYshuxPOotasEGGr-s/edit?usp=sharing
+    - https://polkadot.subsquare.io/treasury/child-bounties/1419
+    - https://polkadot.subsquare.io/treasury/child-bounties/1850
+    - https://use.ink/ubator
+    social: []
+  errors: []
+  bounty_id: 19
+  url: https://inkubatordocs.notion.site/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:17:47.136928+00:00Z
+- status: failed
+  error: Failed to fetch https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+  bounty_id: 33
+  url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:17:47.946743+00:00Z
+- status: failed
+  error: Failed to fetch https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  bounty_id: 43
+  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:17:48.912918+00:00Z
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\52-ux-bounty\scraped\polkadot-ux-bounty.notion.site\index.html
+  outgoing_urls:
+    internal:
+    - https://polkadot-ux-bounty.notion.site/1a4e1c2781f3809c9292c6764804fa74
+    - https://polkadot-ux-bounty.notion.site/61a11d1953fa4981b112f298d5a7a8ea
+    - https://polkadot-ux-bounty.notion.site/Best-Practices-and-Standards-7a7812f05619493e9ba9175a011cea12
+    - https://polkadot-ux-bounty.notion.site/Budget-Reportings-14be1c2781f3809396b4ddc6b344b6e0
+    - https://polkadot-ux-bounty.notion.site/Curator-TaskForce-1e5e1c2781f380598042de337d0cc911
+    - https://polkadot-ux-bounty.notion.site/Figma-Boards-a4743691ed02456fa7645b4e3adff981
+    - https://polkadot-ux-bounty.notion.site/General-Information-b9315d81f67041ca8266a92aeddda4ac
+    - https://polkadot-ux-bounty.notion.site/Job-Descriptions-18ce1c2781f380899e3ece54eb99303a
+    - https://polkadot-ux-bounty.notion.site/Payouts-19de29ff5d474a068b1ee67e13a934c1
+    - https://polkadot-ux-bounty.notion.site/Quarter-Reports-1e4e1c2781f380788afeefedaad7ba29
+    - https://polkadot-ux-bounty.notion.site/Tasks-Projects-DB-1e5e1c2781f38095997be3cddc67d4be
+    - https://polkadot-ux-bounty.notion.site/Time-Tracking-ba882e5a6b194949a695e7e70983d4a3
+    - https://polkadot-ux-bounty.notion.site/UAP-UX-Audits-Program-184e1c2781f3800782dcdff236b0f5b5
+    - https://polkadot-ux-bounty.notion.site/UX-Audits-RFPs-Submissions-1e5e1c2781f380fe99abe7fa3fe5c362
+    - https://polkadot-ux-bounty.notion.site/Vendors-List-1a8e1c2781f38015a6eeec2fcb55158a
+    - https://polkadot-ux-bounty.notion.site/Work-Reportings-3471dafbbf154d78b350cad3343fe58a
+    - https://polkadot-ux-bounty.notion.site/cdn-cgi/l/email-protection
+    - https://polkadot-ux-bounty.notion.site/fbcad88983884dffaa74cdb76c4d8fa5
+    external: []
+    social:
+    - http://t.me/houdz
+    - https://t.me/polkadot_ux_guild
+  errors: []
+  bounty_id: 52
+  url: https://polkadot-ux-bounty.notion.site/
+  mode: single
+  max_depth: null
+  scraped_at: 2025-11-28T14:17:49.473331+00:00Z
 discovered_queue:
 - url: https://github.com/Polkadot-Anti-scam-Team
   found_on: https://polkadot.antiscam.team/
@@ -2510,3 +2601,15 @@ discovered_queue:
 - url: https://forms.gle/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S2080987874:1764339066907025&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU0caH4grnIMiBnYjluecyySe7Lh7zhw_DfwAG3BcQeOdWsRqqbJOT_uce4UpaaJGmq2OE0OlQ&ltmpl=forms&osid=1&service=wise
   found_on: https://forms.gle/pqgSc2QJ7XUznveu5
   bounty_id: 50
+- url: https://docs.google.com/document/d/14_oZUN1YcbD4nGpVvcFnIAbgOOYshuxPOotasEGGr-s/edit?usp=sharing
+  found_on: https://inkubatordocs.notion.site/
+  bounty_id: 19
+- url: https://polkadot.subsquare.io/treasury/child-bounties/1419
+  found_on: https://inkubatordocs.notion.site/
+  bounty_id: 19
+- url: https://polkadot.subsquare.io/treasury/child-bounties/1850
+  found_on: https://inkubatordocs.notion.site/
+  bounty_id: 19
+- url: https://use.ink/ubator
+  found_on: https://inkubatordocs.notion.site/
+  bounty_id: 19

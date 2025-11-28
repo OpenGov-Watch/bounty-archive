@@ -1,28 +1,3 @@
 version: '1.0'
-last_generated: '2025-11-28T14:12:57.874253Z'
-suggestions:
-- bounty_id: 17
-  url: https://dotevents.xyz/
-  mode: single
-  max_depth: 1
-  source: metadata.links.website
-- bounty_id: 19
-  url: https://inkubatordocs.notion.site/
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
-- bounty_id: 33
-  url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
-- bounty_id: 43
-  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
-- bounty_id: 52
-  url: https://polkadot-ux-bounty.notion.site/
-  mode: single
-  max_depth: 1
-  source: metadata.links.notion
+last_generated: null
+suggestions: []

@@ -1,1 +1,7 @@
-queue: []
+queue:
+- bounty_id: 33
+  url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+  mode: single
+- bounty_id: 43
+  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  mode: single
