@@ -17,6 +17,8 @@ class CleanupTool:
 
     def __init__(self, scraping_dir: Path):
         self.scraping_dir = scraping_dir
+        self.project_root = scraping_dir.parent
+        self.bounties_dir = self.project_root / "bounties"
         self.index_file = scraping_dir / "scrape-index.yml"
         self.results_file = scraping_dir / "scrape-results.yml"
         self.links_file = scraping_dir / "scrape-links.yml"
@@ -68,7 +70,7 @@ class CleanupTool:
     def reset_all(self, confirm: bool = False):
         """Reset all auto-generated files for a fresh start"""
         if not confirm:
-            print("\n⚠️  WARNING: This will reset ALL scraping data!")
+            print("\n[!] WARNING: This will reset ALL scraping data!")
             print("\nThis will clear:")
             print("  - scrape-index.yml (all indexed URLs)")
             print("  - scrape-results.yml (all scraping results)")
@@ -92,7 +94,7 @@ class CleanupTool:
             'index': []
         }
         self.save_yaml_file(self.index_file, index_data)
-        print(f"✓ Reset {self.index_file.name}")
+        print(f"[+] Reset {self.index_file.name}")
 
         # Reset results
         results_data = {
@@ -101,7 +103,7 @@ class CleanupTool:
             'scraped': []
         }
         self.save_yaml_file(self.results_file, results_data)
-        print(f"✓ Reset {self.results_file.name}")
+        print(f"[+] Reset {self.results_file.name}")
 
         # Reset links
         links_data = {
@@ -111,7 +113,7 @@ class CleanupTool:
             'discovered_links': []
         }
         self.save_yaml_file(self.links_file, links_data)
-        print(f"✓ Reset {self.links_file.name}")
+        print(f"[+] Reset {self.links_file.name}")
 
         # Reset suggestions
         suggestions_data = {
@@ -120,9 +122,9 @@ class CleanupTool:
             'suggestions': []
         }
         self.save_yaml_file(self.suggestions_file, suggestions_data)
-        print(f"✓ Reset {self.suggestions_file.name}")
+        print(f"[+] Reset {self.suggestions_file.name}")
 
-        print("\n✅ All auto-generated files have been reset.")
+        print("\n[+] All auto-generated files have been reset.")
         print("\nTo start fresh, run:")
         print("  1. python suggest.py")
         print("  2. python review.py")
@@ -166,7 +168,7 @@ class CleanupTool:
         self.save_yaml_file(self.index_file, index_data)
 
         removed_count = original_count - len(new_index)
-        print(f"\n✓ Removed {removed_count} URL(s) from index:")
+        print(f"\n[+] Removed {removed_count} URL(s) from index:")
         for url in removed_urls[:10]:
             print(f"  - {url}")
         if len(removed_urls) > 10:
@@ -183,11 +185,11 @@ class CleanupTool:
             'suggestions': []
         }
         self.save_yaml_file(self.suggestions_file, suggestions_data)
-        print(f"\n✓ Cleared {self.suggestions_file.name}")
+        print(f"\n[+] Cleared {self.suggestions_file.name}")
 
     def clear_queue(self):
         """Clear the queue file"""
-        print("\n⚠️  WARNING: This will clear your scrape queue!")
+        print("\n[!] WARNING: This will clear your scrape queue!")
         response = input("Are you sure? (yes/no): ").strip().lower()
         if response != 'yes':
             print("Cancelled.")
@@ -197,7 +199,64 @@ class CleanupTool:
             'queue': []
         }
         self.save_yaml_file(self.queue_file, queue_data)
-        print(f"\n✓ Cleared {self.queue_file.name}")
+        print(f"\n[+] Cleared {self.queue_file.name}")
+
+    def delete_scraped_files(self):
+        """Delete all scraped files in bounties/*/scraped/ directories"""
+        import shutil
+
+        if not self.bounties_dir.exists():
+            print("No bounties directory found.")
+            return
+
+        deleted_count = 0
+        bounty_count = 0
+
+        for bounty_dir in self.bounties_dir.iterdir():
+            if not bounty_dir.is_dir():
+                continue
+
+            scraped_dir = bounty_dir / "scraped"
+            if scraped_dir.exists() and scraped_dir.is_dir():
+                # Delete the entire scraped directory
+                shutil.rmtree(scraped_dir)
+                deleted_count += 1
+                bounty_count += 1
+                print(f"  [+] Deleted {scraped_dir.relative_to(self.project_root)}")
+
+        return deleted_count
+
+    def reset_complete(self, confirm: bool = False):
+        """Complete reset including scraped files"""
+        if not confirm:
+            print("\n[!] DANGER: This will delete EVERYTHING including scraped files!")
+            print("\nThis will clear:")
+            print("  - scrape-index.yml (all indexed URLs)")
+            print("  - scrape-results.yml (all scraping results)")
+            print("  - scrape-links.yml (all discovered links)")
+            print("  - scrape-suggestions.yml (all pending suggestions)")
+            print("  - bounties/*/scraped/ directories (ALL SCRAPED FILES)")
+            print("\nThis will NOT delete:")
+            print("  - scrape-queue.yml (your queue)")
+            print("  - scrape-ignore.yml (your ignore list)")
+            print("  - scrape-config.yml (your configuration)")
+            print("  - bounties/*/metadata.yml (bounty metadata)")
+            print("\n[!] THIS CANNOT BE UNDONE!")
+
+            response = input("\nType 'DELETE EVERYTHING' to confirm: ").strip()
+            if response != 'DELETE EVERYTHING':
+                print("Cancelled.")
+                return
+
+        # First reset all YAML files
+        self.reset_all(confirm=True)
+
+        # Then delete scraped files
+        print("\n[+] Deleting scraped files...")
+        deleted_count = self.delete_scraped_files()
+
+        print(f"\n[+] Deleted {deleted_count} scraped directories")
+        print("\n[+] Complete reset finished.")
 
 
 def print_usage():
@@ -210,7 +269,8 @@ Usage:
 
 Commands:
   stats                    Show index statistics
-  reset-all                Reset all auto-generated files (fresh start)
+  reset-all                Reset index/results/links/suggestions (keeps scraped files)
+  reset-complete           Reset EVERYTHING including scraped files (DANGER!)
   remove-url <url>         Remove specific URL from index (for re-scraping)
   remove-bounty <id>       Remove all URLs for a bounty from index
   clear-suggestions        Clear suggestions file
@@ -220,8 +280,11 @@ Examples:
   # Show current index stats
   python cleanup.py stats
 
-  # Reset everything for a fresh start
+  # Reset index for fresh start (keeps scraped files)
   python cleanup.py reset-all
+
+  # Complete reset including deleting all scraped files (DANGER!)
+  python cleanup.py reset-complete
 
   # Remove a specific URL to re-scrape it recursively
   python cleanup.py remove-url "https://polkadot.antiscam.team/"
@@ -233,9 +296,10 @@ Examples:
   python cleanup.py clear-suggestions
 
 Use Cases:
-  1. Fresh Start: python cleanup.py reset-all
-  2. Re-scrape deeper: python cleanup.py remove-url <url>, then add to queue with recursive mode
-  3. Re-scrape bounty: python cleanup.py remove-bounty <id>, then re-generate suggestions
+  1. Fresh Start (keep files): python cleanup.py reset-all
+  2. Complete Wipe: python cleanup.py reset-complete
+  3. Re-scrape deeper: python cleanup.py remove-url <url>, then add to queue with recursive mode
+  4. Re-scrape bounty: python cleanup.py remove-bounty <id>, then re-generate suggestions
 """)
 
 
@@ -255,6 +319,9 @@ def main():
 
     elif command == "reset-all":
         tool.reset_all()
+
+    elif command == "reset-complete":
+        tool.reset_complete()
 
     elif command == "remove-url":
         if len(sys.argv) < 3:
