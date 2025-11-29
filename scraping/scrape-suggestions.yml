@@ -1,3 +1,192 @@
 version: '1.0'
-last_generated: null
-suggestions: []
+last_generated: '2025-11-29T10:36:25.468325Z'
+suggestions:
+- bounty_id: 10
+  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.445324Z'
+- bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.446324Z'
+- bounty_id: 11
+  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.446324Z'
+- bounty_id: 17
+  url: https://dotevents.xyz/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.447324Z'
+- bounty_id: 17
+  url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.447324Z'
+- bounty_id: 19
+  url: https://use.ink/ubator/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.448324Z'
+- bounty_id: 19
+  url: https://inkubatordocs.notion.site/
+  mode: single
+  max_depth: 1
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.448324Z'
+- bounty_id: 22
+  url: https://polkadotassurance.com/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.450323Z'
+- bounty_id: 24
+  url: https://polkadot.subsquare.io/referenda/135
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.451324Z'
+- bounty_id: 36
+  url: https://www.velocitylabs.org/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.456322Z'
+- bounty_id: 37
+  url: https://paseo.network
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.457323Z'
+- bounty_id: 43
+  url: http://dotmeetups.xyz/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.459324Z'
+- bounty_id: 43
+  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  mode: single
+  max_depth: 1
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.459324Z'
+- bounty_id: 44
+  url: https://polkadot.com/bridges-bug-bounty/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.460324Z'
+- bounty_id: 50
+  url: https://wiki.ibp.network/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.462323Z'
+- bounty_id: 52
+  url: https://www.uxbounty.xyz/
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.463324Z'
+- bounty_id: 52
+  url: https://polkadot-ux-bounty.notion.site/
+  mode: single
+  max_depth: 1
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.463324Z'
+- bounty_id: 52
+  url: https://calendar.app.google/mBpAmbXzvNBQstYn9
+  mode: single
+  max_depth: 1
+  source: metadata.contact.applicationForm
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.463324Z'
+- bounty_id: 62
+  url: https://www.polkadot.law/legalbounty
+  mode: single
+  max_depth: 1
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.465324Z'
+- bounty_id: 62
+  url: https://polkadot.subsquare.io/referenda/1359
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.465324Z'
+- bounty_id: 64
+  url: https://polkadot.subsquare.io/referenda/1377
+  mode: single
+  max_depth: 1
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-11-29T10:36:25.468325Z'

@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 **1. Generate Suggestions**
 ```bash
-python suggest.py
+python suggest.py  # Extract URLs from metadata (default)
 ```
 Extracts URLs from all bounty metadata files and generates suggestions for scraping.
 
@@ -112,7 +112,7 @@ Scrapes all URLs in the queue and saves content. Extracts and categorizes all li
 
 **4. Discover New URLs**
 ```bash
-python discover.py
+python suggest.py --source=links  # Extract URLs from scraped pages
 ```
 Analyzes extracted links from scraped pages and generates new suggestions. Filters out already scraped, queued, ignored, and suggested URLs. Found URLs are added to suggestions.
 

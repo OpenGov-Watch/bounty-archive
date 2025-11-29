@@ -2,20 +2,109 @@
 """
 Polkadot Bounty Archive - URL Suggestion Generator
 
-Extracts URLs from bounty metadata files and generates scraping suggestions.
-Filters out social media, code repos, and already processed URLs.
+Generates scraping suggestions from two sources:
+1. Bounty metadata files (--source=metadata, default)
+2. Discovered links from scraped pages (--source=links)
+
+All suggestions include categories and type classification.
 """
 
-import os
+import argparse
 import sys
 import yaml
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Set, Tuple
+from urllib.parse import urlparse
+
+
+class URLCategorizer:
+    """Categorizes URLs based on domain and path patterns"""
+
+    # Domain-based categories
+    DOMAIN_CATEGORIES = {
+        'github.com': ['github'],
+        'twitter.com': ['social', 'twitter'],
+        'x.com': ['social', 'twitter'],
+        't.me': ['social', 'telegram'],
+        'discord.gg': ['social', 'discord'],
+        'discord.com': ['social', 'discord'],
+        'matrix.to': ['social', 'matrix'],
+        'docs.google.com': ['documentation', 'form'],
+        'forms.google.com': ['form'],
+        'forms.gle': ['form'],
+        'forms.monday.com': ['form'],
+        'form.typeform.com': ['form'],
+        'typeform.com': ['form'],
+        'notion.site': ['documentation'],
+        'notion.so': ['documentation'],
+        'subsquare.io': ['governance'],
+        'polkassembly.io': ['governance'],
+    }
+
+    # Path-based categories
+    PATH_PATTERNS = {
+        '/forms/': ['form'],
+        '/form/': ['form'],
+        '/docs/': ['documentation'],
+        '/doc/': ['documentation'],
+        '/wiki/': ['documentation'],
+        '/guide/': ['documentation'],
+        '/blog/': ['documentation'],
+        '/proposal': ['governance'],
+        '/referenda': ['governance'],
+        '/treasury': ['governance'],
+        '/bounty': ['governance'],
+    }
+
+    @classmethod
+    def categorize(cls, url: str) -> List[str]:
+        """Categorize a URL based on domain and path"""
+        categories = set()
+
+        try:
+            parsed = urlparse(url)
+            domain = parsed.netloc.lower()
+            path = parsed.path.lower()
+
+            # Check domain patterns
+            for domain_pattern, cats in cls.DOMAIN_CATEGORIES.items():
+                if domain_pattern in domain:
+                    categories.update(cats)
+
+            # Check path patterns
+            for path_pattern, cats in cls.PATH_PATTERNS.items():
+                if path_pattern in path:
+                    categories.update(cats)
+
+            # Default if no matches
+            if not categories:
+                categories.add('other')
+
+            return sorted(list(categories))
+
+        except Exception:
+            return ['other']
+
+    @classmethod
+    def get_type(cls, categories: List[str]) -> str:
+        """Determine suggestion type based on categories"""
+        # Social media (not scraped, added to metadata)
+        social_categories = {'social', 'discord', 'telegram', 'matrix', 'twitter'}
+        if any(cat in categories for cat in social_categories):
+            return 'social'
+
+        # Associated URLs (not scraped, added to metadata)
+        associated_categories = {'github'}
+        if any(cat in categories for cat in associated_categories):
+            return 'associated_url'
+
+        # Everything else gets scraped
+        return 'scrape'
 
 
 class SuggestionGenerator:
-    """Generates scraping suggestions from bounty metadata"""
+    """Generates scraping suggestions from metadata or discovered links"""
 
     def __init__(self, project_root: Path):
         self.project_root = project_root
@@ -26,6 +115,7 @@ class SuggestionGenerator:
         self.index_file = self.scraping_dir / "scrape-index.yml"
         self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
         self.config_file = self.scraping_dir / "scrape-config.yml"
+        self.links_file = self.scraping_dir / "scrape-links.yml"
 
         # Load configuration
         self.config = self.load_config()
@@ -94,7 +184,7 @@ class SuggestionGenerator:
         return mode, max_depth
 
     def extract_urls_from_metadata(self, metadata_file: Path, bounty_id: int) -> List[Dict]:
-        """Extract relevant URLs from a bounty metadata file"""
+        """Extract URLs from a bounty metadata file with categorization"""
         metadata = self.load_yaml_file(metadata_file)
         suggestions = []
 
@@ -107,18 +197,24 @@ class SuggestionGenerator:
 
         # Extract URLs from all fields in links section
         for field, url in links.items():
-            # Skip excluded fields (already filtered by domain exclusion later)
+            # Skip excluded fields
             if field in ['subsquare', 'polkassembly', 'forum', 'spreadsheet']:
                 continue
 
             if url and isinstance(url, str) and url.startswith('http'):
                 mode, max_depth = self.get_default_mode()
+                categories = URLCategorizer.categorize(url)
+                suggestion_type = URLCategorizer.get_type(categories)
+
                 suggestions.append({
                     'bounty_id': bounty_id,
                     'url': url,
                     'mode': mode,
                     'max_depth': max_depth,
-                    'source': f'metadata.links.{field}'
+                    'source': f'metadata.links.{field}',
+                    'categories': categories,
+                    'type': suggestion_type,
+                    'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
                 })
 
         # Also check contact.applicationForm
@@ -127,20 +223,26 @@ class SuggestionGenerator:
             app_form = contact.get('applicationForm')
             if app_form and isinstance(app_form, str) and app_form.startswith('http'):
                 mode, max_depth = self.get_default_mode()
+                categories = URLCategorizer.categorize(app_form)
+                suggestion_type = URLCategorizer.get_type(categories)
+
                 suggestions.append({
                     'bounty_id': bounty_id,
                     'url': app_form,
                     'mode': mode,
                     'max_depth': max_depth,
-                    'source': 'metadata.contact.applicationForm'
+                    'source': 'metadata.contact.applicationForm',
+                    'categories': categories,
+                    'type': suggestion_type,
+                    'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
                 })
 
         return suggestions
 
-    def generate_suggestions(self) -> List[Dict]:
+    def generate_from_metadata(self) -> List[Dict]:
         """Generate suggestions from all bounty metadata files"""
         print("=" * 60)
-        print("Polkadot Bounty Archive - Suggestion Generator")
+        print("Polkadot Bounty Archive - Suggestion Generator (Metadata)")
         print("=" * 60)
 
         # Get all processed URLs
@@ -167,7 +269,7 @@ class SuggestionGenerator:
 
             stats['scanned'] += 1
 
-            # Extract bounty ID from directory name (e.g., "19-inkubator" -> 19)
+            # Extract bounty ID from directory name
             try:
                 bounty_id = int(bounty_dir.name.split('-')[0])
             except (ValueError, IndexError):
@@ -182,50 +284,129 @@ class SuggestionGenerator:
             for suggestion in suggestions:
                 url = suggestion['url']
 
-                # Skip already processed URLs (in queue, ignore list, index, or suggestions)
+                # Skip already processed URLs
                 if url in processed_urls:
                     stats['already_processed'] += 1
                     continue
 
-                # Add to suggestions for review
+                # Add to suggestions
                 all_suggestions.append(suggestion)
                 stats['new_suggestions'] += 1
 
-        # Save suggestions (merge with existing)
-        if all_suggestions:
-            # Load existing suggestions
-            existing_suggestions_data = self.load_yaml_file(self.suggestions_file)
-            existing_suggestions = existing_suggestions_data.get('suggestions', [])
-            if existing_suggestions is None:
-                existing_suggestions = []
+        self._print_stats(stats, "metadata")
+        return all_suggestions
 
-            # Get existing URLs to avoid duplicates
-            existing_urls = {s['url'] for s in existing_suggestions if s and 'url' in s}
+    def generate_from_links(self) -> List[Dict]:
+        """Generate suggestions from discovered links"""
+        print("=" * 60)
+        print("Polkadot Bounty Archive - Suggestion Generator (Links)")
+        print("=" * 60)
 
-            # Add only new suggestions (not already in the file)
-            for suggestion in all_suggestions:
-                if suggestion['url'] not in existing_urls:
-                    existing_suggestions.append(suggestion)
+        # Load discovered links
+        links_data = self.load_yaml_file(self.links_file)
+        discovered_links = links_data.get('discovered_links', [])
 
-            # Save merged suggestions
-            suggestions_data = {
-                'version': "1.0",
-                'last_generated': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
-                'suggestions': existing_suggestions
+        print(f"\nTotal discovered links: {len(discovered_links)}")
+
+        if not discovered_links:
+            print("No discovered links found. Run scraper.py first.")
+            return []
+
+        # Get all processed URLs
+        processed_urls = self.get_all_processed_urls()
+
+        print(f"Already processed: {len(processed_urls)}")
+
+        # Filter to find new URLs
+        new_suggestions = []
+        seen_urls = set()
+
+        for link in discovered_links:
+            url = link['url']
+
+            # Skip if already seen in this run
+            if url in seen_urls:
+                continue
+
+            # Skip if already processed
+            if url in processed_urls:
+                continue
+
+            # This is a new URL!
+            seen_urls.add(url)
+
+            # Get categories (from link or categorize)
+            categories = link.get('categories', [])
+            if not categories:
+                categories = URLCategorizer.categorize(url)
+
+            # Determine type
+            suggestion_type = URLCategorizer.get_type(categories)
+
+            # Get default mode
+            mode, max_depth = self.get_default_mode()
+
+            suggestion = {
+                'url': url,
+                'bounty_id': link['bounty_id'],
+                'mode': mode,
+                'max_depth': max_depth,
+                'source': f"discovered from {link['source_url']}",
+                'categories': categories,
+                'discovered_at': link.get('discovered_at', datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')),
+                'type': suggestion_type
             }
 
-            with open(self.suggestions_file, 'w', encoding='utf-8') as f:
-                yaml.dump(suggestions_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+            new_suggestions.append(suggestion)
 
-            print(f"\n{stats['new_suggestions']} new suggestions added to: {self.suggestions_file.relative_to(self.project_root)}")
-        else:
+        print(f"\nNew URLs discovered: {len(new_suggestions)}")
+
+        return new_suggestions
+
+    def save_suggestions(self, new_suggestions: List[Dict]):
+        """Save suggestions to scrape-suggestions.yml"""
+        if not new_suggestions:
             print("\nNo new suggestions to add.")
+            return
 
-        # Print statistics
+        # Load existing suggestions
+        existing_suggestions_data = self.load_yaml_file(self.suggestions_file)
+        existing_suggestions = existing_suggestions_data.get('suggestions', [])
+        if existing_suggestions is None:
+            existing_suggestions = []
+
+        # Get existing URLs to avoid duplicates
+        existing_urls = {s['url'] for s in existing_suggestions if s and 'url' in s}
+
+        # Add only new suggestions
+        added_count = 0
+        for suggestion in new_suggestions:
+            if suggestion['url'] not in existing_urls:
+                existing_suggestions.append(suggestion)
+                added_count += 1
+
+        # Save merged suggestions
+        suggestions_data = {
+            'version': "1.0",
+            'last_generated': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+            'suggestions': existing_suggestions
+        }
+
+        with open(self.suggestions_file, 'w', encoding='utf-8') as f:
+            yaml.dump(suggestions_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+
+        if added_count > 0:
+            print(f"\n{added_count} new suggestions added to: {self.suggestions_file.relative_to(self.project_root)}")
+        else:
+            print(f"\nAll suggestions already exist in {self.suggestions_file.relative_to(self.project_root)}")
+
+    def _print_stats(self, stats: Dict, source: str):
+        """Print statistics"""
         print("\n" + "=" * 60)
         print("STATISTICS")
         print("=" * 60)
-        print(f"Bounties scanned: {stats['scanned']}")
+        if source == "metadata":
+            print(f"Bounties scanned: {stats['scanned']}")
         print(f"URLs found: {stats['urls_found']}")
         print(f"  Already processed: {stats['already_processed']}")
         print(f"  New suggestions: {stats['new_suggestions']}")
@@ -235,16 +416,35 @@ class SuggestionGenerator:
             print(f"\nNext step: Run 'python review.py' to review suggestions")
         print("=" * 60)
 
-        return all_suggestions
-
 
 def main():
-    # Determine project root (parent of scraping directory)
+    """CLI entry point"""
+    parser = argparse.ArgumentParser(
+        description="Generate scraping suggestions from metadata or discovered links"
+    )
+    parser.add_argument(
+        '--source',
+        choices=['metadata', 'links'],
+        default='metadata',
+        help='Source for suggestions: metadata (default) or links'
+    )
+
+    args = parser.parse_args()
+
+    # Determine project root
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
 
     generator = SuggestionGenerator(project_root)
-    generator.generate_suggestions()
+
+    # Generate suggestions based on source
+    if args.source == 'metadata':
+        suggestions = generator.generate_from_metadata()
+    else:
+        suggestions = generator.generate_from_links()
+
+    # Save suggestions
+    generator.save_suggestions(suggestions)
 
 
 if __name__ == "__main__":

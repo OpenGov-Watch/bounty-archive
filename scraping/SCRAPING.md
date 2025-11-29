@@ -10,7 +10,7 @@ pip install -r requirements.txt
 python suggest.py      # Generate suggestions from metadata
 python review.py       # Review and approve suggestions
 python scraper.py      # Scrape approved URLs
-python discover.py     # Discover new URLs from scraped content
+python suggest.py --source=links     # Discover new URLs from scraped content
 ```
 
 ## Overview
@@ -118,7 +118,7 @@ Processes all URLs in `scrape-queue.yml`:
 ### 4. Discover New URLs
 
 ```bash
-python discover.py
+python suggest.py --source=links
 ```
 
 Analyzes `scrape-links.yml` to find new URLs:
@@ -135,7 +135,7 @@ Repeat steps 2-4 to discover and archive nested documentation:
 ```bash
 python review.py    # Review newly discovered URLs
 python scraper.py   # Scrape approved URLs
-python discover.py  # Find more links
+python suggest.py --source=links  # Find more links
 ```
 
 ## Common Procedures
@@ -185,7 +185,7 @@ python review.py
 python scraper.py
 
 # 5. Discover links from scraped content
-python discover.py
+python suggest.py --source=links
 
 # 6. Review newly discovered URLs
 python review.py
@@ -194,7 +194,7 @@ python review.py
 python scraper.py
 
 # 8. Repeat steps 5-7 until no new URLs are found
-python discover.py
+python suggest.py --source=links
 python review.py
 python scraper.py
 ```
@@ -219,7 +219,7 @@ python cleanup.py remove-url "https://polkadot.antiscam.team/"
 python scraper.py
 
 # 4. Discover new links
-python discover.py
+python suggest.py --source=links
 ```
 
 **Option 2: Remove entire bounty and re-scrape**
@@ -255,7 +255,7 @@ scraping/
 ├── scraper.py              # Main scraper
 ├── suggest.py              # Generate suggestions from metadata
 ├── review.py               # Interactive review tool
-├── discover.py             # Discover new URLs from scraped content
+├── suggest.py             # Discover new URLs from scraped content
 ├── cleanup.py              # Reset/cleanup tool
 ├── requirements.txt        # Python dependencies
 ├── SCRAPING.md            # This documentation
@@ -661,7 +661,7 @@ scraped:
      └─────► scrape-links.yml      │
                     │               │
                     ▼               │
-              [discover.py]─────────┘
+              [suggest.py]─────────┘
 ```
 
 ## Example: Complete Archive of a Bounty
@@ -683,7 +683,7 @@ python scraper.py
 # Discovered: 10 links (including /bounty, /team, GitHub, Twitter)
 
 # 4. Discover new URLs
-python discover.py
+python suggest.py --source=links
 # New suggestions:
 #   - https://polkadot.antiscam.team/bounty (type: scrape)
 #   - https://polkadot.antiscam.team/team (type: scrape)
@@ -703,7 +703,7 @@ python scraper.py
 # Discovered: More links
 
 # 7. Repeat until no new URLs
-python discover.py
+python suggest.py --source=links
 python review.py
 python scraper.py
 
@@ -718,6 +718,6 @@ python scraper.py
 
 - **v1.0** - Initial scraping system with queue-based workflow
 - **v1.1** - Added link extraction and categorization
-- **v1.2** - Added discover.py for automated link discovery
+- **v1.2** - Added suggest.py for automated link discovery
 - **v1.3** - Added three-tier classification (scrape/associated_url/social)
 - **v1.4** - Added cleanup.py for reset and augmentary runs
