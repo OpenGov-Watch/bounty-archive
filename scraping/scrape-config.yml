@@ -1,15 +1,16 @@
-# Scraping Configuration
-
-# Default scraping settings for suggestions
+# Polkadot Bounty Archive - Scraping Configuration
+# Central configuration for all scraping operations
 
 version: "1.0"
+
+# ========== Default Scraping Settings ==========
 
 # Default mode for all suggestions
 # "single" = scrape just the URL
 # "recursive" = scrape the URL and follow internal links
 default_mode: "single"
 
-# Settings for recursive mode (when you change mode to "recursive" in review.py)
+# Settings for recursive mode
 recursive_defaults:
   max_depth: 2
 
@@ -17,22 +18,87 @@ recursive_defaults:
 single_defaults:
   max_depth: 1
 
-# Auto-accept rules: URLs matching these patterns are auto-accepted during review
-# Format: domain can be exact match or subdomain pattern, path is optional
+# ========== HTTP Settings ==========
+
+# Rate limit delay between requests (seconds)
+rate_limit_delay: 1.0
+
+# HTTP request timeout (seconds)
+request_timeout: 30
+
+# User agent string for requests
+user_agent: "PolkadotBountyArchive/1.0 (https://github.com/OpenGov-Watch/bounty-archive)"
+
+# ========== Auto-Accept Rules ==========
+
+# URLs matching these patterns are auto-accepted during review
+# Format: domain can be exact match or subdomain pattern
 auto_accept:
-  # Example: Auto-accept all Notion sites as recursive
-  # - domain: "notion.site"
-  #   mode: "recursive"
-  #   max_depth: 2
+  # Documentation sites
+  - domain: "docs.google.com"
+  - domain: "notion.site"
 
-- domain: "docs.google.com"
+  # Forms
+  - domain: "form.typeform.com"
+  - domain: "forms.monday.com"
+  - domain: "forms.gle"
 
-# Forms
-- domain: "form.typeform.com"
-- domain: "forms.monday.com"
-- domain: "forms.gle"
+# ========== URL Categorization ==========
 
-# Link categorization: domains are matched to categorize extracted links
+# Rules for categorizing URLs (used by suggest.py)
+categorization:
+  # Domain-based categorization
+  domains:
+    # Social media
+    "twitter.com": ["social", "twitter"]
+    "x.com": ["social", "twitter"]
+    "t.me": ["social", "telegram"]
+    "telegram.org": ["social", "telegram"]
+    "discord.gg": ["social", "discord"]
+    "discord.com": ["social", "discord"]
+    "matrix.to": ["social", "matrix"]
+
+    # Code repositories
+    "github.com": ["github"]
+
+    # Documentation & Forms
+    "docs.google.com": ["documentation", "form"]
+    "forms.google.com": ["form"]
+    "forms.gle": ["form"]
+    "forms.monday.com": ["form"]
+    "form.typeform.com": ["form"]
+    "typeform.com": ["form"]
+    "notion.site": ["documentation"]
+    "notion.so": ["documentation"]
+
+    # Governance platforms
+    "subsquare.io": ["governance"]
+    "polkassembly.io": ["governance"]
+
+  # Path-based categorization
+  paths:
+    "/forms/": ["form"]
+    "/form/": ["form"]
+    "/docs/": ["documentation"]
+    "/doc/": ["documentation"]
+    "/wiki/": ["documentation"]
+    "/guide/": ["documentation"]
+    "/blog/": ["documentation"]
+    "/proposal": ["governance"]
+    "/referenda": ["governance"]
+    "/treasury": ["governance"]
+    "/bounty": ["governance"]
+
+  # Type mapping: determines if URL should be scraped or just linked in metadata
+  # Priority order: social > associated_url > scrape (default)
+  type_mapping:
+    social: ["social", "discord", "telegram", "matrix", "twitter"]
+    associated_url: ["github"]
+    # Everything else defaults to "scrape"
+
+# ========== Link Categorization ==========
+
+# Categories for extracted links (used by scraper.py when extracting links from pages)
 link_categories:
   social:
     - "twitter.com"
@@ -59,3 +125,26 @@ link_categories:
     - "typeform.com"
     - "forms.monday.com"
     - "airtable.com/shr"
+
+# ========== Ignored URLs ==========
+
+# URLs that should never be scraped
+ignored:
+  - url: https://polkassembly.io
+    reason: On-chain data - not documentation
+  - url: https://polkadot.js.org
+    reason: App interface - not documentation
+  - url: https://www.marketing-bounty.com/
+    reason: Taken down
+  - url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+    reason: Taken down
+  - url: https://polkadotplay.org
+    reason: SSL certificate error - hostname mismatch
+  - url: https://hackenproof.com/programs/polkadot-bridge
+    reason: HTTP 403 - blocked for agents?
+  - url: https://github.com/opensquare-network/subsquare/issues
+    reason: Issue tracker - not documentation
+  - url: https://app.element.io
+    reason: App interface - not documentation
+  - url: https://wiki.polkadot.network
+    reason: Official Polkadot wiki - out of scope

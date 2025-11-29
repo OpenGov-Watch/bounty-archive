@@ -10,130 +10,26 @@ All suggestions include categories and type classification.
 """
 
 import argparse
-import sys
 import yaml
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
-from urllib.parse import urlparse
+from typing import Dict, List, Set
 
-
-class URLCategorizer:
-    """Categorizes URLs based on domain and path patterns"""
-
-    # Domain-based categories
-    DOMAIN_CATEGORIES = {
-        'github.com': ['github'],
-        'twitter.com': ['social', 'twitter'],
-        'x.com': ['social', 'twitter'],
-        't.me': ['social', 'telegram'],
-        'discord.gg': ['social', 'discord'],
-        'discord.com': ['social', 'discord'],
-        'matrix.to': ['social', 'matrix'],
-        'docs.google.com': ['documentation', 'form'],
-        'forms.google.com': ['form'],
-        'forms.gle': ['form'],
-        'forms.monday.com': ['form'],
-        'form.typeform.com': ['form'],
-        'typeform.com': ['form'],
-        'notion.site': ['documentation'],
-        'notion.so': ['documentation'],
-        'subsquare.io': ['governance'],
-        'polkassembly.io': ['governance'],
-    }
-
-    # Path-based categories
-    PATH_PATTERNS = {
-        '/forms/': ['form'],
-        '/form/': ['form'],
-        '/docs/': ['documentation'],
-        '/doc/': ['documentation'],
-        '/wiki/': ['documentation'],
-        '/guide/': ['documentation'],
-        '/blog/': ['documentation'],
-        '/proposal': ['governance'],
-        '/referenda': ['governance'],
-        '/treasury': ['governance'],
-        '/bounty': ['governance'],
-    }
-
-    @classmethod
-    def categorize(cls, url: str) -> List[str]:
-        """Categorize a URL based on domain and path"""
-        categories = set()
-
-        try:
-            parsed = urlparse(url)
-            domain = parsed.netloc.lower()
-            path = parsed.path.lower()
-
-            # Check domain patterns
-            for domain_pattern, cats in cls.DOMAIN_CATEGORIES.items():
-                if domain_pattern in domain:
-                    categories.update(cats)
-
-            # Check path patterns
-            for path_pattern, cats in cls.PATH_PATTERNS.items():
-                if path_pattern in path:
-                    categories.update(cats)
-
-            # Default if no matches
-            if not categories:
-                categories.add('other')
-
-            return sorted(list(categories))
-
-        except Exception:
-            return ['other']
-
-    @classmethod
-    def get_type(cls, categories: List[str]) -> str:
-        """Determine suggestion type based on categories"""
-        # Social media (not scraped, added to metadata)
-        social_categories = {'social', 'discord', 'telegram', 'matrix', 'twitter'}
-        if any(cat in categories for cat in social_categories):
-            return 'social'
-
-        # Associated URLs (not scraped, added to metadata)
-        associated_categories = {'github'}
-        if any(cat in categories for cat in associated_categories):
-            return 'associated_url'
-
-        # Everything else gets scraped
-        return 'scrape'
+from config import ScrapeConfig
 
 
 class SuggestionGenerator:
     """Generates scraping suggestions from metadata or discovered links"""
 
-    def __init__(self, project_root: Path):
+    def __init__(self, project_root: Path, config: ScrapeConfig):
         self.project_root = project_root
+        self.config = config
         self.bounties_dir = project_root / "bounties"
         self.scraping_dir = project_root / "scraping"
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
-        self.ignore_file = self.scraping_dir / "scrape-ignore.yml"
         self.index_file = self.scraping_dir / "scrape-index.yml"
         self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
-        self.config_file = self.scraping_dir / "scrape-config.yml"
         self.links_file = self.scraping_dir / "scrape-links.yml"
-
-        # Load configuration
-        self.config = self.load_config()
-
-    def load_config(self) -> Dict:
-        """Load scraping configuration"""
-        if not self.config_file.exists():
-            print(f"Error: Configuration file not found: {self.config_file}")
-            print("Please create scrape-config.yml in the scraping directory.")
-            print("See SCRAPING.md for the required format.")
-            sys.exit(1)
-
-        with open(self.config_file, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
-            if config is None:
-                print(f"Error: Configuration file is empty: {self.config_file}")
-                sys.exit(1)
-            return config
 
     def load_yaml_file(self, file_path: Path) -> Dict:
         """Load and parse YAML file"""
@@ -145,7 +41,7 @@ class SuggestionGenerator:
             return data if data is not None else {}
 
     def get_all_processed_urls(self) -> Set[str]:
-        """Get all URLs that have been queued, ignored, indexed, or suggested"""
+        """Get all URLs that have been queued, indexed, or suggested"""
         urls = set()
 
         # From queue
@@ -153,12 +49,6 @@ class SuggestionGenerator:
         queue = queue_data.get('queue', [])
         if queue:
             urls.update(item['url'] for item in queue if item and 'url' in item)
-
-        # From ignore list
-        ignore_data = self.load_yaml_file(self.ignore_file)
-        ignored = ignore_data.get('ignored', [])
-        if ignored:
-            urls.update(item['url'] for item in ignored if item and 'url' in item)
 
         # From index
         index_data = self.load_yaml_file(self.index_file)
@@ -172,16 +62,14 @@ class SuggestionGenerator:
         if suggestions:
             urls.update(item['url'] for item in suggestions if item and 'url' in item)
 
-        return urls
+        # From ignored list (in config)
+        for ignored_item in self.config.ignored_urls:
+            if isinstance(ignored_item, dict):
+                urls.add(ignored_item.get('url', ''))
+            elif isinstance(ignored_item, str):
+                urls.add(ignored_item)
 
-    def get_default_mode(self) -> Tuple[str, int]:
-        """Get default scraping mode from config"""
-        mode = self.config.get('default_mode', 'single')
-        if mode == 'recursive':
-            max_depth = self.config.get('recursive_defaults', {}).get('max_depth', 2)
-        else:
-            max_depth = self.config.get('single_defaults', {}).get('max_depth', 1)
-        return mode, max_depth
+        return urls
 
     def extract_urls_from_metadata(self, metadata_file: Path, bounty_id: int) -> List[Dict]:
         """Extract URLs from a bounty metadata file with categorization"""
@@ -202,40 +90,46 @@ class SuggestionGenerator:
                 continue
 
             if url and isinstance(url, str) and url.startswith('http'):
-                mode, max_depth = self.get_default_mode()
-                categories = URLCategorizer.categorize(url)
-                suggestion_type = URLCategorizer.get_type(categories)
+                # Check if ignored
+                is_ignored, reason = self.config.is_ignored(url)
+                if not is_ignored:
+                    mode, max_depth = self.config.get_default_mode_settings()
+                    categories = self.config.categorize_url(url)
+                    suggestion_type = self.config.get_suggestion_type(categories)
 
-                suggestions.append({
-                    'bounty_id': bounty_id,
-                    'url': url,
-                    'mode': mode,
-                    'max_depth': max_depth,
-                    'source': f'metadata.links.{field}',
-                    'categories': categories,
-                    'type': suggestion_type,
-                    'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-                })
+                    suggestions.append({
+                        'bounty_id': bounty_id,
+                        'url': url,
+                        'mode': mode,
+                        'max_depth': max_depth,
+                        'source': f'metadata.links.{field}',
+                        'categories': categories,
+                        'type': suggestion_type,
+                        'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+                    })
 
         # Also check contact.applicationForm
         if 'contact' in metadata and metadata['contact']:
             contact = metadata['contact']
             app_form = contact.get('applicationForm')
             if app_form and isinstance(app_form, str) and app_form.startswith('http'):
-                mode, max_depth = self.get_default_mode()
-                categories = URLCategorizer.categorize(app_form)
-                suggestion_type = URLCategorizer.get_type(categories)
+                # Check if ignored
+                is_ignored, reason = self.config.is_ignored(app_form)
+                if not is_ignored:
+                    mode, max_depth = self.config.get_default_mode_settings()
+                    categories = self.config.categorize_url(app_form)
+                    suggestion_type = self.config.get_suggestion_type(categories)
 
-                suggestions.append({
-                    'bounty_id': bounty_id,
-                    'url': app_form,
-                    'mode': mode,
-                    'max_depth': max_depth,
-                    'source': 'metadata.contact.applicationForm',
-                    'categories': categories,
-                    'type': suggestion_type,
-                    'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-                })
+                    suggestions.append({
+                        'bounty_id': bounty_id,
+                        'url': app_form,
+                        'mode': mode,
+                        'max_depth': max_depth,
+                        'source': 'metadata.contact.applicationForm',
+                        'categories': categories,
+                        'type': suggestion_type,
+                        'discovered_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+                    })
 
         return suggestions
 
@@ -332,19 +226,24 @@ class SuggestionGenerator:
             if url in processed_urls:
                 continue
 
+            # Check if ignored
+            is_ignored, reason = self.config.is_ignored(url)
+            if is_ignored:
+                continue
+
             # This is a new URL!
             seen_urls.add(url)
 
             # Get categories (from link or categorize)
             categories = link.get('categories', [])
             if not categories:
-                categories = URLCategorizer.categorize(url)
+                categories = self.config.categorize_url(url)
 
             # Determine type
-            suggestion_type = URLCategorizer.get_type(categories)
+            suggestion_type = self.config.get_suggestion_type(categories)
 
             # Get default mode
-            mode, max_depth = self.get_default_mode()
+            mode, max_depth = self.config.get_default_mode_settings()
 
             suggestion = {
                 'url': url,
@@ -435,7 +334,12 @@ def main():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
 
-    generator = SuggestionGenerator(project_root)
+    # Load configuration
+    config_file = script_dir / "scrape-config.yml"
+    config = ScrapeConfig(config_file)
+
+    # Create generator
+    generator = SuggestionGenerator(project_root, config)
 
     # Generate suggestions based on source
     if args.source == 'metadata':

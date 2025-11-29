@@ -1,5 +1,5 @@
 version: '1.0'
-last_generated: '2025-11-29T10:36:25.468325Z'
+last_generated: '2025-11-29T10:50:42.348089Z'
 suggestions:
 - bounty_id: 10
   url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
@@ -9,7 +9,7 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.445324Z'
+  discovered_at: '2025-11-29T10:50:42.299300Z'
 - bounty_id: 11
   url: https://polkadot.antiscam.team/
   mode: single
@@ -18,7 +18,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.446324Z'
+  discovered_at: '2025-11-29T10:50:42.301302Z'
 - bounty_id: 11
   url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
   mode: single
@@ -27,7 +27,7 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.446324Z'
+  discovered_at: '2025-11-29T10:50:42.301302Z'
 - bounty_id: 17
   url: https://dotevents.xyz/
   mode: single
@@ -36,7 +36,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.447324Z'
+  discovered_at: '2025-11-29T10:50:42.302806Z'
 - bounty_id: 17
   url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
   mode: single
@@ -45,7 +45,7 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.447324Z'
+  discovered_at: '2025-11-29T10:50:42.302806Z'
 - bounty_id: 19
   url: https://use.ink/ubator/
   mode: single
@@ -54,7 +54,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.448324Z'
+  discovered_at: '2025-11-29T10:50:42.303813Z'
 - bounty_id: 19
   url: https://inkubatordocs.notion.site/
   mode: single
@@ -63,7 +63,7 @@ suggestions:
   categories:
   - documentation
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.448324Z'
+  discovered_at: '2025-11-29T10:50:42.303813Z'
 - bounty_id: 22
   url: https://polkadotassurance.com/
   mode: single
@@ -72,7 +72,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.450323Z'
+  discovered_at: '2025-11-29T10:50:42.311906Z'
 - bounty_id: 24
   url: https://polkadot.subsquare.io/referenda/135
   mode: single
@@ -81,7 +81,7 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.451324Z'
+  discovered_at: '2025-11-29T10:50:42.314052Z'
 - bounty_id: 36
   url: https://www.velocitylabs.org/
   mode: single
@@ -90,7 +90,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.456322Z'
+  discovered_at: '2025-11-29T10:50:42.321055Z'
 - bounty_id: 37
   url: https://paseo.network
   mode: single
@@ -99,7 +99,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.457323Z'
+  discovered_at: '2025-11-29T10:50:42.327564Z'
 - bounty_id: 43
   url: http://dotmeetups.xyz/
   mode: single
@@ -108,7 +108,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.459324Z'
+  discovered_at: '2025-11-29T10:50:42.331563Z'
 - bounty_id: 43
   url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
   mode: single
@@ -117,7 +117,7 @@ suggestions:
   categories:
   - documentation
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.459324Z'
+  discovered_at: '2025-11-29T10:50:42.331563Z'
 - bounty_id: 44
   url: https://polkadot.com/bridges-bug-bounty/
   mode: single
@@ -126,7 +126,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.460324Z'
+  discovered_at: '2025-11-29T10:50:42.333068Z'
 - bounty_id: 50
   url: https://wiki.ibp.network/
   mode: single
@@ -135,7 +135,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.462323Z'
+  discovered_at: '2025-11-29T10:50:42.335072Z'
 - bounty_id: 52
   url: https://www.uxbounty.xyz/
   mode: single
@@ -144,7 +144,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.463324Z'
+  discovered_at: '2025-11-29T10:50:42.341580Z'
 - bounty_id: 52
   url: https://polkadot-ux-bounty.notion.site/
   mode: single
@@ -153,7 +153,7 @@ suggestions:
   categories:
   - documentation
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.463324Z'
+  discovered_at: '2025-11-29T10:50:42.341580Z'
 - bounty_id: 52
   url: https://calendar.app.google/mBpAmbXzvNBQstYn9
   mode: single
@@ -162,7 +162,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.463324Z'
+  discovered_at: '2025-11-29T10:50:42.341580Z'
 - bounty_id: 62
   url: https://www.polkadot.law/legalbounty
   mode: single
@@ -171,7 +171,7 @@ suggestions:
   categories:
   - other
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.465324Z'
+  discovered_at: '2025-11-29T10:50:42.345088Z'
 - bounty_id: 62
   url: https://polkadot.subsquare.io/referenda/1359
   mode: single
@@ -180,7 +180,7 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.465324Z'
+  discovered_at: '2025-11-29T10:50:42.345088Z'
 - bounty_id: 64
   url: https://polkadot.subsquare.io/referenda/1377
   mode: single
@@ -189,4 +189,4 @@ suggestions:
   categories:
   - governance
   type: scrape
-  discovered_at: '2025-11-29T10:36:25.468325Z'
+  discovered_at: '2025-11-29T10:50:42.348089Z'
