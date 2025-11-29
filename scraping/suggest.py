@@ -93,15 +93,12 @@ class SuggestionGenerator:
                 # Check if ignored
                 is_ignored, reason = self.config.is_ignored(url)
                 if not is_ignored:
-                    mode, max_depth = self.config.get_default_mode_settings()
                     categories = self.config.categorize_url(url)
                     suggestion_type = self.config.get_suggestion_type(categories)
 
                     suggestions.append({
                         'bounty_id': bounty_id,
                         'url': url,
-                        'mode': mode,
-                        'max_depth': max_depth,
                         'source': f'metadata.links.{field}',
                         'categories': categories,
                         'type': suggestion_type,
@@ -116,15 +113,12 @@ class SuggestionGenerator:
                 # Check if ignored
                 is_ignored, reason = self.config.is_ignored(app_form)
                 if not is_ignored:
-                    mode, max_depth = self.config.get_default_mode_settings()
                     categories = self.config.categorize_url(app_form)
                     suggestion_type = self.config.get_suggestion_type(categories)
 
                     suggestions.append({
                         'bounty_id': bounty_id,
                         'url': app_form,
-                        'mode': mode,
-                        'max_depth': max_depth,
                         'source': 'metadata.contact.applicationForm',
                         'categories': categories,
                         'type': suggestion_type,
@@ -242,14 +236,9 @@ class SuggestionGenerator:
             # Determine type
             suggestion_type = self.config.get_suggestion_type(categories)
 
-            # Get default mode
-            mode, max_depth = self.config.get_default_mode_settings()
-
             suggestion = {
                 'url': url,
                 'bounty_id': link['bounty_id'],
-                'mode': mode,
-                'max_depth': max_depth,
                 'source': f"discovered from {link['source_url']}",
                 'categories': categories,
                 'discovered_at': link.get('discovered_at', datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')),

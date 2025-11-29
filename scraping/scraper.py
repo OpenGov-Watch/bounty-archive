@@ -42,6 +42,10 @@ class ScrapeJob:
     url: str
     mode: str  # "single" or "recursive"
     max_depth: int = 1
+    source: str = "Unknown"
+    categories: list = field(default_factory=list)
+    type: str = "scrape"
+    discovered_at: str = None
 
 
 class PolkadotBountyScraper:
@@ -416,12 +420,16 @@ class PolkadotBountyScraper:
         else:
             result = self.scrape_single(job)
 
-        # Add metadata
+        # Add metadata (preserve all fields from queue)
         result.update({
             'bounty_id': job.bounty_id,
             'url': job.url,
             'mode': job.mode,
             'max_depth': job.max_depth if job.mode == "recursive" else None,
+            'source': job.source,
+            'categories': job.categories,
+            'type': job.type,
+            'discovered_at': job.discovered_at,
             'scraped_at': start_time.isoformat().replace('+00:00', 'Z')
         })
 
@@ -507,15 +515,28 @@ class PolkadotBountyScraper:
                         existing_entry['scraped_at'] = result.get('scraped_at', '')
                         if location:
                             existing_entry['location'] = location
+                        # Update metadata fields
+                        existing_entry['source'] = result.get('source', 'Unknown')
+                        existing_entry['categories'] = result.get('categories', [])
+                        existing_entry['type'] = result.get('type', 'scrape')
+                        if result.get('discovered_at'):
+                            existing_entry['discovered_at'] = result['discovered_at']
                     else:
                         # Add new entry (pages count is for the whole job, not per URL)
-                        index_data['index'].append({
+                        entry = {
                             'url': url,
                             'bounty_id': result['bounty_id'],
                             'scraped_at': result.get('scraped_at', ''),
                             'location': location or '',
-                            'pages': 1  # Each URL is 1 page
-                        })
+                            'pages': 1,  # Each URL is 1 page
+                            'source': result.get('source', 'Unknown'),
+                            'categories': result.get('categories', []),
+                            'type': result.get('type', 'scrape')
+                        }
+                        # Only add discovered_at if it exists
+                        if result.get('discovered_at'):
+                            entry['discovered_at'] = result['discovered_at']
+                        index_data['index'].append(entry)
 
         # Update metadata
         index_data['version'] = "1.0"
