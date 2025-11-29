@@ -225,7 +225,7 @@ class CleanupTool:
         return deleted_count
 
     def reset_complete(self, confirm: bool = False):
-        """Complete reset including scraped files"""
+        """Complete reset including scraped files and queue"""
         if not confirm:
             print("\n[!] DANGER: This will delete EVERYTHING including scraped files!")
             print("\nThis will clear:")
@@ -233,9 +233,9 @@ class CleanupTool:
             print("  - scrape-results.yml (all scraping results)")
             print("  - scrape-links.yml (all discovered links)")
             print("  - scrape-suggestions.yml (all pending suggestions)")
+            print("  - scrape-queue.yml (your queue)")
             print("  - bounties/*/scraped/ directories (ALL SCRAPED FILES)")
             print("\nThis will NOT delete:")
-            print("  - scrape-queue.yml (your queue)")
             print("  - scrape-ignore.yml (your ignore list)")
             print("  - scrape-config.yml (your configuration)")
             print("  - bounties/*/metadata.yml (bounty metadata)")
@@ -248,6 +248,13 @@ class CleanupTool:
 
         # First reset all YAML files
         self.reset_all(confirm=True)
+
+        # Clear the queue
+        queue_data = {
+            'queue': []
+        }
+        self.save_yaml_file(self.queue_file, queue_data)
+        print(f"[+] Reset {self.queue_file.name}")
 
         # Then delete scraped files
         print("\n[+] Deleting scraped files...")
@@ -267,21 +274,21 @@ Usage:
 
 Commands:
   stats                    Show index statistics
-  reset-all                Reset index/results/links/suggestions (keeps scraped files)
-  reset-complete           Reset EVERYTHING including scraped files (DANGER!)
+  reset-all                Reset index/results/links/suggestions (keeps scraped files & queue)
+  reset-complete           Reset EVERYTHING including scraped files and queue (DANGER!)
   remove-url <url>         Remove specific URL from index (for re-scraping)
   remove-bounty <id>       Remove all URLs for a bounty from index
   clear-suggestions        Clear suggestions file
-  clear-queue              Clear scrape queue (WARNING: destructive)
+  clear-queue              Clear scrape queue only (WARNING: destructive)
 
 Examples:
   # Show current index stats
   python cleanup.py stats
 
-  # Reset index for fresh start (keeps scraped files)
+  # Reset index for fresh start (keeps scraped files and queue)
   python cleanup.py reset-all
 
-  # Complete reset including deleting all scraped files (DANGER!)
+  # Complete reset: deletes all scraped files AND clears queue (DANGER!)
   python cleanup.py reset-complete
 
   # Remove a specific URL to re-scrape it recursively
