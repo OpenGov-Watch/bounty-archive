@@ -16,14 +16,14 @@ class CleanupTool:
     """Tool for managing scraping index and resetting data"""
 
     def __init__(self, scraping_dir: Path):
-        self.scraping_dir = scraping_dir
-        self.project_root = scraping_dir.parent
+        self.scraping_dir = scraping_dir.resolve()
+        self.project_root = self.scraping_dir.parent
         self.bounties_dir = self.project_root / "bounties"
-        self.index_file = scraping_dir / "scrape-index.yml"
-        self.results_file = scraping_dir / "scrape-results.yml"
-        self.links_file = scraping_dir / "scrape-links.yml"
-        self.suggestions_file = scraping_dir / "scrape-suggestions.yml"
-        self.queue_file = scraping_dir / "scrape-queue.yml"
+        self.index_file = self.scraping_dir / "scrape-index.yml"
+        self.results_file = self.scraping_dir / "scrape-results.yml"
+        self.links_file = self.scraping_dir / "scrape-links.yml"
+        self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
+        self.queue_file = self.scraping_dir / "scrape-queue.yml"
 
     def load_yaml_file(self, file_path: Path):
         """Load YAML file"""
@@ -206,11 +206,10 @@ class CleanupTool:
         import shutil
 
         if not self.bounties_dir.exists():
-            print("No bounties directory found.")
-            return
+            print(f"  [!] Bounties directory not found: {self.bounties_dir}")
+            return 0
 
         deleted_count = 0
-        bounty_count = 0
 
         for bounty_dir in self.bounties_dir.iterdir():
             if not bounty_dir.is_dir():
@@ -221,7 +220,6 @@ class CleanupTool:
                 # Delete the entire scraped directory
                 shutil.rmtree(scraped_dir)
                 deleted_count += 1
-                bounty_count += 1
                 print(f"  [+] Deleted {scraped_dir.relative_to(self.project_root)}")
 
         return deleted_count
