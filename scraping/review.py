@@ -14,21 +14,19 @@ from pathlib import Path
 from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
+from config import ScrapeConfig
+
 
 class SuggestionReviewer:
     """Interactive reviewer for scraping suggestions"""
 
-    def __init__(self, project_root: Path):
+    def __init__(self, project_root: Path, config: ScrapeConfig):
         self.project_root = project_root
+        self.config = config
         self.scraping_dir = project_root / "scraping"
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
-        self.ignore_file = self.scraping_dir / "scrape-ignore.yml"
         self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
-        self.config_file = self.scraping_dir / "scrape-config.yml"
         self.index_file = self.scraping_dir / "scrape-index.yml"
-
-        # Load configuration
-        self.config = self.load_config()
 
         # Track changes
         self.accepted = []
@@ -36,21 +34,6 @@ class SuggestionReviewer:
         self.ignored = []
         self.modified = []
         self.skipped_already_scraped = []
-
-    def load_config(self) -> Dict:
-        """Load scraping configuration"""
-        if not self.config_file.exists():
-            print(f"Error: Configuration file not found: {self.config_file}")
-            print("Please create scrape-config.yml in the scraping directory.")
-            print("See SCRAPING.md for the required format.")
-            sys.exit(1)
-
-        with open(self.config_file, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
-            if config is None:
-                print(f"Error: Configuration file is empty: {self.config_file}")
-                sys.exit(1)
-            return config
 
     def load_yaml_file(self, file_path: Path) -> Dict:
         """Load and parse YAML file"""
@@ -244,20 +227,12 @@ class SuggestionReviewer:
         self.save_yaml_file(self.queue_file, queue_data)
 
     def add_to_ignore(self, suggestion: Dict, reason: Optional[str] = None):
-        """Add suggestion to ignore list"""
-        ignore_data = self.load_yaml_file(self.ignore_file)
-
-        # Initialize ignored list if needed
-        if 'ignored' not in ignore_data or ignore_data['ignored'] is None:
-            ignore_data['ignored'] = []
-
-        # Prepare ignore entry
-        entry = {'url': suggestion['url']}
+        """Note: Ignored URLs are now managed in scrape-config.yml"""
+        # Ignored URLs should be manually added to scrape-config.yml for permanent ignoring
+        print(f"\n[!] URL ignored: {suggestion['url']}")
         if reason:
-            entry['reason'] = reason
-
-        ignore_data['ignored'].append(entry)
-        self.save_yaml_file(self.ignore_file, ignore_data)
+            print(f"    Reason: {reason}")
+        print(f"    To permanently ignore, add to scrape-config.yml under 'ignored' section")
 
     def parse_social_url(self, url: str) -> tuple[str, str]:
         """Parse social URL into (platform, handle/identifier)"""
@@ -397,7 +372,7 @@ class SuggestionReviewer:
 
     def check_auto_accept(self, url: str) -> Optional[tuple[str, int]]:
         """Check if URL matches auto-accept rules. Returns (mode, max_depth) if matched, None otherwise"""
-        auto_accept_rules = self.config.get('auto_accept', [])
+        auto_accept_rules = self.config.auto_accept_rules
         if not auto_accept_rules:
             return None
 
@@ -642,7 +617,12 @@ def main():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
 
-    reviewer = SuggestionReviewer(project_root)
+    # Load configuration
+    config_file = script_dir / "scrape-config.yml"
+    config = ScrapeConfig(config_file)
+
+    # Create reviewer and run
+    reviewer = SuggestionReviewer(project_root, config)
     reviewer.review_suggestions()
 
 

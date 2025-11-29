@@ -82,14 +82,14 @@ For each suggestion, choose:
   - **Associated URLs** → `metadata.yml` under `associated_urls`
   - **Associated Socials** → `metadata.yml` under `associated_socials`
 - **[M]odify** - Edit bounty_id/url/mode/depth (scrape URLs only)
-- **[I]gnore** - Add to `scrape-ignore.yml` (never suggest again)
+- **[I]gnore** - Add to `scrape-config.yml` → `ignored` section (never suggest again)
 - **[S]kip** - Leave in suggestions for later
 - **[Q]uit** - Exit and keep remaining suggestions
 
 **Output:**
 - `scrape-queue.yml` (scrape URLs)
 - `metadata.yml` files (associated URLs and socials)
-- `scrape-ignore.yml` (ignored URLs)
+- `scrape-config.yml` → `ignored` section (ignored URLs)
 
 ### 3. Scrape URLs
 
@@ -157,7 +157,7 @@ This clears all auto-generated data:
 **Preserved files:**
 - Scraped content in `bounties/*/scraped/`
 - Your configuration (`scrape-config.yml`)
-- Your ignore list (`scrape-ignore.yml`)
+- Your ignore list (`scrape-config.yml` → `ignored` section)
 - Your queue (`scrape-queue.yml`)
 
 **After reset, start fresh:**
@@ -262,7 +262,7 @@ scraping/
 │
 ├── scrape-config.yml      # Configuration (user-managed)
 ├── scrape-queue.yml       # Scrape queue (user-managed)
-├── scrape-ignore.yml      # Ignore list (user-managed)
+├── scrape-config.yml      # Ignore list (user-managed)
 │
 ├── scrape-suggestions.yml # Auto-generated suggestions
 ├── scrape-index.yml       # Index of scraped URLs
@@ -427,7 +427,7 @@ During review, press **[M]** to modify settings:
 Add URLs to ignore list during review or manually:
 
 ```yaml
-# scrape-ignore.yml
+# scrape-config.yml
 ignored:
   - url: "https://example.com/irrelevant"
     reason: "Not useful"
@@ -541,7 +541,7 @@ queue:
     categories: ["documentation"]  # Preserved from suggestions
 ```
 
-### scrape-ignore.yml (User-Managed)
+### scrape-config.yml (User-Managed)
 URLs to never suggest or scrape:
 ```yaml
 ignored:

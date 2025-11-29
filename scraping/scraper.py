@@ -20,6 +20,8 @@ from dataclasses import dataclass, field
 import requests
 from bs4 import BeautifulSoup
 
+from config import ScrapeConfig
+
 
 @dataclass
 class ScrapedPage:
@@ -45,71 +47,25 @@ class ScrapeJob:
 class PolkadotBountyScraper:
     """Scraper for Polkadot bounty documentation"""
 
-    SOCIAL_DOMAINS = {
-        'twitter.com', 'x.com', 't.me', 'telegram.me',
-        'discord.com', 'discord.gg', 'matrix.to', 'matrix.org'
-    }
-
-    EXCLUDE_DOMAINS = {
-        'google.com', 'youtube.com', 'facebook.com', 'instagram.com',
-        'linkedin.com', 'reddit.com'
-    }
-
-    def __init__(self, project_root: Path):
+    def __init__(self, project_root: Path, config: ScrapeConfig):
         self.project_root = project_root
+        self.config = config
         self.bounties_dir = project_root / "bounties"
         self.scraping_dir = project_root / "scraping"
         self.queue_file = self.scraping_dir / "scrape-queue.yml"
         self.results_file = self.scraping_dir / "scrape-results.yml"
         self.index_file = self.scraping_dir / "scrape-index.yml"
         self.links_file = self.scraping_dir / "scrape-links.yml"
-        self.config_file = self.scraping_dir / "scrape-config.yml"
-
-        # Load configuration
-        self.config = self.load_config()
-        self.link_categories = self.config.get('link_categories', {})
 
         # Session for requests with proper headers
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (compatible; PolkadotBountyArchiver/1.0)'
+            'User-Agent': self.config.user_agent
         })
-
-    def load_config(self) -> Dict:
-        """Load scraping configuration from YAML file"""
-        if not self.config_file.exists():
-            print(f"Warning: Config file not found: {self.config_file}")
-            return {}
-
-        with open(self.config_file, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
-
-        return config or {}
 
     def categorize_link(self, url: str) -> List[str]:
         """Categorize a URL based on configured link_categories"""
-        categories = []
-        parsed = urlparse(url)
-        domain = parsed.netloc
-
-        for category_name, patterns in self.link_categories.items():
-            for pattern in patterns:
-                # Check if pattern matches domain
-                if pattern.startswith('.'):
-                    # Pattern like ".gitbook.io" matches any subdomain
-                    if domain.endswith(pattern[1:]):
-                        categories.append(category_name)
-                        break
-                elif pattern in domain:
-                    # Pattern like "docs." matches anywhere in domain
-                    categories.append(category_name)
-                    break
-
-        # If no categories matched, mark as "other"
-        if not categories:
-            categories.append('other')
-
-        return categories
+        return self.config.categorize_extracted_link(url)
 
     def load_queue(self) -> List[ScrapeJob]:
         """Load scraping queue from YAML file"""
@@ -153,7 +109,7 @@ class PolkadotBountyScraper:
         """Fetch URL and return response object"""
         try:
             print(f"  Fetching: {url}")
-            response = self.session.get(url, timeout=30, allow_redirects=True)
+            response = self.session.get(url, timeout=self.config.request_timeout, allow_redirects=True)
 
             # Check if redirected to different host
             if urlparse(response.url).netloc != urlparse(url).netloc:
@@ -398,7 +354,7 @@ class PolkadotBountyScraper:
                 errors.append(f"Failed to fetch: {url}")
 
             # Rate limiting
-            time.sleep(1)
+            time.sleep(self.config.rate_limit_delay)
 
         return {
             'status': 'completed' if not errors or files_created else 'partial' if files_created else 'failed',
@@ -733,7 +689,12 @@ def main():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
 
-    scraper = PolkadotBountyScraper(project_root)
+    # Load configuration
+    config_file = script_dir / "scrape-config.yml"
+    config = ScrapeConfig(config_file)
+
+    # Create scraper and run
+    scraper = PolkadotBountyScraper(project_root, config)
     scraper.run()
 
 
