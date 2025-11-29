@@ -97,9 +97,11 @@ Extracts URLs from all bounty metadata files and generates suggestions for scrap
 ```bash
 python review.py
 ```
-Interactively review suggestions:
+Interactively review suggestions with three-tier classification:
+- **Scrape URLs** (docs, forms, governance) → Added to scrape queue
+- **Associated URLs** (GitHub repos) → Added to metadata
+- **Associated Socials** (Twitter, Discord, Telegram) → Added to metadata
 - Auto-accepts URLs matching rules in `scrape-config.yml`
-- Prompts for manual review of other URLs
 - Options: Accept, Modify, Ignore, Skip, Quit
 
 **3. Scrape URLs**
@@ -123,16 +125,38 @@ git commit -m "Add scraped documentation for bounties #X, #Y"
 git push
 ```
 
+### Common Procedures
+
+**Fresh Start (Reset Everything)**
+```bash
+python cleanup.py reset-all  # Clears index, results, links, suggestions
+python suggest.py            # Re-generate from metadata
+```
+
+**View Index Stats**
+```bash
+python cleanup.py stats      # Show scraped URLs by bounty
+```
+
+**Augmentary Run (Go Deeper)**
+```bash
+python cleanup.py remove-url "https://example.com/"  # Remove from index
+# Edit scrape-queue.yml to add URL with recursive mode
+python scraper.py            # Re-scrape with new settings
+```
+
 ### Features
 
 - 📥 **Single & recursive scraping** - Fetch individual pages or entire documentation sites
 - 🔄 **Auto-suggestions** - Extracts URLs from bounty metadata automatically
 - ✅ **Auto-accept rules** - Configure trusted domains to skip manual review
 - 📄 **Original format preservation** - Saves HTML, PDF, JSON, etc. as-is with metadata
-- 🔗 **Link extraction & categorization** - Automatically extracts and categorizes links (social, github, documentation, governance, forms)
+- 🔗 **Three-tier classification** - Scrape URLs / Associated URLs (GitHub) / Associated Socials (Twitter, Discord)
+- 🔗 **Link extraction & categorization** - Automatically extracts and categorizes links
 - 🔍 **Link discovery** - Generates new scraping suggestions from extracted links
 - 🗂️ **Organized storage** - Saves to `bounties/[id]-[slug]/scraped/[domain]/`
-- 🌐 **Website integration** - Scraped content appears on bounty cards automatically
+- 🌐 **Website integration** - Scraped content and associated links appear on bounty cards automatically
+- 🧹 **Reset & cleanup tools** - Fresh starts and augmentary runs
 
 See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.
 

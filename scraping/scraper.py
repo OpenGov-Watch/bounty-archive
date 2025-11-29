@@ -466,7 +466,7 @@ class PolkadotBountyScraper:
             'url': job.url,
             'mode': job.mode,
             'max_depth': job.max_depth if job.mode == "recursive" else None,
-            'scraped_at': start_time.isoformat() + 'Z'
+            'scraped_at': start_time.isoformat().replace('+00:00', 'Z')
         })
 
         return result

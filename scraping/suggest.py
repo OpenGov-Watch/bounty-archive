@@ -11,7 +11,7 @@ import sys
 import yaml
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Tuple
 
 
 class SuggestionGenerator:
@@ -84,7 +84,7 @@ class SuggestionGenerator:
 
         return urls
 
-    def get_default_mode(self) -> tuple[str, int]:
+    def get_default_mode(self) -> Tuple[str, int]:
         """Get default scraping mode from config"""
         mode = self.config.get('default_mode', 'single')
         if mode == 'recursive':

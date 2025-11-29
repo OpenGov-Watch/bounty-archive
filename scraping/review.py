@@ -97,6 +97,16 @@ class SuggestionReviewer:
         with open(file_path, 'w', encoding='utf-8') as f:
             yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
+    def is_unscrapable_social(self, categories: list) -> bool:
+        """Check if categories indicate an unscrapable social link"""
+        social_categories = {'social', 'discord', 'telegram', 'matrix'}
+        return bool(set(categories) & social_categories)
+
+    def is_associated_url(self, categories: list) -> bool:
+        """Check if categories indicate an associated URL (not scraped)"""
+        associated_categories = {'github'}
+        return bool(set(categories) & associated_categories)
+
     def display_suggestion(self, suggestion: Dict, index: int, total: int):
         """Display a suggestion with formatting"""
         print("\n" + "=" * 60)
@@ -104,15 +114,19 @@ class SuggestionReviewer:
         print("=" * 60)
         # Determine type: check 'type' field first, fallback to checking categories
         suggestion_type = suggestion.get('type', 'scrape')
-        if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
-            suggestion_type = 'social'
+        categories = suggestion.get('categories', [])
+        if suggestion_type == 'scrape':
+            if self.is_unscrapable_social(categories):
+                suggestion_type = 'social'
+            elif self.is_associated_url(categories):
+                suggestion_type = 'associated_url'
         print(f"Type:       {suggestion_type.upper()}")
         print(f"Bounty ID:  {suggestion['bounty_id']}")
         print(f"URL:        {suggestion['url']}")
-        if suggestion_type != 'social':
+        if suggestion_type == 'scrape':
             print(f"Mode:       {suggestion['mode']}")
             print(f"Max Depth:  {suggestion.get('max_depth', 'N/A')}")
-        print(f"Categories: {', '.join(suggestion.get('categories', ['other']))}")
+        print(f"Categories: {', '.join(categories or ['other'])}")
         print(f"Source:     {suggestion.get('source', 'Unknown')}")
         print("=" * 60)
 
@@ -120,8 +134,9 @@ class SuggestionReviewer:
         """Get user's choice for a suggestion"""
         while True:
             print("\nActions:")
-            if suggestion_type == 'social':
-                print("  [A] Accept - Add to bounty metadata")
+            if suggestion_type in ['social', 'associated_url']:
+                action_label = "Add to bounty metadata (associated_socials)" if suggestion_type == 'social' else "Add to bounty metadata (associated_urls)"
+                print(f"  [A] Accept - {action_label}")
                 print("  [I] Ignore - Add to ignore list")
                 print("  [S] Skip - Leave for later")
                 print("  [Q] Quit - Exit reviewer")
@@ -221,6 +236,10 @@ class SuggestionReviewer:
         if suggestion['mode'] == 'recursive' and suggestion.get('max_depth'):
             entry['max_depth'] = suggestion['max_depth']
 
+        # Include categories if present
+        if 'categories' in suggestion and suggestion['categories']:
+            entry['categories'] = suggestion['categories']
+
         queue_data['queue'].append(entry)
         self.save_yaml_file(self.queue_file, queue_data)
 
@@ -285,6 +304,8 @@ class SuggestionReviewer:
 
         if not matches:
             print(f"\n[!] Error: Bounty folder not found for ID {bounty_id}")
+            print(f"    Expected folder pattern: {bounties_dir}/{pattern}")
+            print(f"    Please ensure the bounty folder exists before adding metadata.")
             return False
 
         bounty_folder = matches[0]
@@ -320,6 +341,58 @@ class SuggestionReviewer:
         self.save_yaml_file(metadata_file, metadata)
 
         print(f"\n[+] Added to metadata: {platform} - {identifier}")
+        return True
+
+    def add_associated_url_to_metadata(self, suggestion: Dict):
+        """Add associated URL to bounty metadata.yml under associated_urls"""
+        bounty_id = suggestion['bounty_id']
+        url = suggestion['url']
+        categories = suggestion.get('categories', ['other'])
+
+        # Find bounty folder
+        pattern = f"{bounty_id}-*"
+        bounties_dir = self.project_root / "bounties"
+        matches = list(bounties_dir.glob(pattern))
+
+        if not matches:
+            print(f"\n[!] Error: Bounty folder not found for ID {bounty_id}")
+            print(f"    Expected folder pattern: {bounties_dir}/{pattern}")
+            print(f"    Please ensure the bounty folder exists before adding metadata.")
+            return False
+
+        bounty_folder = matches[0]
+        metadata_file = bounty_folder / "metadata.yml"
+
+        if not metadata_file.exists():
+            print(f"\n[!] Error: metadata.yml not found in {bounty_folder}")
+            return False
+
+        # Load metadata
+        metadata = self.load_yaml_file(metadata_file)
+
+        # Initialize associated_urls if needed
+        if 'associated_urls' not in metadata:
+            metadata['associated_urls'] = {}
+
+        # Use first category as the grouping key
+        category = categories[0] if categories else 'other'
+
+        # Initialize category list if needed
+        if category not in metadata['associated_urls']:
+            metadata['associated_urls'][category] = []
+
+        # Check if already exists
+        if url in metadata['associated_urls'][category]:
+            print(f"\n[!] URL already in metadata: {category} - {url}")
+            return False
+
+        # Add to metadata
+        metadata['associated_urls'][category].append(url)
+
+        # Save metadata
+        self.save_yaml_file(metadata_file, metadata)
+
+        print(f"\n[+] Added to metadata: {category} - {url}")
         return True
 
     def check_auto_accept(self, url: str) -> Optional[tuple[str, int]]:
@@ -412,14 +485,19 @@ class SuggestionReviewer:
         manual_review_suggestions = []
 
         for i, suggestion in enumerate(suggestions):
-            # Skip social links in auto-accept (they need manual review for metadata)
+            # Skip social and associated URLs in auto-accept (they need manual review for metadata)
             # Check type field or fallback to categories
             suggestion_type = suggestion.get('type', 'scrape')
-            if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
-                suggestion_type = 'social'
-                suggestion['type'] = 'social'  # Update for consistency
+            categories = suggestion.get('categories', [])
+            if suggestion_type == 'scrape':
+                if self.is_unscrapable_social(categories):
+                    suggestion_type = 'social'
+                    suggestion['type'] = 'social'  # Update for consistency
+                elif self.is_associated_url(categories):
+                    suggestion_type = 'associated_url'
+                    suggestion['type'] = 'associated_url'  # Update for consistency
 
-            if suggestion_type == 'social':
+            if suggestion_type in ['social', 'associated_url']:
                 manual_review_suggestions.append(suggestion)
                 continue
 
@@ -467,16 +545,25 @@ class SuggestionReviewer:
             self.display_suggestion(suggestion, i, len(manual_review_suggestions))
             # Determine type: check 'type' field first, fallback to checking categories
             suggestion_type = suggestion.get('type', 'scrape')
-            if suggestion_type == 'scrape' and 'social' in suggestion.get('categories', []):
-                suggestion_type = 'social'
-                suggestion['type'] = 'social'  # Update for consistency
+            categories = suggestion.get('categories', [])
+            if suggestion_type == 'scrape':
+                if self.is_unscrapable_social(categories):
+                    suggestion_type = 'social'
+                    suggestion['type'] = 'social'  # Update for consistency
+                elif self.is_associated_url(categories):
+                    suggestion_type = 'associated_url'
+                    suggestion['type'] = 'associated_url'  # Update for consistency
             choice = self.get_user_choice(suggestion_type)
 
             if choice == 'A':
                 # Accept
                 if suggestion_type == 'social':
-                    # Add to metadata
+                    # Add to metadata (associated_socials)
                     if self.add_to_metadata(suggestion):
+                        self.accepted.append(suggestion['url'])
+                elif suggestion_type == 'associated_url':
+                    # Add to metadata (associated_urls)
+                    if self.add_associated_url_to_metadata(suggestion):
                         self.accepted.append(suggestion['url'])
                 else:
                     # Add to scrape queue
@@ -511,7 +598,8 @@ class SuggestionReviewer:
             elif choice == 'Q':
                 # Quit
                 print("\n-> Exiting reviewer...")
-                # Keep all remaining suggestions from manual review
+                # Keep current suggestion and all remaining suggestions from manual review
+                remaining_suggestions.append(suggestion)
                 remaining_suggestions.extend(manual_review_suggestions[i+1:])
                 break
 

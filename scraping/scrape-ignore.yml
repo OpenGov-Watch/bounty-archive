@@ -1,26 +1,16 @@
-# URL Ignore List
-
-# URLs that should never be scraped or suggested
-# Add URLs here that you've reviewed and decided not to scrape
-# You can also add domain patterns using wildcards
-
 ignored:
-  # Example format:
-  # - url: "https://example.com/page"
-  #   reason: "Not useful content"  # Optional reason
-
-  # Blockchain explorers (not documentation)
-  - url: "https://polkassembly.io"
-    reason: "On-chain data - not documentation"
-  - url: "https://polkadot.js.org"
-    reason: "App interface - not documentation"
-
-  # Sites that block scrapers or have technical issues
-  - url: "https://www.marketing-bounty.com/"
-    reason: "Taken down"
-  - url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
-    reason: "Taken down"
-  - url: "https://polkadotplay.org"
-    reason: "SSL certificate error - hostname mismatch"
-  - url: "https://hackenproof.com/programs/polkadot-bridge"
-    reason: "HTTP 403 - blocked for agents?"
+- url: https://polkassembly.io
+  reason: On-chain data - not documentation
+- url: https://polkadot.js.org
+  reason: App interface - not documentation
+- url: https://www.marketing-bounty.com/
+  reason: Taken down
+- url: https://marketingbounty.notion.site/MB-Spending-Tracker-15a4aaf5ccba80aeb9bcd73cd048dbd8
+  reason: Taken down
+- url: https://polkadotplay.org
+  reason: SSL certificate error - hostname mismatch
+- url: https://hackenproof.com/programs/polkadot-bridge
+  reason: HTTP 403 - blocked for agents?
+- url: https://github.com/opensquare-network/subsquare/issues
+- url: https://app.element.io
+- url: https://wiki.polkadot.network

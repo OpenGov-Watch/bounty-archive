@@ -25,9 +25,7 @@ auto_accept:
   #   mode: "recursive"
   #   max_depth: 2
 
-- domain: "subsquare.io"
 - domain: "docs.google.com"
-- domain: "polkadot.com"
 
 # Forms
 - domain: "form.typeform.com"
@@ -44,6 +42,7 @@ link_categories:
     - "discord.gg"
     - "discord.com"
     - "matrix.to"
+    - "youtube.com"
   documentation:
     - "docs."
     - "wiki."

@@ -175,11 +175,26 @@ class LinkDiscoverer:
             # This is a new URL!
             seen_urls.add(url)
 
-            # Check if this is a social link
+            # Determine type based on categories
             categories = link.get('categories', ['other'])
-            is_social = 'social' in categories
 
-            # Get default mode from config (socials don't get scraped)
+            # Associated socials (not scraped, added to metadata)
+            social_categories = {'social', 'discord', 'telegram', 'matrix'}
+            is_social = bool(set(categories) & social_categories)
+
+            # Associated URLs (not scraped, added to metadata)
+            associated_categories = {'github'}
+            is_associated = bool(set(categories) & associated_categories)
+
+            # Everything else gets scraped
+            if is_social:
+                suggestion_type = 'social'
+            elif is_associated:
+                suggestion_type = 'associated_url'
+            else:
+                suggestion_type = 'scrape'
+
+            # Get default mode from config (only used for scrape type)
             default_mode = self.config.get('default_mode', 'single')
             default_depth = 1
             if default_mode == 'recursive':
@@ -192,14 +207,9 @@ class LinkDiscoverer:
                 'max_depth': default_depth,
                 'source': f"discovered from {link['source_url']}",
                 'categories': categories,
-                'discovered_at': link.get('discovered_at', '')
+                'discovered_at': link.get('discovered_at', ''),
+                'type': suggestion_type
             }
-
-            # Mark social links with special type
-            if is_social:
-                suggestion['type'] = 'social'
-            else:
-                suggestion['type'] = 'scrape'
 
             new_suggestions.append(suggestion)
 

@@ -704,6 +704,47 @@
             `;
         }
 
+        function createAssociatedUrlsSection(associatedUrls) {
+            if (!associatedUrls || Object.keys(associatedUrls).length === 0) {
+                return '';
+            }
+
+            const categories = Object.entries(associatedUrls)
+                .filter(([category, urls]) => urls && urls.length > 0)
+                .map(([category, urls]) => {
+                    return `
+                        <div class="platform-group">
+                            <div class="platform-name">${category}</div>
+                            <div class="platform-links">
+                                ${urls.map(url => {
+                                    // Extract display text from URL
+                                    let displayText = url;
+                                    try {
+                                        const urlObj = new URL(url);
+                                        // For GitHub, show org/repo
+                                        if (urlObj.hostname.includes('github.com')) {
+                                            displayText = urlObj.pathname.slice(1) || url;
+                                        } else {
+                                            displayText = urlObj.hostname + urlObj.pathname;
+                                        }
+                                    } catch (e) {
+                                        displayText = url;
+                                    }
+                                    return `<a href="${url}" target="_blank" class="social-btn">${displayText}</a>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+            return `
+                <div class="associated-socials-section">
+                    <div class="section-title">Associated URLs</div>
+                    ${categories}
+                </div>
+            `;
+        }
+
         function createBountyCard(bounty) {
             const funding = bounty.funding || {};
             const links = bounty.links || {};
@@ -711,6 +752,7 @@
             const contact = bounty.contact || {};
             const github = bounty.github || {};
             const associatedSocials = bounty.associated_socials || {};
+            const associatedUrls = bounty.associated_urls || {};
 
             return `
                 <div class="bounty-card">
@@ -772,6 +814,7 @@
                     ` : ''}
 
                     ${createAssociatedSocialsSection(associatedSocials)}
+                    ${createAssociatedUrlsSection(associatedUrls)}
 
                     ${bounty.tags && bounty.tags.length > 0 ? `
                     <div class="tags">
