@@ -1,4 +1,2224 @@
 version: '1.0'
-last_updated: '2025-12-05T09:55:56.515612Z'
-total_links: 0
-discovered_links: []
+last_updated: '2025-12-05T12:18:55.526704Z'
+total_links: 370
+discovered_links:
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&followup=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  bounty_id: 19
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:56.463040Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  bounty_id: 19
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:15:56.463040Z'
+- url: https://docs.google.com/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S590636993:1764936959197297&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1uSf1j-ZnmQP71ftrHfRn95xrcq0CqdkdqNo91rN3Sv_U1e4rAg3rOuk101F3I3wzwZdkY&ltmpl=forms&osid=1&service=wise
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US&privacy=true
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://docs.google.com/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S590636993:1764936959197297&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1uSf1j-ZnmQP71ftrHfRn95xrcq0CqdkdqNo91rN3Sv_U1e4rAg3rOuk101F3I3wzwZdkY&ltmpl=forms&osid=1&service=wise
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://support.google.com/accounts?hl=en-US&p=account_iph
+  source_url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:58.030500Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  bounty_id: 31
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:15:59.059682Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&followup=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  bounty_id: 31
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:15:59.059682Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  bounty_id: 32
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:00.238679Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&followup=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  bounty_id: 32
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:00.238679Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  bounty_id: 33
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:00.777652Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&followup=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  bounty_id: 33
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:00.777652Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  bounty_id: 36
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:01.312677Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&followup=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:01.312677Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&followup=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  bounty_id: 37
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:02.311717Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  bounty_id: 37
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:02.311717Z'
+- url: https://accounts.google.com/AccountChooser?continue=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form&service=wise
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://docs.google.com/document/d/1ET7lOb91316T_F10PbJ6HuntVq_dHUjc/edit
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://policies.google.com/terms
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://www.google.com/forms/about?utm_source=product&utm_medium=forms_logo&utm_campaign=forms
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://policies.google.com/privacy
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://drive.google.com/abuse?id=AKkXjoyWGjVhy6dm2X70wDOFBh4vF-EF0SUALyE3EDZ0h_BwcSDNJQG6L1F2oLRkIprxWU60eafA6WAeH47iNic:0&docurl=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form
+  source_url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:03.926008Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&followup=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  bounty_id: 44
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:04.545633Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  bounty_id: 44
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:04.545633Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&followup=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:06.279016Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:06.279016Z'
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US&privacy=true
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://forms.gle/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1995626213:1764936968610536&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU2wzkGBdX1P7C5fW_4msjY7JGaXxvOO6fQBjQjOCIglmTppiOo0QLnycamlhHcE3Mppr07c5A&ltmpl=forms&osid=1&service=wise
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://accounts.google.com/TOS?loc=AT&hl=en-US
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://forms.gle/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1995626213:1764936968610536&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU2wzkGBdX1P7C5fW_4msjY7JGaXxvOO6fQBjQjOCIglmTppiOo0QLnycamlhHcE3Mppr07c5A&ltmpl=forms&osid=1&service=wise
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://support.google.com/accounts?hl=en-US&p=account_iph
+  source_url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:07.317019Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&followup=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  bounty_id: 59
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:08.846127Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  bounty_id: 59
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:08.846127Z'
+- url: https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&followup=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&ltmpl=docs&ec=GAZAGQ
+  source_url: https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  bounty_id: 63
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:09.381795Z'
+- url: https://docs.google.com/document?usp=docs_web
+  source_url: https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  bounty_id: 63
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:09.381795Z'
+- url: https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/treasury/tips
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/14mwSGdhdrAA3pGoKSX1tWguFREswWucAsr7kcHbdsf7fU7Q
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/democracy/referenda
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/democracy/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/council/members
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/12NLgzqfhuJkc9mZ5XUTTG85N8yhhzfptwqF1xVhtK3ZX7f6
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/council/motions
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/democracy/externals
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/techcomm/members
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.subsquare.io/techcomm/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:10.015354Z'
+- url: https://polkadot.antiscam.team/sitemap
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkaverse.com/11141/anti-scam-bounty-team-infographics-for-task-7-educational-37774
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/spends
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://www.youtube.com/@PolkadotAntiscamTeam
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/best-practices-for-safeguarding-seed-phrases
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/spreadsheets/d/1sTmI3hF2oFJ8dK_aC-juBJxq2s-05nqwIN8xT_hmWMI/edit
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/tracks
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.subscan.io/account/151fSxLtpjaBRLGoo1DQB8n8ERLNR6ZduBnmjyzpypegJQp9
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://airtable.com/appU6pQRrsyGBPv2m/shrGlJk3xvRVsDaKz
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.subscan.io/account/13UVJyLnbVp9RBZYFwHYxa6GPKJ2SqkGg4Mo7jG7uLAbPkT8
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/bounty
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/spreadsheets/d/1GX7O3HFmLvqBsDaSkKuFxbK3TKTVIaeDaNDAdMEgeFA/edit
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://airtable.com/appU6pQRrsyGBPv2m/shryw2ASliU755PBI
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/spreadsheets/d/1ZN9qgkMMl_CnOetr1YZySbKLGrCCbGdV8OKa1-O8Geg/edit?gid=1302329893
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36992
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://twitter.com/DotAntiscam
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.subsquare.io/council/motions/356
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/blog
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://discord.gg/3kSb7keSg9
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://discord.gg/RrWBd9aj9v
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/./bounty
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/./guides
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/general-information-on-security
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/security-in-smart-contracts
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/contact
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/dyor-do-your-own-research
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/spreadsheets/d/1OesY8_LteEXMRN2K81ztuG_eEelvjzMZhSVf2MLae38/edit
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36990
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://airtable.com/appU6pQRrsyGBPv2m/shreb1VlmhXoS7gp1
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://discord.com/invite/RrWBd9aj9v
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/privacy-policy
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://en.cryptonomist.ch/2023/02/10/hermes-plagiarized-nft
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36991
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/bounty/anti-scam-bounty-spends-report-february-2023-february-2024
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://contractwizard.xyz
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36993
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://medium.com/@DotAntiScam
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://polkadot.antiscam.team/collective
+  source_url: https://polkadot.antiscam.team/
+  bounty_id: 11
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:11.358217Z'
+- url: https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/democracy/referenda
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/techcomm/members
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/treasury/tips
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/democracy/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/democracy/externals
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/14DQEq1XtPvntMyUFbgcDCSce79s1CBum3rBYrEeB66qgTqG
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/council/members
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/council/motions
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://docs.google.com/forms/d/e/1FAIpQLSf2iXCCvdkQ70WrfDPtG5uQA3RrCfvb0VDlZjti26q0yb17sg/viewform?pli=1
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://polkadot.subsquare.io/techcomm/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:31.192722Z'
+- url: https://docs.google.com/document/d/1Y8DuYnXpNuGJYALjJSUJ83ogJypWoOrL2df1_6XTfYc/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1g_vHWYJQB8snooSTE-PYcd3V_9YP4kgl1-TEV5gfiQE/edit?usp=drive_link
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://www.dotevents.xyz/templates
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1oWuASk7ebxC-X0oh3f-BYAhM2CUZbJHznUugjzN1DVQ/edit
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://eventsbounty.notion.site/Sept-Dec-2022-Bounty-Roundup-db17e42f5cbf4173a7ec3b68d0575bff
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/submissions
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1DRFl-7dkNEvca6QXfabMsaBTf_BagN8WsnXOgHs7efQ/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1W8IdemrKZZLDiDLyd8_XHUJ7GjwgJ_cXL81l5CKqaOY/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://meet.google.com/vgu-jaqc-rpi
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/guidelines/stepbystep
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/10mSYyp54Lm6WYYsQy_Frf9poRgEKNl9nc_-AaOcGS3o/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/stepbystep
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1o0EXzcBua5ijDASMwe02W2EVo0zen5ApbFWuzL7bg-0/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1NcOBy0eeAL9uR7rQ5tSyVBOvURfJ7x0jFu5tocPD0mQ/edit
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/1
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://www.subscan.io/account/13UVJyLnbVp9RBZYFwHYxa7N6RNy1Wme5Zng7fD2mnnZ8vM1
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/submissions/submissions
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1OlyGLnPnQsSxY_mcCDNNvrSPmLuPKnZD2PAHiJ3MRsw/edit?usp=drive_link
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://x.com/PolkadotEB
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/document/d/1KfnrjpMQMyb6nK6M6XNxLO39Ri3LwtDzcn2QBKJj3C0/edit
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?usp=sharing
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/roots
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/funding-types
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://dotevents.xyz/about/1
+  source_url: https://dotevents.xyz/
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:32.017908Z'
+- url: https://polkadot.subsquare.io/democracy/referenda
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://dotevents.xyz
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: http://meet.google.com/vgu-jaqc-rpi
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/techcomm/members
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/treasury/tips
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/democracy/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/democracy/externals
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/council/members
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/council/motions
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://dotevents.xyz/about/1
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadot.subsquare.io/techcomm/proposals
+  source_url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:16:42.151654Z'
+- url: https://polkadotassurance.com/community_reports
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/funding/parachains
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/funding
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/funding/security_tooling
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/funding/smart_contracts
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/funding/common_good
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/rfp
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://securityalliance.org
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://discord.gg/xDyGGcnCJw
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/audits
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/contact
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://x.com/dotpal_
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://polkadotassurance.com/security_tooling
+  source_url: https://polkadotassurance.com/
+  bounty_id: 22
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:16:44.419399Z'
+- url: https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/referenda/tracks/33
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/delegation
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subscan.io/referenda_v2/135
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/discussions
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/bounties/24
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/whitelist
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://voting.opensquare.io/space/polkadot
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/proxies
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/burn
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/user/13YWynHAu8F8uKZFbQwvPgJ67xizvo21HCEQU3Ke8z1XHoyT
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/democracy
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/assets
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/referenda
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/council
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/scheduler
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/bounties
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/techcomm
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/calendar
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit?usp=sharing
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/proposals
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://kusama.subsquare.io/referenda/referendum/29
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/spends
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/treasury/child-bounties
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://polkadot.subsquare.io/preimages
+  source_url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:17:24.644583Z'
+- url: https://turtle.cool
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/blog
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://forms.monday.com/forms/7f8d0a8fc84276cfc4004f1c1281ad9e?r=euc1
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://turtle.cool/widget
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://polkadot.com/platform/hub
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/defi-builders
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037?r=euc1
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - form
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/post/turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://x.com/v_labs
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://ch.linkedin.com/company/velocity-labs-org
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://polkadot.com/blog/defi-builders-program
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program
+  source_url: https://www.velocitylabs.org/
+  bounty_id: 36
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:25.952113Z'
+- url: https://www.godaddy.com/forsale/paseo.network
+  source_url: https://paseo.network
+  bounty_id: 37
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:35.628658Z'
+- url: https://wiki.ibp.network/blog/tech-review-20230227
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags/news
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/design
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/hello
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/automation/ansible
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/auditors/monitoring
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.turboflakes.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://docs.google.com/forms/d/e/1FAIpQLSdhCFsscVz66ZocyKfPQzmsmoR9Y_ZlfGGyAUBJ6ThZDS8hRQ/viewform
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags/youtube
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://luckyfriday.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/admin-meeting-20230220
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://amforc.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/welcome
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://docs.google.com/document/d/16USQYVhlyAlrU829EUB2TRoqUC0nnfoS_uCdZ84HT8k
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/nodes
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://docs.libp2p.io/concepts/fundamentals/addressing
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/hypervisors
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://gatotech.uk
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.stkd.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://helikon.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/basics/introduction
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/hypervisors/proxmox
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://monitor.dotters.network
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.paranodes.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/nodes/general
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.aperturemining.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.dozenodes.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/nodes/archives
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/reporting/grafana
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://aperturemining.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/proxies/stub
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/temp/development
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://rotko.net
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/certificates
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tech-review-20230606
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.polkadotters.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/auditing-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/basics/operations
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/highavailability/proxmoxceph
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.youtube.com/@dotsama-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags/admin
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/admin-meeting-20230125
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.youtube.com/@ibp.network
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://stake.plus
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/serving-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.dozenodes.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/machines/ubuntu
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://guide.kusama.network/docs/thousand-validators
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/nodes/bootnodes
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://stkd.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/networking/ringnetwork-proxmox
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.turboflakes.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://radiumblock.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://matrix.to
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/youtube
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/members/reporting/monitor
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.gatotech.network
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/consuming-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://interweb-it.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/what-is-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/reporting
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/proxies
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp-monitor.math-crypto.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/consumers/bootnodes
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/temporary-information
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.dwellir.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tech-review-20230303
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags/tech
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/system-chains
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/machines
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://twitter.com/TheKusamarian
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/joining-ibp
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/candidates/join
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.math-crypto.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/automation
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/networking
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/tags/welcome
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/auditors/members
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://paranodes.io
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/category/high-availability
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/consumers/archives
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://ibp.rotko.net/monitor
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://polkadotters.com
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/blog/opengov-update-20230515
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://wiki.ibp.network/docs/auditors/progress
+  source_url: https://wiki.ibp.network/
+  bounty_id: 50
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:17:39.402896Z'
+- url: https://www.polkadot.law/pcf
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://polkadot.network
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://discord.gg/artCCVuy
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://wiki.polkadot.com
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://www.polkadot.law/research
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://polkadot.subsquare.io/referenda/1676
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://www.soft.law
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://www.polkadot.law
+  source_url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:51.152936Z'
+- url: https://polkadot.subsquare.io/referenda/tracks/33
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/user/1eGtATyy4ayn77dsrhdW8N3Vs1yjqjzJcintksNmScqy31j
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/delegation
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/bounties/62
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/discussions
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/whitelist
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://voting.opensquare.io/space/polkadot
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subscan.io/referenda_v2/1359
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/proxies
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/burn
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://discord.gg/sYw7WkZVzV
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - social
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/democracy
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/assets
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/referenda
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/council
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/scheduler
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/bounties
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/techcomm
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/calendar
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/proposals
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://docs.google.com/document/d/1eHSn1wD5sgIERqsO7sB6iu7z30O3k6FPSXKjkAHK0Ek/edit?usp=sharing
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - documentation
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/spends
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/treasury/child-bounties
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/preimages
+  source_url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:52.392549Z'
+- url: https://polkadot.subsquare.io/delegation
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/discussions
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/whitelist
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subscan.io/referenda_v2/1377
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://voting.opensquare.io/space/polkadot
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - other
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/proxies
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/burn
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/democracy
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/referenda/712
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/assets
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/referenda/tracks/34
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/referenda
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/user/15BERoWxrWC61cAb4JjpUdM7sy8FAS9uduismDbZ7PURZLto
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/council
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/scheduler
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/bounties
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/techcomm
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/calendar
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/bounties/64
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/proposals
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/spends
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/treasury/child-bounties
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'
+- url: https://polkadot.subsquare.io/preimages
+  source_url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  categories:
+  - governance
+  discovered_at: '2025-12-05T12:18:53.994070Z'

@@ -130,11 +130,13 @@ class IndexEntry:
     bounty_id: int
     scraped_at: str
     location: str
-    pages: int = 1
     source: str = "Unknown"
     categories: List[str] = field(default_factory=lambda: ['other'])
     type: str = "scrape"
     discovered_at: Optional[str] = None
+    status: str = "success"  # "success" or "failed"
+    error_code: Optional[int] = None  # HTTP status code (404, 403, etc.)
+    error_message: Optional[str] = None  # Error description
 
     def __post_init__(self):
         """Validate data"""
@@ -142,8 +144,8 @@ class IndexEntry:
             raise ValueError(f"Invalid URL: {self.url}")
         if self.bounty_id <= 0:
             raise ValueError(f"Invalid bounty_id: {self.bounty_id}")
-        if self.pages < 0:
-            raise ValueError(f"Invalid pages: {self.pages}")
+        if self.status not in ('success', 'failed'):
+            raise ValueError(f"Invalid status: {self.status}")
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for YAML serialization"""
@@ -159,11 +161,13 @@ class IndexEntry:
             bounty_id=data['bounty_id'],
             scraped_at=data.get('scraped_at', ''),
             location=data.get('location', ''),
-            pages=data.get('pages', 1),
             source=data.get('source', 'Unknown'),
             categories=data.get('categories', ['other']),
             type=data.get('type', 'scrape'),
-            discovered_at=data.get('discovered_at')
+            discovered_at=data.get('discovered_at'),
+            status=data.get('status', 'success'),
+            error_code=data.get('error_code'),
+            error_message=data.get('error_message')
         )
 
 

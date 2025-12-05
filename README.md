@@ -4,6 +4,24 @@
 
 Archive of Polkadot bounty documentation with structured metadata and an interactive website.
 
+## Quick Commands
+
+**View Website Locally:**
+```bash
+python -m http.server 8000
+# Then open http://localhost:8000 in your browser
+```
+
+**Scraping Workflow:**
+```bash
+cd scraping
+pip install -r requirements.txt
+python suggest.py       # Generate suggestions from metadata
+python review.py        # Review and approve URLs (0-9 for depth, A/I/S/Q)
+python scraper.py       # Scrape approved URLs
+python cleanup.py stats # View scraping statistics
+```
+
 ## Overview
 
 This repository contains comprehensive documentation for all 20 active Polkadot Treasury bounties, including:
@@ -58,9 +76,10 @@ Each bounty folder contains:
   - Application details (process, timeline, status)
   - Tags and notes
 - **scraped/** (optional) - Archived documentation from bounty websites
-  - Preserved in original format (HTML, PDF, JSON, etc.)
+  - Preserved in original HTML format
   - Organized by domain: `scraped/[domain]/[path]`
   - Metadata stored in companion `.meta.yml` files
+  - Indexed in `scraping/scrape-index.yml` for website integration
 
 See [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for the complete schema definition.
 
@@ -70,9 +89,11 @@ The interactive website (`index.html`) provides:
 - 🔍 **Search** - Filter bounties by name, tags, or keywords
 - 🏷️ **Category filters** - Development, Security, Infrastructure, Community, Grants, DeFi, UX, etc.
 - 📊 **Live statistics** - Total bounties, DOT allocated, categories
-- 📄 **Scraped content viewer** - Browse archived documentation with modal file tree
+- 📄 **Scraped content viewer** - Browse archived HTML documentation with modal file tree
 - 📱 **Mobile-responsive** - Works on all devices
 - 🎨 **Polkadot branding** - Official color scheme and design
+
+The website loads scraped content directly from `scraping/scrape-index.yml` (no build step required).
 
 ## Scraping & Archiving Documentation
 
@@ -150,12 +171,12 @@ python scraper.py            # Re-scrape with new settings
 - 📥 **Single & recursive scraping** - Fetch individual pages or entire documentation sites
 - 🔄 **Auto-suggestions** - Extracts URLs from bounty metadata automatically
 - ✅ **Auto-accept rules** - Configure trusted domains to skip manual review
-- 📄 **Original format preservation** - Saves HTML, PDF, JSON, etc. as-is with metadata
+- 📄 **HTML preservation** - Saves pages in original HTML format with metadata
 - 🔗 **Three-tier classification** - Scrape URLs / Associated URLs (GitHub) / Associated Socials (Twitter, Discord)
 - 🔗 **Link extraction & categorization** - Automatically extracts and categorizes links
 - 🔍 **Link discovery** - Generates new scraping suggestions from extracted links
 - 🗂️ **Organized storage** - Saves to `bounties/[id]-[slug]/scraped/[domain]/`
-- 🌐 **Website integration** - Scraped content and associated links appear on bounty cards automatically
+- 🌐 **Website integration** - Scraped content indexed in `scraping/scrape-index.yml` and displayed on bounty cards automatically
 - 🧹 **Reset & cleanup tools** - Fresh starts and augmentary runs
 
 See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.
@@ -164,12 +185,12 @@ See [scraping/SCRAPING.md](scraping/SCRAPING.md) for detailed documentation.
 
 The website is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
 
-### Build Pipeline
+### Deployment Pipeline
 
-On each deployment:
-1. **Build scraped index** - `website/build_scraped_index.py` generates `scraped-index.json`
-2. **Deploy to GitHub Pages** - All content including scraped files is published
-3. **Website displays scraped content** - Bounty cards show archived documentation with interactive viewer
+On each push to `main`:
+1. **Deploy to GitHub Pages** - All content including scraped HTML files is published
+2. **Website loads scraped index** - Client-side JavaScript reads `scraping/scrape-index.yml` and transforms it for display
+3. **Bounty cards show scraped content** - Interactive viewer displays archived documentation with file tree
 
 The website at [opengov-watch.github.io/bounty-archive](https://opengov-watch.github.io/bounty-archive/) updates automatically within 1-2 minutes of pushing to `main`.
 

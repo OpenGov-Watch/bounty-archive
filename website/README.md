@@ -1,77 +1,69 @@
-# Website Build Pipeline
+# Website Scripts
 
-This folder contains scripts that process scraped content and generate data files for the website.
+## ⚠️ Status: No Build Step Required
 
-## Scripts
+**As of December 2025**, this folder contains deprecated scripts. The website now loads scraped content directly from `scraping/scrape-index.yml` without requiring a build step.
 
-### build_scraped_index.py
+## Deprecated Scripts
 
-Scans all bounty folders for scraped documentation and generates `scraped-index.json`.
+### build_scraped_index.py ❌ DEPRECATED
 
-**What it does:**
-- Walks through `bounties/*/scraped/` directories
-- Reads `.meta.yml` files for URLs, titles, and timestamps
-- Builds a tree structure organized by bounty ID and domain
-- Outputs JSON file with all scraped files and metadata
+**This script is no longer used or needed.**
 
-**Output format:**
-```json
-{
-  "generated_at": "2025-11-28T12:00:00Z",
-  "bounty_count": 2,
-  "total_domains": 3,
-  "total_files": 5,
-  "bounties": {
-    "10": {
-      "domains": [
-        {
-          "domain": "example.com",
-          "file_count": 3,
-          "files": [
-            {
-              "path": "index.html",
-              "name": "index.html",
-              "url": "https://example.com/",
-              "title": "Example Page",
-              "scraped_at": "2025-11-28T12:00:00Z"
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
+Previously, this script scanned bounty folders and generated `scraped-index.json` for the website. It has been replaced by client-side YAML loading.
+
+### Why It Was Deprecated
+
+1. **Simpler deployment**: No Python build step required
+2. **Single source of truth**: `scraping/scrape-index.yml` is the only index
+3. **Automatic updates**: Changes are immediately reflected on the website
+4. **Fewer moving parts**: No JSON generation or sync issues between files
+
+## Current Website Integration
+
+The `index.html` file now:
+1. **Loads `scraping/scrape-index.yml` directly** using js-yaml parser (already included)
+2. **Transforms it client-side** into the display structure
+3. **Filters to successful scrapes only** (excludes failed entries)
+4. **Displays scraped documentation** on bounty cards with modal file tree
+
+### Data Flow
+
+```
+scraping/scrape-index.yml  →  Website (index.html)  →  User sees scraped docs
+     (single source)              (js-yaml parser)          (interactive UI)
 ```
 
-**Run manually:**
-```bash
-python website/build_scraped_index.py
+### File Paths
+
+Scraped content is stored as:
+- **Files**: `bounties/{id}-{slug}/scraped/{domain}/{path}.html`
+- **Index**: `scraping/scrape-index.yml` (loaded by website)
+- **Metadata**: `{file}.meta.yml` (contains title, URL, timestamps)
+
+## Migration Notes
+
+If you need to update the GitHub Actions workflow:
+
+**Old workflow (remove this):**
+```yaml
+- name: Build scraped index
+  run: python website/build_scraped_index.py
 ```
 
-**Run automatically:**
-The GitHub Actions workflow (`.github/workflows/pages.yml`) runs this script before deploying to GitHub Pages.
-
-## Integration with Website
-
-The `index.html` file:
-1. Loads `scraped-index.json` on page load
-2. Displays "Scraped Documentation" section on bounty cards when content exists
-3. Shows domain chips and file counts
-4. Opens modal with full file tree when clicked
-
-## Adding More Build Scripts
-
-To add new build scripts:
-1. Create a new Python script in this folder
-2. Add it to `.github/workflows/pages.yml` under the build steps
-3. Document it in this README
-
-## Dependencies
-
-- Python 3.12+
-- PyYAML
-
-Install dependencies:
-```bash
-pip install pyyaml
+**New workflow (no build step needed):**
+```yaml
+# No build step required - website loads YAML directly
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./
 ```
+
+## Future Scripts
+
+This folder is kept for any future website build scripts that may be needed. Current requirements:
+- ✅ Scraped content indexing: Handled by scrape-index.yml (no build needed)
+- ✅ Metadata parsing: Handled client-side with js-yaml
+- ✅ File organization: Handled by scraping system

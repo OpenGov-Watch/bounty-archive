@@ -84,7 +84,11 @@ class PolkadotBountyScraper:
                 bounty_id=item.bounty_id,
                 url=item.url,
                 mode=item.mode.value,
-                max_depth=item.max_depth
+                max_depth=item.max_depth,
+                source=item.source,
+                categories=item.categories,
+                type=item.type,
+                discovered_at=item.discovered_at
             ))
         return jobs
 
@@ -96,8 +100,14 @@ class PolkadotBountyScraper:
             return matches[0].name
         return None
 
-    def fetch_url(self, url: str) -> Optional[requests.Response]:
-        """Fetch URL and return response object"""
+    def fetch_url(self, url: str) -> Tuple[Optional[requests.Response], Optional[int], Optional[str]]:
+        """Fetch URL and return (response, error_code, error_message)
+
+        Returns:
+            - (response, None, None) on success
+            - (None, status_code, message) on HTTP error
+            - (None, None, message) on network error
+        """
         try:
             print(f"  Fetching: {url}")
             response = self.session.get(url, timeout=self.config.request_timeout, allow_redirects=True)
@@ -107,17 +117,20 @@ class PolkadotBountyScraper:
                 print(f"  Warning: Redirected to different host: {response.url}")
 
             if response.status_code == 200:
-                return response
+                return response, None, None
             else:
-                print(f"  Error: HTTP {response.status_code}")
-                return None
+                error_msg = f"HTTP {response.status_code}"
+                print(f"  Error: {error_msg}")
+                return None, response.status_code, error_msg
 
         except requests.exceptions.Timeout:
-            print(f"  Error: Timeout")
-            return None
+            error_msg = "Request timeout"
+            print(f"  Error: {error_msg}")
+            return None, None, error_msg
         except requests.exceptions.RequestException as e:
-            print(f"  Error: {str(e)}")
-            return None
+            error_msg = str(e)
+            print(f"  Error: {error_msg}")
+            return None, None, error_msg
 
     def extract_title(self, soup: BeautifulSoup, url: str) -> str:
         """Extract page title from HTML"""
@@ -207,12 +220,17 @@ class PolkadotBountyScraper:
             # Default to .html for web pages
             return '.html'
 
-    def scrape_page(self, url: str, base_url: str) -> Optional[Tuple[ScrapedPage, str]]:
-        """Scrape a single page and return page + file extension"""
-        response = self.fetch_url(url)
+    def scrape_page(self, url: str, base_url: str) -> Tuple[Optional[ScrapedPage], Optional[str], Optional[int], Optional[str]]:
+        """Scrape a single page and return (page, extension, error_code, error_message)
+
+        Returns:
+            - (page, extension, None, None) on success
+            - (None, None, error_code, error_message) on failure
+        """
+        response, error_code, error_message = self.fetch_url(url)
 
         if not response:
-            return None
+            return None, None, error_code, error_message
 
         # Get file extension
         extension = self.get_file_extension(response, url)
@@ -247,7 +265,7 @@ class PolkadotBountyScraper:
             social_links=social
         )
 
-        return page, extension
+        return page, extension, None, None
 
     def url_to_filepath(self, url: str, bounty_slug: str, extension: str) -> Path:
         """Convert URL to file path with appropriate extension"""
@@ -316,6 +334,7 @@ class PolkadotBountyScraper:
         all_social = set()
         files_created = []
         errors = []
+        url_results = {}  # Track per-URL status
 
         while queue:
             url, depth = queue.pop(0)
@@ -327,14 +346,20 @@ class PolkadotBountyScraper:
             visited.add(normalized_url)
 
             # Scrape page
-            result = self.scrape_page(url, job.url)
+            page, extension, error_code, error_message = self.scrape_page(url, job.url)
 
-            if result:
-                page, extension = result
-                # Save page
+            if page:
+                # Success - save page
                 filepath = self.url_to_filepath(url, bounty_slug, extension)
                 self.save_page(page, filepath)
                 files_created.append(str(filepath.relative_to(self.project_root)))
+
+                # Track success
+                url_results[url] = {
+                    'status': 'success',
+                    'error_code': None,
+                    'error_message': None
+                }
 
                 # Collect links
                 all_internal.update(page.internal_links)
@@ -347,7 +372,30 @@ class PolkadotBountyScraper:
                         if link.rstrip('/') not in visited:
                             queue.append((link, depth + 1))
             else:
-                errors.append(f"Failed to fetch: {url}")
+                # Failed - create error marker file
+                error_filepath = self.url_to_filepath(url, bounty_slug, '.error.yml')
+                error_data = {
+                    'url': url,
+                    'error_code': error_code,
+                    'error_message': error_message,
+                    'attempted_at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+                    'bounty_id': job.bounty_id
+                }
+
+                # Create directory and save error file
+                error_filepath.parent.mkdir(parents=True, exist_ok=True)
+                with open(error_filepath, 'w', encoding='utf-8') as f:
+                    yaml.dump(error_data, f, default_flow_style=False, allow_unicode=True)
+
+                print(f"  Error marker saved: {error_filepath.relative_to(self.project_root)}")
+
+                # Track failure
+                url_results[url] = {
+                    'status': 'failed',
+                    'error_code': error_code,
+                    'error_message': error_message
+                }
+                errors.append(f"Failed to fetch: {url} ({error_message})")
 
             # Rate limiting
             time.sleep(self.config.rate_limit_delay)
@@ -357,6 +405,7 @@ class PolkadotBountyScraper:
             'pages_scraped': len(files_created),
             'files_created': files_created,
             'visited_urls': sorted(visited),
+            'url_results': url_results,  # Per-URL status tracking
             'outgoing_urls': {
                 'internal': sorted(all_internal),
                 'external': sorted(all_external),
@@ -371,34 +420,72 @@ class PolkadotBountyScraper:
         if not bounty_slug:
             return {
                 'status': 'failed',
-                'error': f'Bounty folder not found for ID {job.bounty_id}'
+                'error': f'Bounty folder not found for ID {job.bounty_id}',
+                'url_results': {}
             }
 
-        result = self.scrape_page(job.url, job.url)
+        page, extension, error_code, error_message = self.scrape_page(job.url, job.url)
 
-        if not result:
+        url_results = {}
+
+        if page:
+            # Save successful page
+            filepath = self.url_to_filepath(job.url, bounty_slug, extension)
+            self.save_page(page, filepath)
+
+            url_results[job.url] = {
+                'status': 'success',
+                'error_code': None,
+                'error_message': None
+            }
+
+            return {
+                'status': 'completed',
+                'pages_scraped': 1,
+                'files_created': [str(filepath.relative_to(self.project_root))],
+                'visited_urls': [job.url],
+                'url_results': url_results,
+                'outgoing_urls': {
+                    'internal': sorted(page.internal_links),
+                    'external': sorted(page.external_links),
+                    'social': sorted(page.social_links)
+                },
+                'errors': []
+            }
+        else:
+            # Create error marker file
+            error_filepath = self.url_to_filepath(job.url, bounty_slug, '.error.yml')
+            error_data = {
+                'url': job.url,
+                'error_code': error_code,
+                'error_message': error_message,
+                'attempted_at': datetime.now(timezone.utc).isoformat(),
+                'bounty_id': job.bounty_id
+            }
+
+            error_filepath.parent.mkdir(parents=True, exist_ok=True)
+            with open(error_filepath, 'w', encoding='utf-8') as f:
+                yaml.dump(error_data, f)
+
+            url_results[job.url] = {
+                'status': 'failed',
+                'error_code': error_code,
+                'error_message': error_message
+            }
+
             return {
                 'status': 'failed',
-                'error': f'Failed to fetch {job.url}'
+                'pages_scraped': 0,
+                'files_created': [],
+                'visited_urls': [job.url],
+                'url_results': url_results,
+                'outgoing_urls': {
+                    'internal': [],
+                    'external': [],
+                    'social': []
+                },
+                'errors': [f'Failed to fetch {job.url}: {error_message}']
             }
-
-        page, extension = result
-
-        # Save page
-        filepath = self.url_to_filepath(job.url, bounty_slug, extension)
-        self.save_page(page, filepath)
-
-        return {
-            'status': 'completed',
-            'pages_scraped': 1,
-            'files_created': [str(filepath.relative_to(self.project_root))],
-            'outgoing_urls': {
-                'internal': sorted(page.internal_links),
-                'external': sorted(page.external_links),
-                'social': sorted(page.social_links)
-            },
-            'errors': []
-        }
 
     def scrape_job(self, job: ScrapeJob) -> Dict:
         """Scrape a job from the queue"""
@@ -434,41 +521,53 @@ class PolkadotBountyScraper:
         print(f"\nResults saved to: scraping/scrape-results.yml")
 
     def update_index(self, results: List[Dict]):
-        """Update scrape-index.yml with successfully scraped URLs"""
+        """Update scrape-index.yml with all attempted URLs (successful and failed)"""
         entries = []
 
         # Build index entries from results
         for result in results:
-            if result.get('status') in ('completed', 'partial'):
-                # Extract location from first file created
-                location = ''
-                if result.get('files_created'):
-                    # Get the directory path from the first file
-                    first_file = result['files_created'][0]
-                    # Extract path like "bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/"
-                    if '/scraped/' in first_file or '\\scraped\\' in first_file:
-                        parts = first_file.replace('\\', '/').split('/scraped/')
-                        if len(parts) == 2:
-                            location = parts[0] + '/scraped/' + parts[1].rsplit('/', 1)[0] + '/'
+            # Get per-URL results if available
+            url_results = result.get('url_results', {})
 
-                # For recursive scrapes, index all visited URLs
-                urls_to_index = result.get('visited_urls', [result['url']])
-                if not urls_to_index:
-                    urls_to_index = [result['url']]
+            # Extract base location from first successful file
+            base_location = ''
+            if result.get('files_created'):
+                first_file = result['files_created'][0]
+                # Extract path like "bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/"
+                if '/scraped/' in first_file or '\\scraped\\' in first_file:
+                    parts = first_file.replace('\\', '/').split('/scraped/')
+                    if len(parts) == 2:
+                        base_location = parts[0] + '/scraped/' + parts[1].rsplit('/', 1)[0] + '/'
 
-                for url in urls_to_index:
-                    entry = IndexEntry(
-                        url=url,
-                        bounty_id=result['bounty_id'],
-                        scraped_at=result.get('scraped_at', ''),
-                        location=location,
-                        pages=1,  # Each URL is 1 page
-                        source=result.get('source', 'Unknown'),
-                        categories=result.get('categories', []),
-                        type=result.get('type', 'scrape'),
-                        discovered_at=result.get('discovered_at')
-                    )
-                    entries.append(entry)
+            # Index all attempted URLs
+            urls_to_index = result.get('visited_urls', [result['url']])
+            if not urls_to_index:
+                urls_to_index = [result['url']]
+
+            for url in urls_to_index:
+                # Get per-URL status if available
+                url_status = url_results.get(url, {})
+                status = 'success' if url_status.get('status') == 'success' else 'failed'
+                error_code = url_status.get('error_code')
+                error_message = url_status.get('error_message')
+
+                # Use base_location for successful URLs, empty for failed
+                location = base_location if status == 'success' else ''
+
+                entry = IndexEntry(
+                    url=url,
+                    bounty_id=result['bounty_id'],
+                    scraped_at=result.get('scraped_at', ''),
+                    location=location,
+                    source=result.get('source', 'Unknown'),
+                    categories=result.get('categories', []),
+                    type=result.get('type', 'scrape'),
+                    discovered_at=result.get('discovered_at'),
+                    status=status,
+                    error_code=error_code,
+                    error_message=error_message
+                )
+                entries.append(entry)
 
         # Add entries to index using data manager (handles deduplication and conversion)
         if entries:

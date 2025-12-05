@@ -1,3 +1,1245 @@
 version: '1.0'
-last_updated: '2025-12-05T09:55:56.515612Z'
-index: []
+last_updated: '2025-12-05T12:18:55.499180Z'
+index:
+- url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:15:55.029465Z'
+  location: bounties/17-events-bounty/scraped/forms.monday.com/forms/
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: success
+- url: https://inkubatordocs.notion.site/
+  bounty_id: 19
+  scraped_at: '2025-12-05T12:15:55.398218Z'
+  location: bounties/19-inkubator/scraped/inkubatordocs.notion.site/
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  status: success
+- url: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  bounty_id: 19
+  scraped_at: '2025-12-05T12:15:56.463040Z'
+  location: bounties/19-inkubator/scraped/docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  status: success
+- url: https://form.typeform.com/to/NDn5L7Nn
+  bounty_id: 19
+  scraped_at: '2025-12-05T12:15:57.272957Z'
+  location: bounties/19-inkubator/scraped/form.typeform.com/to/
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  status: success
+- url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:15:58.030500Z'
+  location: bounties/22-polkadot-assurance-legion-bounty/scraped/docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/
+  source: metadata.contact.applicationForm
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: success
+- url: https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  bounty_id: 31
+  scraped_at: '2025-12-05T12:15:59.059682Z'
+  location: bounties/31-public-rpcs-for-relay-and-system-chains/scraped/docs.google.com/document/d/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.153912Z'
+  status: success
+- url: https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  bounty_id: 32
+  scraped_at: '2025-12-05T12:16:00.238679Z'
+  location: bounties/32-system-parachains-collator-bounty/scraped/docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.154913Z'
+  status: success
+- url: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  bounty_id: 33
+  scraped_at: '2025-12-05T12:16:00.777652Z'
+  location: bounties/33-marketing-bounty/scraped/docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.155911Z'
+  status: success
+- url: https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:16:01.312677Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:16:02.109645Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/forms.monday.com/forms/
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  bounty_id: 37
+  scraped_at: '2025-12-05T12:16:02.311717Z'
+  location: bounties/37-paseo-testnet-bounty/scraped/docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.158914Z'
+  status: success
+- url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  bounty_id: 43
+  scraped_at: '2025-12-05T12:16:03.569458Z'
+  location: bounties/43-meetups-bounty/scraped/dotmeetup.notion.site/
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  status: success
+- url: https://forms.gle/3XCTyLZGaCf9hnah7
+  bounty_id: 43
+  scraped_at: '2025-12-05T12:16:03.926008Z'
+  location: bounties/43-meetups-bounty/scraped/forms.gle/
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  status: success
+- url: https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  bounty_id: 44
+  scraped_at: '2025-12-05T12:16:04.545633Z'
+  location: bounties/44-polkadot-kusama-bridge-security-bounty/scraped/docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.162911Z'
+  status: success
+- url: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:16:06.279016Z'
+  location: bounties/50-infrastructure-builders-program/scraped/docs.google.com/document/d/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://forms.gle/pqgSc2QJ7XUznveu5
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:16:07.317019Z'
+  location: bounties/50-infrastructure-builders-program/scraped/forms.gle/
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://polkadot-ux-bounty.notion.site/
+  bounty_id: 52
+  scraped_at: '2025-12-05T12:16:08.472709Z'
+  location: bounties/52-ux-bounty/scraped/polkadot-ux-bounty.notion.site/
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  status: success
+- url: https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  bounty_id: 59
+  scraped_at: '2025-12-05T12:16:08.846127Z'
+  location: bounties/59-open-source-developer-grants-bounty/scraped/docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.166914Z'
+  status: success
+- url: https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  bounty_id: 63
+  scraped_at: '2025-12-05T12:16:09.381795Z'
+  location: bounties/63-fast-grants-bounty/scraped/docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.169914Z'
+  status: success
+- url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  bounty_id: 10
+  scraped_at: '2025-12-05T12:16:10.015354Z'
+  location: bounties/10-polkadot-pioneers-bounty/scraped/polkadot.subsquare.io/council/motions/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.145911Z'
+  status: success
+- url: https://polkadot.antiscam.team
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: failed
+- url: https://polkadot.antiscam.team/./bounty
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/./guides
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/blog
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/bounty
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/bounty/anti-scam-bounty-spends-report-february-2023-february-2024
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/collective
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/contact
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/best-practices-for-safeguarding-seed-phrases
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/dyor-do-your-own-research
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/general-information-on-security
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/security-in-smart-contracts
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/privacy-policy
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/sitemap
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/spends
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.antiscam.team/tracks
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.antiscam.team/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  bounty_id: 11
+  scraped_at: '2025-12-05T12:16:31.192722Z'
+  location: bounties/11-anti-scam-bounty/scraped/polkadot.subsquare.io/council/motions/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  status: success
+- url: https://dotevents.xyz
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+- url: https://dotevents.xyz/1
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://dotevents.xyz/about/1
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: bounties/17-events-bounty/scraped/dotevents.xyz/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: success
+- url: https://dotevents.xyz/funding-types
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://dotevents.xyz/guidelines/stepbystep
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: bounties/17-events-bounty/scraped/dotevents.xyz/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: success
+- url: https://dotevents.xyz/roots
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://dotevents.xyz/stepbystep
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://dotevents.xyz/submissions
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://dotevents.xyz/submissions/submissions
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+  location: bounties/17-events-bounty/scraped/dotevents.xyz/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: success
+- url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  bounty_id: 17
+  scraped_at: '2025-12-05T12:16:42.151654Z'
+  location: bounties/17-events-bounty/scraped/polkadot.subsquare.io/council/motions/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  status: success
+- url: https://use.ink/ubator
+  bounty_id: 19
+  scraped_at: '2025-12-05T12:16:43.179109Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  status: failed
+- url: https://polkadotassurance.com
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+- url: https://polkadotassurance.com/audits
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/community_reports
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/contact
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/funding
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/funding/common_good
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/funding/parachains
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/funding/security_tooling
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/funding/smart_contracts
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/rfp
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadotassurance.com/security_tooling
+  bounty_id: 22
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://polkadot.subsquare.io/referenda/135
+  bounty_id: 24
+  scraped_at: '2025-12-05T12:17:24.644583Z'
+  location: bounties/24-moderation-team-bounty/scraped/polkadot.subsquare.io/referenda/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.152911Z'
+  status: success
+- url: https://www.velocitylabs.org
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: failed
+- url: https://www.velocitylabs.org/blog
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://www.velocitylabs.org/defi-builders
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://www.velocitylabs.org/post/turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem
+  bounty_id: 36
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+  location: bounties/36-defi-infrastructure-and-tooling-bounty/scraped/www.velocitylabs.org/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  status: success
+- url: https://paseo.network
+  bounty_id: 37
+  scraped_at: '2025-12-05T12:17:35.628658Z'
+  location: bounties/37-paseo-testnet-bounty/scraped/paseo.network/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.158914Z'
+  status: success
+- url: http://dotmeetups.xyz
+  bounty_id: 43
+  scraped_at: '2025-12-05T12:17:37.625272Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  status: failed
+- url: https://polkadot.com/bridges-bug-bounty/
+  bounty_id: 44
+  scraped_at: '2025-12-05T12:17:39.164948Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.162911Z'
+  status: failed
+  error_code: 404
+  error_message: HTTP 404
+- url: https://wiki.ibp.network
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: failed
+- url: https://wiki.ibp.network/blog
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/admin-meeting-20230125
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/admin-meeting-20230220
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/opengov-update-20230515
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/system-chains
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags/admin
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags/news
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags/tech
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags/welcome
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tags/youtube
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tech-review-20230227
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tech-review-20230303
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/tech-review-20230606
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/welcome
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/blog/youtube
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/auditors/members
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/auditors/monitoring
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/auditors/progress
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/basics/introduction
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/basics/operations
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/candidates/join
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/auditing-ibp
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/automation
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/consuming-ibp
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/high-availability
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/hypervisors
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/joining-ibp
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/machines
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/networking
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/nodes
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/proxies
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/reporting
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/serving-ibp
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/temporary-information
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/category/what-is-ibp
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/consumers/archives
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/consumers/bootnodes
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/members/certificates
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/members/design
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/members/hello
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://wiki.ibp.network/docs/temp/development
+  bounty_id: 50
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+  location: bounties/50-infrastructure-builders-program/scraped/wiki.ibp.network/
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  status: success
+- url: https://www.uxbounty.xyz
+  bounty_id: 52
+  scraped_at: '2025-12-05T12:18:49.051433Z'
+  location: ''
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  status: failed
+- url: https://calendar.app.google/mBpAmbXzvNBQstYn9
+  bounty_id: 52
+  scraped_at: '2025-12-05T12:18:50.488542Z'
+  location: bounties/52-ux-bounty/scraped/calendar.app.google/
+  source: metadata.contact.applicationForm
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  status: success
+- url: https://www.polkadot.law/legalbounty
+  bounty_id: 62
+  scraped_at: '2025-12-05T12:18:51.152936Z'
+  location: bounties/62-legal-bounty/scraped/www.polkadot.law/
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.167912Z'
+  status: success
+- url: https://polkadot.subsquare.io/referenda/1359
+  bounty_id: 62
+  scraped_at: '2025-12-05T12:18:52.392549Z'
+  location: bounties/62-legal-bounty/scraped/polkadot.subsquare.io/referenda/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.167912Z'
+  status: success
+- url: https://polkadot.subsquare.io/referenda/1377
+  bounty_id: 64
+  scraped_at: '2025-12-05T12:18:53.994070Z'
+  location: bounties/64-rust-bounties/scraped/polkadot.subsquare.io/referenda/
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.170916Z'
+  status: success

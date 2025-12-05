@@ -248,7 +248,46 @@ When working with this repository:
 - Manual edits can break the workflow
 - Scripts update timestamps and metadata correctly
 
-### 13. Important Notes
+### 13. Configuration-First Principle
+
+**CRITICAL: All configuration must be in YAML files, never hardcoded in Python**
+
+When working with scraping code:
+- **ALWAYS** add new settings to `scrape-config.yml`
+- **NEVER** hardcode domains, URLs, patterns, or constants in Python files
+- **ALWAYS** expose configuration through `config.py` properties
+- **NEVER** create class constants (like `SOCIAL_DOMAINS`, `EXCLUDE_DOMAINS`) for configuration
+
+**Why this matters:**
+- Users can modify behavior without editing code
+- Configuration is documented and visible
+- Changes don't require code edits or understanding Python
+- Settings can be version-controlled and reviewed separately
+
+**Configuration structure in scrape-config.yml:**
+- `auto_accept`: Rules for auto-accepting URLs during review
+- `categorization`: Category-first URL categorization (category → [patterns])
+  - Each category contains a list of domain patterns
+  - Patterns support substring matching (e.g., `"docs."` matches `docs.substrate.io`)
+  - First matching category wins
+  - Examples: `social: ["twitter.com", "x.com"]`, `documentation: ["docs.", "wiki."]`
+- `type_mapping`: Maps categories to suggestion types (scrape/social/associated_url)
+  - Lives at root level, not inside `categorization`
+  - Determines whether URLs are scraped or just added to metadata
+- `ignored`: Single source of truth for excluded URLs/domains
+  - Domain patterns: `google.com` (matches all subdomains)
+  - Specific URLs: `https://example.com/specific/path`
+  - Always include a `reason` field
+
+**Examples:**
+- ❌ BAD: `SOCIAL_DOMAINS = {'twitter.com', 'x.com'}`
+- ✅ GOOD: Add to `categorization.social` list, access via `self.config.social_domains`
+- ❌ BAD: `EXCLUDE_DOMAINS = {'google.com', 'youtube.com'}`
+- ✅ GOOD: Add to `ignored` list with reasons, check via `self.config.is_ignored(url)`
+- ❌ BAD: `if 'docs.' in domain:`
+- ✅ GOOD: Add to `categorization.documentation` list, use `self.config.categorize_url(url)`
+
+### 14. Important Notes
 
 **DO:**
 - Keep metadata and README in sync
@@ -258,6 +297,7 @@ When working with this repository:
 - Follow the schema strictly
 - Commit frequently with clear messages
 - **Use scripts for all scraping operations**
+- **Use configuration files for all settings**
 
 **DON'T:**
 - Guess or fabricate information
@@ -267,8 +307,9 @@ When working with this repository:
 - Commit unverified information
 - Push to wrong branch names
 - **Manually edit auto-generated scraping files**
+- **Hardcode configuration in Python files**
 
-### 14. Getting Help
+### 15. Getting Help
 
 If you encounter issues:
 1. Check [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for schema reference
@@ -276,7 +317,7 @@ If you encounter issues:
 3. Validate YAML syntax online if needed
 4. Ask the user for clarification on uncertain data
 
-### 15. Future Enhancements
+### 16. Future Enhancements
 
 Areas for improvement:
 - Automated on-chain data syncing

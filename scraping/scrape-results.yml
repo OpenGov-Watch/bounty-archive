@@ -1,3 +1,1841 @@
 version: '1.0'
-last_updated: '2025-12-05T09:55:56.516610Z'
-scraped: []
+last_updated: '2025-12-05T12:18:55.465642Z'
+scraped:
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\17-events-bounty\scraped\forms.monday.com\forms\6333f358de606dd1eded5a06d478db1a.html
+  visited_urls:
+  - https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a
+  url_results:
+    https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 17
+  url: https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  scraped_at: '2025-12-05T12:15:55.029465Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\19-inkubator\scraped\inkubatordocs.notion.site\index.html
+  visited_urls:
+  - https://inkubatordocs.notion.site/
+  url_results:
+    https://inkubatordocs.notion.site/:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 19
+  url: https://inkubatordocs.notion.site/
+  mode: single
+  max_depth: null
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  scraped_at: '2025-12-05T12:15:55.398218Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\19-inkubator\scraped\docs.google.com\document\d\1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  url_results:
+    https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&followup=https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 19
+  url: https://docs.google.com/document/d/1y2QECPsXQktVGZIat_yNKTlodviTecMZ6IbiLNQ4NLM/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  scraped_at: '2025-12-05T12:15:56.463040Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\19-inkubator\scraped\form.typeform.com\to\NDn5L7Nn.html
+  visited_urls:
+  - https://form.typeform.com/to/NDn5L7Nn
+  url_results:
+    https://form.typeform.com/to/NDn5L7Nn:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 19
+  url: https://form.typeform.com/to/NDn5L7Nn
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  scraped_at: '2025-12-05T12:15:57.272957Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\22-polkadot-assurance-legion-bounty\scraped\docs.google.com\forms\d\e\1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag\viewform.html
+  visited_urls:
+  - https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  url_results:
+    https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/TOS?loc=AT&hl=en-US
+    - https://accounts.google.com/TOS?loc=AT&hl=en-US&privacy=true
+    - https://docs.google.com/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S590636993:1764936959197297&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1uSf1j-ZnmQP71ftrHfRn95xrcq0CqdkdqNo91rN3Sv_U1e4rAg3rOuk101F3I3wzwZdkY&ltmpl=forms&osid=1&service=wise
+    - https://docs.google.com/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&dsh=S590636993:1764936959197297&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform&ifkv=ARESoU1uSf1j-ZnmQP71ftrHfRn95xrcq0CqdkdqNo91rN3Sv_U1e4rAg3rOuk101F3I3wzwZdkY&ltmpl=forms&osid=1&service=wise
+    - https://support.google.com/accounts?hl=en-US&p=account_iph
+    - https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US
+    social: []
+  errors: []
+  bounty_id: 22
+  url: https://docs.google.com/forms/d/e/1FAIpQLSfhF6TNyDVHm7LpcmXl1ydEiRXZ378l_4cNnkEdVeLz8Kt4ag/viewform
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  scraped_at: '2025-12-05T12:15:58.030500Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\31-public-rpcs-for-relay-and-system-chains\scraped\docs.google.com\document\d\1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw.html
+  visited_urls:
+  - https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  url_results:
+    https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&followup=https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 31
+  url: https://docs.google.com/document/d/1GS4D95fkNjpi9GbXsiW7-9WOeGb30M5CYXEHXWsWRaw
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.153912Z'
+  scraped_at: '2025-12-05T12:15:59.059682Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\32-system-parachains-collator-bounty\scraped\docs.google.com\document\d\1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  url_results:
+    https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&followup=https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 32
+  url: https://docs.google.com/document/d/1H2T1Nx90HkSAYF_CaOPLG-o3LS7h_QAa2WLDdcSJMs0/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.154913Z'
+  scraped_at: '2025-12-05T12:16:00.238679Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\33-marketing-bounty\scraped\docs.google.com\document\d\1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  url_results:
+    https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&followup=https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 33
+  url: https://docs.google.com/document/d/1_hkZ6-N-8yt7JVF_ITHKL4tpsC-ZWSSrgT0Sce255RY/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.155911Z'
+  scraped_at: '2025-12-05T12:16:00.777652Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\docs.google.com\document\d\1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  url_results:
+    https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&followup=https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 36
+  url: https://docs.google.com/document/d/1RdP1We3jkQeDy0HlA2T_n8whaeGbLZnuSYxPoJ7XLfw/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  scraped_at: '2025-12-05T12:16:01.312677Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\forms.monday.com\forms\e628ca59fa684ec958907bac275fa037.html
+  visited_urls:
+  - https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037
+  url_results:
+    https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 36
+  url: https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  scraped_at: '2025-12-05T12:16:02.109645Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\37-paseo-testnet-bounty\scraped\docs.google.com\document\d\1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  url_results:
+    https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&followup=https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 37
+  url: https://docs.google.com/document/d/1BknF-v1d4YKnhMYEmpsZz-FOLwGwm3a5zaL5BJw1FyQ/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.158914Z'
+  scraped_at: '2025-12-05T12:16:02.311717Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\43-meetups-bounty\scraped\dotmeetup.notion.site\Meetups-bounty-cd57b5990ba443559413dec3b339ab4a.html
+  visited_urls:
+  - https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  url_results:
+    https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 43
+  url: https://dotmeetup.notion.site/Meetups-bounty-cd57b5990ba443559413dec3b339ab4a
+  mode: single
+  max_depth: null
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  scraped_at: '2025-12-05T12:16:03.569458Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\43-meetups-bounty\scraped\forms.gle\3XCTyLZGaCf9hnah7.html
+  visited_urls:
+  - https://forms.gle/3XCTyLZGaCf9hnah7
+  url_results:
+    https://forms.gle/3XCTyLZGaCf9hnah7:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/AccountChooser?continue=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form&service=wise
+    - https://docs.google.com/document/d/1ET7lOb91316T_F10PbJ6HuntVq_dHUjc/edit
+    - https://drive.google.com/abuse?id=AKkXjoyWGjVhy6dm2X70wDOFBh4vF-EF0SUALyE3EDZ0h_BwcSDNJQG6L1F2oLRkIprxWU60eafA6WAeH47iNic:0&docurl=https://docs.google.com/forms/d/e/1FAIpQLSeVzaUemNu66acNyaBWpL_humngQ7e0NO526vWVwgwgJTp2BQ/viewform?usp%3Dsend_form
+    - https://policies.google.com/privacy
+    - https://policies.google.com/terms
+    - https://www.google.com/forms/about?utm_source=product&utm_medium=forms_logo&utm_campaign=forms
+    social: []
+  errors: []
+  bounty_id: 43
+  url: https://forms.gle/3XCTyLZGaCf9hnah7
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  scraped_at: '2025-12-05T12:16:03.926008Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\44-polkadot-kusama-bridge-security-bounty\scraped\docs.google.com\document\d\1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  url_results:
+    https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&followup=https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 44
+  url: https://docs.google.com/document/d/1j-Nb7FYgSJpChgbvkbkHCM_dsjENhrh4Vqc4rNsmNGY/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.162911Z'
+  scraped_at: '2025-12-05T12:16:04.545633Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\50-infrastructure-builders-program\scraped\docs.google.com\document\d\1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY.html
+  visited_urls:
+  - https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  url_results:
+    https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&followup=https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 50
+  url: https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  scraped_at: '2025-12-05T12:16:06.279016Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\50-infrastructure-builders-program\scraped\forms.gle\pqgSc2QJ7XUznveu5.html
+  visited_urls:
+  - https://forms.gle/pqgSc2QJ7XUznveu5
+  url_results:
+    https://forms.gle/pqgSc2QJ7XUznveu5:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/TOS?loc=AT&hl=en-US
+    - https://accounts.google.com/TOS?loc=AT&hl=en-US&privacy=true
+    - https://forms.gle/lifecycle/flows/signup?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1995626213:1764936968610536&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU2wzkGBdX1P7C5fW_4msjY7JGaXxvOO6fQBjQjOCIglmTppiOo0QLnycamlhHcE3Mppr07c5A&ltmpl=forms&osid=1&service=wise
+    - https://forms.gle/signin/usernamerecovery?continue=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&dsh=S-1995626213:1764936968610536&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/forms/d/e/1FAIpQLSeES4B2VlRaCwRizjGx4RAk3ltG2QTfx_EZRdRNEjIxEJNH6A/viewform?usp%3Dsend_form&ifkv=ARESoU2wzkGBdX1P7C5fW_4msjY7JGaXxvOO6fQBjQjOCIglmTppiOo0QLnycamlhHcE3Mppr07c5A&ltmpl=forms&osid=1&service=wise
+    - https://support.google.com/accounts?hl=en-US&p=account_iph
+    - https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US
+    social: []
+  errors: []
+  bounty_id: 50
+  url: https://forms.gle/pqgSc2QJ7XUznveu5
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - form
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  scraped_at: '2025-12-05T12:16:07.317019Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\52-ux-bounty\scraped\polkadot-ux-bounty.notion.site\index.html
+  visited_urls:
+  - https://polkadot-ux-bounty.notion.site/
+  url_results:
+    https://polkadot-ux-bounty.notion.site/:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 52
+  url: https://polkadot-ux-bounty.notion.site/
+  mode: single
+  max_depth: null
+  source: metadata.links.notion
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  scraped_at: '2025-12-05T12:16:08.472709Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\59-open-source-developer-grants-bounty\scraped\docs.google.com\document\d\15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  url_results:
+    https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&followup=https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 59
+  url: https://docs.google.com/document/d/15Q5qvdZOBbl1_U2JxEfVyUGeTfEVxj2hRY7_m85_l2w/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.166914Z'
+  scraped_at: '2025-12-05T12:16:08.846127Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\63-fast-grants-bounty\scraped\docs.google.com\document\d\1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4\edit.html
+  visited_urls:
+  - https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  url_results:
+    https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&osid=1&continue=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&followup=https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit&ltmpl=docs&ec=GAZAGQ
+    - https://docs.google.com/document?usp=docs_web
+    social: []
+  errors: []
+  bounty_id: 63
+  url: https://docs.google.com/document/d/1Hat9Mtj5lnTfySb8wMYj3m_EilBSuL5orwa5LxusDq4/edit
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.169914Z'
+  scraped_at: '2025-12-05T12:16:09.381795Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\10-polkadot-pioneers-bounty\scraped\polkadot.subsquare.io\council\motions\8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca.html
+  visited_urls:
+  - https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  url_results:
+    https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/council/members
+    - https://polkadot.subsquare.io/council/motions
+    - https://polkadot.subsquare.io/democracy/externals
+    - https://polkadot.subsquare.io/democracy/proposals
+    - https://polkadot.subsquare.io/democracy/referenda
+    - https://polkadot.subsquare.io/techcomm/members
+    - https://polkadot.subsquare.io/techcomm/proposals
+    - https://polkadot.subsquare.io/treasury/tips
+    - https://polkadot.subsquare.io/user/12NLgzqfhuJkc9mZ5XUTTG85N8yhhzfptwqF1xVhtK3ZX7f6
+    - https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+    - https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+    - https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+    - https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+    - https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+    - https://polkadot.subsquare.io/user/14mwSGdhdrAA3pGoKSX1tWguFREswWucAsr7kcHbdsf7fU7Q
+    - https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+    social: []
+  errors: []
+  bounty_id: 10
+  url: https://polkadot.subsquare.io/council/motions/8736873_0x80b22690da27eb26a1b33f6508f133f85ca66fd9d7de05edc1a6110f241cfeca
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.145911Z'
+  scraped_at: '2025-12-05T12:16:10.015354Z'
+- status: completed
+  pages_scraped: 18
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\index.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\security-in-smart-contracts.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\sitemap.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\the-risks-associated-with-nfts-and-the-prevalence-of-scams.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\contact.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\proxy-and-multi-signature-accounts.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\blog.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\privacy-policy.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\tracks.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\bounty.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\collective.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\general-information-on-security.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\best-practices-for-safeguarding-seed-phrases.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides\dyor-do-your-own-research.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\bounty\anti-scam-bounty-spends-report-february-2023-february-2024.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\guides.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\spends.html
+  - bounties\11-anti-scam-bounty\scraped\polkadot.antiscam.team\bounty.html
+  visited_urls:
+  - https://polkadot.antiscam.team
+  - https://polkadot.antiscam.team/./bounty
+  - https://polkadot.antiscam.team/./guides
+  - https://polkadot.antiscam.team/blog
+  - https://polkadot.antiscam.team/bounty
+  - https://polkadot.antiscam.team/bounty/anti-scam-bounty-spends-report-february-2023-february-2024
+  - https://polkadot.antiscam.team/collective
+  - https://polkadot.antiscam.team/contact
+  - https://polkadot.antiscam.team/guides/best-practices-for-safeguarding-seed-phrases
+  - https://polkadot.antiscam.team/guides/dyor-do-your-own-research
+  - https://polkadot.antiscam.team/guides/general-information-on-security
+  - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+  - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+  - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+  - https://polkadot.antiscam.team/privacy-policy
+  - https://polkadot.antiscam.team/sitemap
+  - https://polkadot.antiscam.team/spends
+  - https://polkadot.antiscam.team/tracks
+  url_results:
+    https://polkadot.antiscam.team/:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/security-in-smart-contracts:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/sitemap:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/contact:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/blog:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/privacy-policy:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/tracks:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/bounty:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/collective:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/general-information-on-security:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/best-practices-for-safeguarding-seed-phrases:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/guides/dyor-do-your-own-research:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/bounty/anti-scam-bounty-spends-report-february-2023-february-2024:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/./guides:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/spends:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadot.antiscam.team/./bounty:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal:
+    - https://polkadot.antiscam.team/./bounty
+    - https://polkadot.antiscam.team/./guides
+    - https://polkadot.antiscam.team/blog
+    - https://polkadot.antiscam.team/bounty
+    - https://polkadot.antiscam.team/bounty/anti-scam-bounty-spends-report-february-2023-february-2024
+    - https://polkadot.antiscam.team/collective
+    - https://polkadot.antiscam.team/contact
+    - https://polkadot.antiscam.team/guides/best-practices-for-safeguarding-seed-phrases
+    - https://polkadot.antiscam.team/guides/dyor-do-your-own-research
+    - https://polkadot.antiscam.team/guides/general-information-on-security
+    - https://polkadot.antiscam.team/guides/proxy-and-multi-signature-accounts
+    - https://polkadot.antiscam.team/guides/security-in-smart-contracts
+    - https://polkadot.antiscam.team/guides/the-risks-associated-with-nfts-and-the-prevalence-of-scams
+    - https://polkadot.antiscam.team/privacy-policy
+    - https://polkadot.antiscam.team/sitemap
+    - https://polkadot.antiscam.team/spends
+    - https://polkadot.antiscam.team/tracks
+    external:
+    - https://airtable.com/appU6pQRrsyGBPv2m/shrGlJk3xvRVsDaKz
+    - https://airtable.com/appU6pQRrsyGBPv2m/shreb1VlmhXoS7gp1
+    - https://airtable.com/appU6pQRrsyGBPv2m/shryw2ASliU755PBI
+    - https://contractwizard.xyz
+    - https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+    - https://docs.google.com/spreadsheets/d/1GX7O3HFmLvqBsDaSkKuFxbK3TKTVIaeDaNDAdMEgeFA/edit
+    - https://docs.google.com/spreadsheets/d/1OesY8_LteEXMRN2K81ztuG_eEelvjzMZhSVf2MLae38/edit
+    - https://docs.google.com/spreadsheets/d/1ZN9qgkMMl_CnOetr1YZySbKLGrCCbGdV8OKa1-O8Geg/edit?gid=1302329893
+    - https://docs.google.com/spreadsheets/d/1sTmI3hF2oFJ8dK_aC-juBJxq2s-05nqwIN8xT_hmWMI/edit
+    - https://en.cryptonomist.ch/2023/02/10/hermes-plagiarized-nft
+    - https://medium.com/@DotAntiScam
+    - https://polkadot.subscan.io/account/13UVJyLnbVp9RBZYFwHYxa6GPKJ2SqkGg4Mo7jG7uLAbPkT8
+    - https://polkadot.subscan.io/account/151fSxLtpjaBRLGoo1DQB8n8ERLNR6ZduBnmjyzpypegJQp9
+    - https://polkadot.subsquare.io/council/motions/356
+    - https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36990
+    - https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36991
+    - https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36992
+    - https://polkaverse.com/10185/anti-scam-bounty-team-infographics-for-task-7-create-36993
+    - https://polkaverse.com/11141/anti-scam-bounty-team-infographics-for-task-7-educational-37774
+    - https://www.youtube.com/@PolkadotAntiscamTeam
+    social:
+    - https://discord.com/invite/RrWBd9aj9v
+    - https://discord.gg/3kSb7keSg9
+    - https://discord.gg/RrWBd9aj9v
+    - https://twitter.com/DotAntiscam
+    - https://twitter.com/DotAntiscam?ref_src=twsrc%5Etfw
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.antiscam.team/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  scraped_at: '2025-12-05T12:16:11.358217Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\11-anti-scam-bounty\scraped\polkadot.subsquare.io\council\motions\8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109.html
+  visited_urls:
+  - https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  url_results:
+    https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://docs.google.com/document/d/1V-39ktdgpvATPpV1cfI8iZlS8_3oBDAHdlcMDd_3jpo/edit
+    - https://docs.google.com/forms/d/e/1FAIpQLSf2iXCCvdkQ70WrfDPtG5uQA3RrCfvb0VDlZjti26q0yb17sg/viewform?pli=1
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/council/members
+    - https://polkadot.subsquare.io/council/motions
+    - https://polkadot.subsquare.io/democracy/externals
+    - https://polkadot.subsquare.io/democracy/proposals
+    - https://polkadot.subsquare.io/democracy/referenda
+    - https://polkadot.subsquare.io/techcomm/members
+    - https://polkadot.subsquare.io/techcomm/proposals
+    - https://polkadot.subsquare.io/treasury/tips
+    - https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+    - https://polkadot.subsquare.io/user/12xG1Bn4421hUQAxKwZd9WSxZCJQwJBbwr6aZ4ZxvuR7A1Ao
+    - https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+    - https://polkadot.subsquare.io/user/14DQEq1XtPvntMyUFbgcDCSce79s1CBum3rBYrEeB66qgTqG
+    - https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+    - https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+    - https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+    - https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+    social: []
+  errors: []
+  bounty_id: 11
+  url: https://polkadot.subsquare.io/council/motions/8948082_0x39791370f8d3f6b50de688f9a0dec3d876a14ab1a225833a7f1161ac76b80109
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.146914Z'
+  scraped_at: '2025-12-05T12:16:31.192722Z'
+- status: completed
+  pages_scraped: 4
+  files_created:
+  - bounties\17-events-bounty\scraped\dotevents.xyz\index.html
+  - bounties\17-events-bounty\scraped\dotevents.xyz\submissions\submissions.html
+  - bounties\17-events-bounty\scraped\dotevents.xyz\about\1.html
+  - bounties\17-events-bounty\scraped\dotevents.xyz\guidelines\stepbystep.html
+  visited_urls:
+  - https://dotevents.xyz
+  - https://dotevents.xyz/1
+  - https://dotevents.xyz/about/1
+  - https://dotevents.xyz/funding-types
+  - https://dotevents.xyz/guidelines/stepbystep
+  - https://dotevents.xyz/roots
+  - https://dotevents.xyz/stepbystep
+  - https://dotevents.xyz/submissions
+  - https://dotevents.xyz/submissions/submissions
+  url_results:
+    https://dotevents.xyz/:
+      status: success
+      error_code: null
+      error_message: null
+    https://dotevents.xyz/submissions/submissions:
+      status: success
+      error_code: null
+      error_message: null
+    https://dotevents.xyz/about/1:
+      status: success
+      error_code: null
+      error_message: null
+    https://dotevents.xyz/guidelines/stepbystep:
+      status: success
+      error_code: null
+      error_message: null
+    https://dotevents.xyz/submissions:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://dotevents.xyz/1:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://dotevents.xyz/stepbystep:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://dotevents.xyz/roots:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://dotevents.xyz/funding-types:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+  outgoing_urls:
+    internal:
+    - https://dotevents.xyz/1
+    - https://dotevents.xyz/about/1
+    - https://dotevents.xyz/funding-types
+    - https://dotevents.xyz/guidelines/stepbystep
+    - https://dotevents.xyz/roots
+    - https://dotevents.xyz/stepbystep
+    - https://dotevents.xyz/submissions
+    - https://dotevents.xyz/submissions/submissions
+    external:
+    - https://docs.google.com/document/d/10mSYyp54Lm6WYYsQy_Frf9poRgEKNl9nc_-AaOcGS3o/edit?usp=sharing
+    - https://docs.google.com/document/d/1DRFl-7dkNEvca6QXfabMsaBTf_BagN8WsnXOgHs7efQ/edit?usp=sharing
+    - https://docs.google.com/document/d/1KfnrjpMQMyb6nK6M6XNxLO39Ri3LwtDzcn2QBKJj3C0/edit
+    - https://docs.google.com/document/d/1NcOBy0eeAL9uR7rQ5tSyVBOvURfJ7x0jFu5tocPD0mQ/edit
+    - https://docs.google.com/document/d/1OlyGLnPnQsSxY_mcCDNNvrSPmLuPKnZD2PAHiJ3MRsw/edit?usp=drive_link
+    - https://docs.google.com/document/d/1W8IdemrKZZLDiDLyd8_XHUJ7GjwgJ_cXL81l5CKqaOY/edit?usp=sharing
+    - https://docs.google.com/document/d/1Y8DuYnXpNuGJYALjJSUJ83ogJypWoOrL2df1_6XTfYc/edit?usp=sharing
+    - https://docs.google.com/document/d/1g_vHWYJQB8snooSTE-PYcd3V_9YP4kgl1-TEV5gfiQE/edit?usp=drive_link
+    - https://docs.google.com/document/d/1o0EXzcBua5ijDASMwe02W2EVo0zen5ApbFWuzL7bg-0/edit?usp=sharing
+    - https://docs.google.com/document/d/1oWuASk7ebxC-X0oh3f-BYAhM2CUZbJHznUugjzN1DVQ/edit
+    - https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+    - https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?gid=787414755
+    - https://docs.google.com/spreadsheets/d/1Y6oM9o0ldVPcHc1LtDBEIm7XgYWi0f9LYd8aCg8eRuY/edit?usp=sharing
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C
+    - https://drive.google.com/drive/folders/1RvEyNpMjHtKTTuKVfvAKkmCF9J605H5C?usp=drive_link
+    - https://eventsbounty.notion.site/Sept-Dec-2022-Bounty-Roundup-db17e42f5cbf4173a7ec3b68d0575bff
+    - https://forms.gle/gFAL6ZJ7yLQ7Sdun7
+    - https://forms.monday.com/forms/6333f358de606dd1eded5a06d478db1a?r=euc1
+    - https://meet.google.com/vgu-jaqc-rpi
+    - https://www.dotevents.xyz/templates
+    - https://www.subscan.io/account/13UVJyLnbVp9RBZYFwHYxa7N6RNy1Wme5Zng7fD2mnnZ8vM1
+    social:
+    - https://x.com/PolkadotEB
+  errors:
+  - 'Failed to fetch: https://dotevents.xyz/submissions (HTTP 404)'
+  - 'Failed to fetch: https://dotevents.xyz/1 (HTTP 404)'
+  - 'Failed to fetch: https://dotevents.xyz/stepbystep (HTTP 404)'
+  - 'Failed to fetch: https://dotevents.xyz/roots (HTTP 404)'
+  - 'Failed to fetch: https://dotevents.xyz/funding-types (HTTP 404)'
+  bounty_id: 17
+  url: https://dotevents.xyz/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  scraped_at: '2025-12-05T12:16:32.017908Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\17-events-bounty\scraped\polkadot.subsquare.io\council\motions\11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab.html
+  visited_urls:
+  - https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  url_results:
+    https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - http://meet.google.com/vgu-jaqc-rpi
+    - https://docs.google.com/spreadsheets/d/17iSz4oMJixv1CC-CrSgUhWDcFLPs11QOq29YADz6Rs0/edit?usp=sharing
+    - https://dotevents.xyz
+    - https://dotevents.xyz/about/1
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/council/members
+    - https://polkadot.subsquare.io/council/motions
+    - https://polkadot.subsquare.io/democracy/externals
+    - https://polkadot.subsquare.io/democracy/proposals
+    - https://polkadot.subsquare.io/democracy/referenda
+    - https://polkadot.subsquare.io/techcomm/members
+    - https://polkadot.subsquare.io/techcomm/proposals
+    - https://polkadot.subsquare.io/treasury/tips
+    - https://polkadot.subsquare.io/user/12Y8b4C9ar162cBgycxYgxxHG7cLVs8gre9Y5xeMjW3izqer
+    - https://polkadot.subsquare.io/user/12hAtDZJGt4of3m2GqZcUCVAjZPALfvPwvtUTFZPQUbdX1Ud
+    - https://polkadot.subsquare.io/user/12m16pNVG4QKDsr3d9hA1TMjNhSxdQaztqZ5jMC86HLba1Qw
+    - https://polkadot.subsquare.io/user/1363HWTPzDrzAQ6ChFiMU6mP4b6jmQid2ae55JQcKtZnpLGv
+    - https://polkadot.subsquare.io/user/14ShUZUYUR35RBZW6uVVt1zXDxmSQddkeDdXf1JkMA6P721N
+    - https://polkadot.subsquare.io/user/14mSXQeHpF8NT1tMKu87tAbNDNjm7q9qh8hYa7BY2toNUkTo
+    - https://polkadot.subsquare.io/user/167rjWHghVwBJ52mz8sNkqr5bKu5vpchbc9CBoieBhVX714h
+    - https://polkadot.subsquare.io/user/1hCMdtRsaRA4ZTEKpPKPvEjK9rZpGhyFnRHSDhqFMCEayRL
+    social: []
+  errors: []
+  bounty_id: 17
+  url: https://polkadot.subsquare.io/council/motions/11114563_0x573cea9384e111ea2428a53fcfb35324c24649da169ce9b586553f60db4a16ab
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.148911Z'
+  scraped_at: '2025-12-05T12:16:42.151654Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\19-inkubator\scraped\use.ink\ubator.html
+  visited_urls:
+  - https://use.ink/ubator
+  url_results:
+    https://use.ink/ubator/:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 19
+  url: https://use.ink/ubator/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.149911Z'
+  scraped_at: '2025-12-05T12:16:43.179109Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\22-polkadot-assurance-legion-bounty\scraped\polkadotassurance.com\index.html
+  visited_urls:
+  - https://polkadotassurance.com
+  - https://polkadotassurance.com/audits
+  - https://polkadotassurance.com/community_reports
+  - https://polkadotassurance.com/contact
+  - https://polkadotassurance.com/funding
+  - https://polkadotassurance.com/funding/common_good
+  - https://polkadotassurance.com/funding/parachains
+  - https://polkadotassurance.com/funding/security_tooling
+  - https://polkadotassurance.com/funding/smart_contracts
+  - https://polkadotassurance.com/rfp
+  - https://polkadotassurance.com/security_tooling
+  url_results:
+    https://polkadotassurance.com/:
+      status: success
+      error_code: null
+      error_message: null
+    https://polkadotassurance.com/community_reports:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/funding/parachains:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/funding:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/funding/security_tooling:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/funding/smart_contracts:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/funding/common_good:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/rfp:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/audits:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/contact:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+    https://polkadotassurance.com/security_tooling:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+  outgoing_urls:
+    internal:
+    - https://polkadotassurance.com/audits
+    - https://polkadotassurance.com/community_reports
+    - https://polkadotassurance.com/contact
+    - https://polkadotassurance.com/funding
+    - https://polkadotassurance.com/funding/common_good
+    - https://polkadotassurance.com/funding/parachains
+    - https://polkadotassurance.com/funding/security_tooling
+    - https://polkadotassurance.com/funding/smart_contracts
+    - https://polkadotassurance.com/rfp
+    - https://polkadotassurance.com/security_tooling
+    external:
+    - https://securityalliance.org
+    social:
+    - https://discord.gg/xDyGGcnCJw
+    - https://x.com/dotpal_
+  errors:
+  - 'Failed to fetch: https://polkadotassurance.com/community_reports (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/funding/parachains (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/funding (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/funding/security_tooling (HTTP
+    404)'
+  - 'Failed to fetch: https://polkadotassurance.com/funding/smart_contracts (HTTP
+    404)'
+  - 'Failed to fetch: https://polkadotassurance.com/funding/common_good (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/rfp (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/audits (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/contact (HTTP 404)'
+  - 'Failed to fetch: https://polkadotassurance.com/security_tooling (HTTP 404)'
+  bounty_id: 22
+  url: https://polkadotassurance.com/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.150911Z'
+  scraped_at: '2025-12-05T12:16:44.419399Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\24-moderation-team-bounty\scraped\polkadot.subsquare.io\referenda\135.html
+  visited_urls:
+  - https://polkadot.subsquare.io/referenda/135
+  url_results:
+    https://polkadot.subsquare.io/referenda/135:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit
+    - https://docs.google.com/document/d/1dLvzMgP8-BFg25Y1eK1PF6sv5SpN0SbktGkPvUkPSbk/edit?usp=sharing
+    - https://kusama.subsquare.io/referenda/referendum/29
+    - https://polkadot.subscan.io/referenda_v2/135
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/assets
+    - https://polkadot.subsquare.io/calendar
+    - https://polkadot.subsquare.io/council
+    - https://polkadot.subsquare.io/delegation
+    - https://polkadot.subsquare.io/democracy
+    - https://polkadot.subsquare.io/discussions
+    - https://polkadot.subsquare.io/preimages
+    - https://polkadot.subsquare.io/proxies
+    - https://polkadot.subsquare.io/referenda
+    - https://polkadot.subsquare.io/referenda/tracks/33
+    - https://polkadot.subsquare.io/scheduler
+    - https://polkadot.subsquare.io/techcomm
+    - https://polkadot.subsquare.io/treasury
+    - https://polkadot.subsquare.io/treasury/bounties
+    - https://polkadot.subsquare.io/treasury/bounties/24
+    - https://polkadot.subsquare.io/treasury/burn
+    - https://polkadot.subsquare.io/treasury/child-bounties
+    - https://polkadot.subsquare.io/treasury/proposals
+    - https://polkadot.subsquare.io/treasury/spends
+    - https://polkadot.subsquare.io/user/13YWynHAu8F8uKZFbQwvPgJ67xizvo21HCEQU3Ke8z1XHoyT
+    - https://polkadot.subsquare.io/whitelist
+    - https://voting.opensquare.io/space/polkadot
+    social: []
+  errors: []
+  bounty_id: 24
+  url: https://polkadot.subsquare.io/referenda/135
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.152911Z'
+  scraped_at: '2025-12-05T12:17:24.644583Z'
+- status: completed
+  pages_scraped: 7
+  files_created:
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\index.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\defi-builders.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\post\introducing-the-defi-builders-program-on-polkadot-hub.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\post\meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\post\harbour-goes-live-on-polkadot-magic-ramps-are-now-available.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\blog.html
+  - bounties\36-defi-infrastructure-and-tooling-bounty\scraped\www.velocitylabs.org\post\turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem.html
+  visited_urls:
+  - https://www.velocitylabs.org
+  - https://www.velocitylabs.org/blog
+  - https://www.velocitylabs.org/defi-builders
+  - https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available
+  - https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub
+  - https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program
+  - https://www.velocitylabs.org/post/turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem
+  url_results:
+    https://www.velocitylabs.org/:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/defi-builders:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/blog:
+      status: success
+      error_code: null
+      error_message: null
+    https://www.velocitylabs.org/post/turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal:
+    - https://www.velocitylabs.org/blog
+    - https://www.velocitylabs.org/defi-builders
+    - https://www.velocitylabs.org/post/harbour-goes-live-on-polkadot-magic-ramps-are-now-available
+    - https://www.velocitylabs.org/post/introducing-the-defi-builders-program-on-polkadot-hub
+    - https://www.velocitylabs.org/post/meet-the-first-cohort-the-5-teams-selected-for-the-defi-builders-program
+    - https://www.velocitylabs.org/post/turtle-v2-evolving-cross-chain-token-transfers-in-the-polkadot-ecosystem
+    external:
+    - https://ch.linkedin.com/company/velocity-labs-org
+    - https://forms.monday.com/forms/7f8d0a8fc84276cfc4004f1c1281ad9e?r=euc1
+    - https://forms.monday.com/forms/e628ca59fa684ec958907bac275fa037?r=euc1
+    - https://polkadot.com/blog/defi-builders-program
+    - https://polkadot.com/platform/hub
+    - https://turtle.cool
+    - https://turtle.cool/widget
+    social:
+    - https://x.com/v_labs
+  errors: []
+  bounty_id: 36
+  url: https://www.velocitylabs.org/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.157913Z'
+  scraped_at: '2025-12-05T12:17:25.952113Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\37-paseo-testnet-bounty\scraped\paseo.network\index.html
+  visited_urls:
+  - https://paseo.network
+  url_results:
+    https://paseo.network:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://www.godaddy.com/forsale/paseo.network
+    social: []
+  errors: []
+  bounty_id: 37
+  url: https://paseo.network
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.158914Z'
+  scraped_at: '2025-12-05T12:17:35.628658Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\43-meetups-bounty\scraped\dotmeetups.xyz\index.html
+  visited_urls:
+  - http://dotmeetups.xyz
+  url_results:
+    http://dotmeetups.xyz/:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 43
+  url: http://dotmeetups.xyz/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.161911Z'
+  scraped_at: '2025-12-05T12:17:37.625272Z'
+- status: failed
+  pages_scraped: 0
+  files_created: []
+  visited_urls:
+  - https://polkadot.com/bridges-bug-bounty/
+  url_results:
+    https://polkadot.com/bridges-bug-bounty/:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors:
+  - 'Failed to fetch https://polkadot.com/bridges-bug-bounty/: HTTP 404'
+  bounty_id: 44
+  url: https://polkadot.com/bridges-bug-bounty/
+  mode: single
+  max_depth: null
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.162911Z'
+  scraped_at: '2025-12-05T12:17:39.164948Z'
+- status: completed
+  pages_scraped: 44
+  files_created:
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\index.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\serving-ibp.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\temporary-information.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\auditing-ibp.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\consuming-ibp.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\joining-ibp.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\what-is-ibp.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tech-review-20230606.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\admin-meeting-20230125.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tech-review-20230227.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tech-review-20230303.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags\news.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\opengov-update-20230515.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags\admin.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags\youtube.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags\tech.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\system-chains.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags\welcome.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\youtube.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\admin-meeting-20230220.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\welcome.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\members\design.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\members\hello.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\members\certificates.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\candidates\join.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\nodes.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\automation.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\hypervisors.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\networking.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\high-availability.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\reporting.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\proxies.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\category\machines.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\temp\development.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\consumers\archives.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\auditors\monitoring.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\auditors\members.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\auditors\progress.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\consumers\bootnodes.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\basics\operations.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\docs\basics\introduction.html
+  - bounties\50-infrastructure-builders-program\scraped\wiki.ibp.network\blog\tags.html
+  visited_urls:
+  - https://wiki.ibp.network
+  - https://wiki.ibp.network/blog
+  - https://wiki.ibp.network/blog/admin-meeting-20230125
+  - https://wiki.ibp.network/blog/admin-meeting-20230220
+  - https://wiki.ibp.network/blog/opengov-update-20230515
+  - https://wiki.ibp.network/blog/system-chains
+  - https://wiki.ibp.network/blog/tags
+  - https://wiki.ibp.network/blog/tags/admin
+  - https://wiki.ibp.network/blog/tags/news
+  - https://wiki.ibp.network/blog/tags/tech
+  - https://wiki.ibp.network/blog/tags/welcome
+  - https://wiki.ibp.network/blog/tags/youtube
+  - https://wiki.ibp.network/blog/tech-review-20230227
+  - https://wiki.ibp.network/blog/tech-review-20230303
+  - https://wiki.ibp.network/blog/tech-review-20230606
+  - https://wiki.ibp.network/blog/welcome
+  - https://wiki.ibp.network/blog/youtube
+  - https://wiki.ibp.network/docs
+  - https://wiki.ibp.network/docs/auditors/members
+  - https://wiki.ibp.network/docs/auditors/monitoring
+  - https://wiki.ibp.network/docs/auditors/progress
+  - https://wiki.ibp.network/docs/basics/introduction
+  - https://wiki.ibp.network/docs/basics/operations
+  - https://wiki.ibp.network/docs/candidates/join
+  - https://wiki.ibp.network/docs/category/auditing-ibp
+  - https://wiki.ibp.network/docs/category/automation
+  - https://wiki.ibp.network/docs/category/consuming-ibp
+  - https://wiki.ibp.network/docs/category/high-availability
+  - https://wiki.ibp.network/docs/category/hypervisors
+  - https://wiki.ibp.network/docs/category/joining-ibp
+  - https://wiki.ibp.network/docs/category/machines
+  - https://wiki.ibp.network/docs/category/networking
+  - https://wiki.ibp.network/docs/category/nodes
+  - https://wiki.ibp.network/docs/category/proxies
+  - https://wiki.ibp.network/docs/category/reporting
+  - https://wiki.ibp.network/docs/category/serving-ibp
+  - https://wiki.ibp.network/docs/category/temporary-information
+  - https://wiki.ibp.network/docs/category/what-is-ibp
+  - https://wiki.ibp.network/docs/consumers/archives
+  - https://wiki.ibp.network/docs/consumers/bootnodes
+  - https://wiki.ibp.network/docs/members/certificates
+  - https://wiki.ibp.network/docs/members/design
+  - https://wiki.ibp.network/docs/members/hello
+  - https://wiki.ibp.network/docs/temp/development
+  url_results:
+    https://wiki.ibp.network/:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/serving-ibp:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/temporary-information:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/auditing-ibp:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/consuming-ibp:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/joining-ibp:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/what-is-ibp:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tech-review-20230606:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/admin-meeting-20230125:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tech-review-20230227:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tech-review-20230303:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags/news:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/opengov-update-20230515:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags/admin:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags/youtube:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags/tech:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/system-chains:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags/welcome:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/youtube:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/admin-meeting-20230220:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/welcome:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/members/design:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/members/hello:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/members/certificates:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/candidates/join:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/nodes:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/automation:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/hypervisors:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/networking:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/high-availability:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/reporting:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/proxies:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/category/machines:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/temp/development:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/consumers/archives:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/auditors/monitoring:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/auditors/members:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/auditors/progress:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/consumers/bootnodes:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/basics/operations:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/docs/basics/introduction:
+      status: success
+      error_code: null
+      error_message: null
+    https://wiki.ibp.network/blog/tags:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal:
+    - https://wiki.ibp.network/blog
+    - https://wiki.ibp.network/blog/admin-meeting-20230125
+    - https://wiki.ibp.network/blog/admin-meeting-20230220
+    - https://wiki.ibp.network/blog/opengov-update-20230515
+    - https://wiki.ibp.network/blog/system-chains
+    - https://wiki.ibp.network/blog/tags
+    - https://wiki.ibp.network/blog/tags/admin
+    - https://wiki.ibp.network/blog/tags/news
+    - https://wiki.ibp.network/blog/tags/tech
+    - https://wiki.ibp.network/blog/tags/welcome
+    - https://wiki.ibp.network/blog/tags/youtube
+    - https://wiki.ibp.network/blog/tech-review-20230227
+    - https://wiki.ibp.network/blog/tech-review-20230303
+    - https://wiki.ibp.network/blog/tech-review-20230606
+    - https://wiki.ibp.network/blog/welcome
+    - https://wiki.ibp.network/blog/youtube
+    - https://wiki.ibp.network/docs
+    - https://wiki.ibp.network/docs/auditors/members
+    - https://wiki.ibp.network/docs/auditors/monitoring
+    - https://wiki.ibp.network/docs/auditors/progress
+    - https://wiki.ibp.network/docs/basics/introduction
+    - https://wiki.ibp.network/docs/basics/operations
+    - https://wiki.ibp.network/docs/candidates/join
+    - https://wiki.ibp.network/docs/category/auditing-ibp
+    - https://wiki.ibp.network/docs/category/automation
+    - https://wiki.ibp.network/docs/category/consuming-ibp
+    - https://wiki.ibp.network/docs/category/high-availability
+    - https://wiki.ibp.network/docs/category/hypervisors
+    - https://wiki.ibp.network/docs/category/joining-ibp
+    - https://wiki.ibp.network/docs/category/machines
+    - https://wiki.ibp.network/docs/category/networking
+    - https://wiki.ibp.network/docs/category/nodes
+    - https://wiki.ibp.network/docs/category/proxies
+    - https://wiki.ibp.network/docs/category/reporting
+    - https://wiki.ibp.network/docs/category/serving-ibp
+    - https://wiki.ibp.network/docs/category/temporary-information
+    - https://wiki.ibp.network/docs/category/what-is-ibp
+    - https://wiki.ibp.network/docs/consumers/archives
+    - https://wiki.ibp.network/docs/consumers/bootnodes
+    - https://wiki.ibp.network/docs/members/automation/ansible
+    - https://wiki.ibp.network/docs/members/certificates
+    - https://wiki.ibp.network/docs/members/design
+    - https://wiki.ibp.network/docs/members/hello
+    - https://wiki.ibp.network/docs/members/highavailability/proxmoxceph
+    - https://wiki.ibp.network/docs/members/hypervisors/proxmox
+    - https://wiki.ibp.network/docs/members/machines/ubuntu
+    - https://wiki.ibp.network/docs/members/networking/ringnetwork-proxmox
+    - https://wiki.ibp.network/docs/members/nodes/archives
+    - https://wiki.ibp.network/docs/members/nodes/bootnodes
+    - https://wiki.ibp.network/docs/members/nodes/general
+    - https://wiki.ibp.network/docs/members/proxies/stub
+    - https://wiki.ibp.network/docs/members/reporting/grafana
+    - https://wiki.ibp.network/docs/members/reporting/monitor
+    - https://wiki.ibp.network/docs/temp/development
+    external:
+    - https://amforc.com
+    - https://aperturemining.com
+    - https://docs.google.com/document/d/16USQYVhlyAlrU829EUB2TRoqUC0nnfoS_uCdZ84HT8k
+    - https://docs.google.com/document/d/1WENGgO1KwJKkLJ_c6AGxRkLtOhhAjd4OW1v_yWaEUqY
+    - https://docs.google.com/forms/d/e/1FAIpQLSdhCFsscVz66ZocyKfPQzmsmoR9Y_ZlfGGyAUBJ6ThZDS8hRQ/viewform
+    - https://docs.libp2p.io/concepts/fundamentals/addressing
+    - https://gatotech.uk
+    - https://guide.kusama.network/docs/thousand-validators
+    - https://helikon.io
+    - https://ibp-monitor.aperturemining.com
+    - https://ibp-monitor.dozenodes.com
+    - https://ibp-monitor.gatotech.network
+    - https://ibp-monitor.math-crypto.com
+    - https://ibp-monitor.paranodes.io
+    - https://ibp-monitor.polkadotters.com
+    - https://ibp-monitor.stkd.io
+    - https://ibp-monitor.turboflakes.io
+    - https://ibp.rotko.net/monitor
+    - https://interweb-it.com
+    - https://luckyfriday.io
+    - https://monitor.dotters.network
+    - https://paranodes.io
+    - https://polkadotters.com
+    - https://radiumblock.com
+    - https://rotko.net
+    - https://stake.plus
+    - https://stkd.io
+    - https://www.dozenodes.com
+    - https://www.dwellir.com
+    - https://www.math-crypto.com
+    - https://www.turboflakes.io
+    - https://www.youtube.com/@dotsama-ibp
+    - https://www.youtube.com/@ibp.network
+    social:
+    - https://matrix.to
+    - https://twitter.com/TheKusamarian
+  errors: []
+  bounty_id: 50
+  url: https://wiki.ibp.network/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - documentation
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.163911Z'
+  scraped_at: '2025-12-05T12:17:39.402896Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\52-ux-bounty\scraped\www.uxbounty.xyz\index.html
+  visited_urls:
+  - https://www.uxbounty.xyz
+  url_results:
+    https://www.uxbounty.xyz/:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 52
+  url: https://www.uxbounty.xyz/
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  scraped_at: '2025-12-05T12:18:49.051433Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\52-ux-bounty\scraped\calendar.app.google\mBpAmbXzvNBQstYn9.html
+  visited_urls:
+  - https://calendar.app.google/mBpAmbXzvNBQstYn9
+  url_results:
+    https://calendar.app.google/mBpAmbXzvNBQstYn9:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors: []
+  bounty_id: 52
+  url: https://calendar.app.google/mBpAmbXzvNBQstYn9
+  mode: single
+  max_depth: null
+  source: metadata.contact.applicationForm
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.165911Z'
+  scraped_at: '2025-12-05T12:18:50.488542Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\62-legal-bounty\scraped\www.polkadot.law\legalbounty.html
+  visited_urls:
+  - https://www.polkadot.law/legalbounty
+  url_results:
+    https://www.polkadot.law/legalbounty:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://polkadot.network
+    - https://polkadot.subsquare.io/referenda/1676
+    - https://wiki.polkadot.com
+    - https://www.polkadot.law
+    - https://www.polkadot.law/pcf
+    - https://www.polkadot.law/research
+    - https://www.soft.law
+    social:
+    - https://discord.gg/artCCVuy
+  errors: []
+  bounty_id: 62
+  url: https://www.polkadot.law/legalbounty
+  mode: recursive
+  max_depth: 3
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.167912Z'
+  scraped_at: '2025-12-05T12:18:51.152936Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\62-legal-bounty\scraped\polkadot.subsquare.io\referenda\1359.html
+  visited_urls:
+  - https://polkadot.subsquare.io/referenda/1359
+  url_results:
+    https://polkadot.subsquare.io/referenda/1359:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://docs.google.com/document/d/1eHSn1wD5sgIERqsO7sB6iu7z30O3k6FPSXKjkAHK0Ek/edit?usp=sharing
+    - https://polkadot.subscan.io/referenda_v2/1359
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/assets
+    - https://polkadot.subsquare.io/calendar
+    - https://polkadot.subsquare.io/council
+    - https://polkadot.subsquare.io/delegation
+    - https://polkadot.subsquare.io/democracy
+    - https://polkadot.subsquare.io/discussions
+    - https://polkadot.subsquare.io/preimages
+    - https://polkadot.subsquare.io/proxies
+    - https://polkadot.subsquare.io/referenda
+    - https://polkadot.subsquare.io/referenda/tracks/33
+    - https://polkadot.subsquare.io/scheduler
+    - https://polkadot.subsquare.io/techcomm
+    - https://polkadot.subsquare.io/treasury
+    - https://polkadot.subsquare.io/treasury/bounties
+    - https://polkadot.subsquare.io/treasury/bounties/62
+    - https://polkadot.subsquare.io/treasury/burn
+    - https://polkadot.subsquare.io/treasury/child-bounties
+    - https://polkadot.subsquare.io/treasury/proposals
+    - https://polkadot.subsquare.io/treasury/spends
+    - https://polkadot.subsquare.io/user/1eGtATyy4ayn77dsrhdW8N3Vs1yjqjzJcintksNmScqy31j
+    - https://polkadot.subsquare.io/whitelist
+    - https://voting.opensquare.io/space/polkadot
+    social:
+    - https://discord.gg/sYw7WkZVzV
+  errors: []
+  bounty_id: 62
+  url: https://polkadot.subsquare.io/referenda/1359
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.167912Z'
+  scraped_at: '2025-12-05T12:18:52.392549Z'
+- status: completed
+  pages_scraped: 1
+  files_created:
+  - bounties\64-rust-bounties\scraped\polkadot.subsquare.io\referenda\1377.html
+  visited_urls:
+  - https://polkadot.subsquare.io/referenda/1377
+  url_results:
+    https://polkadot.subsquare.io/referenda/1377:
+      status: success
+      error_code: null
+      error_message: null
+  outgoing_urls:
+    internal: []
+    external:
+    - https://polkadot.subscan.io/referenda_v2/1377
+    - https://polkadot.subsquare.io
+    - https://polkadot.subsquare.io/assets
+    - https://polkadot.subsquare.io/calendar
+    - https://polkadot.subsquare.io/council
+    - https://polkadot.subsquare.io/delegation
+    - https://polkadot.subsquare.io/democracy
+    - https://polkadot.subsquare.io/discussions
+    - https://polkadot.subsquare.io/preimages
+    - https://polkadot.subsquare.io/proxies
+    - https://polkadot.subsquare.io/referenda
+    - https://polkadot.subsquare.io/referenda/712
+    - https://polkadot.subsquare.io/referenda/tracks/34
+    - https://polkadot.subsquare.io/scheduler
+    - https://polkadot.subsquare.io/techcomm
+    - https://polkadot.subsquare.io/treasury
+    - https://polkadot.subsquare.io/treasury/bounties
+    - https://polkadot.subsquare.io/treasury/bounties/64
+    - https://polkadot.subsquare.io/treasury/burn
+    - https://polkadot.subsquare.io/treasury/child-bounties
+    - https://polkadot.subsquare.io/treasury/proposals
+    - https://polkadot.subsquare.io/treasury/spends
+    - https://polkadot.subsquare.io/user/15BERoWxrWC61cAb4JjpUdM7sy8FAS9uduismDbZ7PURZLto
+    - https://polkadot.subsquare.io/whitelist
+    - https://voting.opensquare.io/space/polkadot
+    social: []
+  errors: []
+  bounty_id: 64
+  url: https://polkadot.subsquare.io/referenda/1377
+  mode: single
+  max_depth: null
+  source: metadata.links.proposal
+  categories:
+  - governance
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.170916Z'
+  scraped_at: '2025-12-05T12:18:53.994070Z'

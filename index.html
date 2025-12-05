@@ -591,9 +591,70 @@
 
         async function loadScrapedIndex() {
             try {
-                const response = await fetch('scraped-index.json');
-                const data = await response.json();
-                scrapedIndex = data.bounties || {};
+                const response = await fetch('scraping/scrape-index.yml');
+                const yamlText = await response.text();
+                const data = jsyaml.load(yamlText);
+
+                // Transform scrape-index.yml format into grouped structure
+                // Format: { bountyId: { domains: [ { domain, file_count, files: [{path, title, url}] } ] } }
+                const grouped = {};
+
+                for (const entry of data.index || []) {
+                    // Only include successful scrapes
+                    if (entry.status !== 'success' || !entry.location) continue;
+
+                    const bountyId = entry.bounty_id;
+                    const url = entry.url;
+
+                    // Extract domain from URL
+                    let domain;
+                    try {
+                        const urlObj = new URL(url);
+                        domain = urlObj.hostname;
+                    } catch {
+                        continue;
+                    }
+
+                    // Build file path from URL
+                    const urlObj = new URL(url);
+                    let filePath = urlObj.pathname;
+
+                    // Clean up path and add .html extension
+                    if (filePath === '/' || filePath === '') {
+                        filePath = 'index.html';
+                    } else {
+                        // Remove leading slash and clean up
+                        filePath = filePath.replace(/^\/+/, '');
+                        // Remove trailing slash
+                        filePath = filePath.replace(/\/+$/, '');
+                        // Add .html if no extension
+                        if (!filePath.includes('.')) {
+                            filePath += '.html';
+                        }
+                    }
+
+                    // Initialize bounty if needed
+                    if (!grouped[bountyId]) {
+                        grouped[bountyId] = { domains: [] };
+                    }
+
+                    // Find or create domain entry
+                    let domainEntry = grouped[bountyId].domains.find(d => d.domain === domain);
+                    if (!domainEntry) {
+                        domainEntry = { domain, file_count: 0, files: [] };
+                        grouped[bountyId].domains.push(domainEntry);
+                    }
+
+                    // Add file entry
+                    domainEntry.files.push({
+                        path: filePath,
+                        title: '', // We don't have titles in the index, they're in .meta.yml files
+                        url: url
+                    });
+                    domainEntry.file_count++;
+                }
+
+                scrapedIndex = grouped;
                 console.log('Loaded scraped index:', Object.keys(scrapedIndex).length, 'bounties');
             } catch (error) {
                 console.warn('Could not load scraped index:', error);
