@@ -351,6 +351,10 @@
             margin-top: 0.5rem;
         }
 
+        .scraped-domains.empty {
+            color: #558b2f;
+        }
+
         .domain-chip {
             padding: 0.4rem 0.8rem;
             background: white;
@@ -365,6 +369,30 @@
         .domain-chip:hover {
             background: #4caf50;
             color: white;
+        }
+
+        .scraped-errors {
+            margin-top: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .error-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 0.75rem;
+            background: #fff5f5;
+            border: 1px solid #e57373;
+            color: #c62828;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .error-pill:hover {
+            background: #ffcdd2;
         }
 
         .view-all-btn {
@@ -497,6 +525,36 @@
             background: #e8f5e9;
         }
 
+        .error-section {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .error-section h4 {
+            margin-bottom: 0.5rem;
+            color: #c62828;
+        }
+
+        .error-item {
+            background: #fff5f5;
+            border: 1px solid #ef9a9a;
+            border-radius: 8px;
+            padding: 0.75rem 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-url {
+            font-weight: 700;
+            color: #7f1d1d;
+            word-break: break-all;
+        }
+
+        .error-detail {
+            margin-top: 0.25rem;
+            color: #b71c1c;
+        }
+
         .file-title {
             font-size: 0.85rem;
             color: #666;
@@ -596,62 +654,67 @@
                 const data = jsyaml.load(yamlText);
 
                 // Transform scrape-index.yml format into grouped structure
-                // Format: { bountyId: { domains: [ { domain, file_count, files: [{path, title, url}] } ] } }
+                // Format: { bountyId: { domains: [ { domain, file_count, files: [{path, title, url}] } ], errors: [{ url, error_code, error_message }] } }
                 const grouped = {};
 
                 for (const entry of data.index || []) {
-                    // Only include successful scrapes
-                    if (entry.status !== 'success' || !entry.location) continue;
-
                     const bountyId = entry.bounty_id;
-                    const url = entry.url;
 
-                    // Extract domain from URL
-                    let domain;
-                    try {
-                        const urlObj = new URL(url);
-                        domain = urlObj.hostname;
-                    } catch {
-                        continue;
-                    }
-
-                    // Build file path from URL
-                    const urlObj = new URL(url);
-                    let filePath = urlObj.pathname;
-
-                    // Clean up path and add .html extension
-                    if (filePath === '/' || filePath === '') {
-                        filePath = 'index.html';
-                    } else {
-                        // Remove leading slash and clean up
-                        filePath = filePath.replace(/^\/+/, '');
-                        // Remove trailing slash
-                        filePath = filePath.replace(/\/+$/, '');
-                        // Add .html if no extension
-                        if (!filePath.includes('.')) {
-                            filePath += '.html';
-                        }
-                    }
-
-                    // Initialize bounty if needed
                     if (!grouped[bountyId]) {
-                        grouped[bountyId] = { domains: [] };
+                        grouped[bountyId] = { domains: [], errors: [] };
                     }
 
-                    // Find or create domain entry
-                    let domainEntry = grouped[bountyId].domains.find(d => d.domain === domain);
-                    if (!domainEntry) {
-                        domainEntry = { domain, file_count: 0, files: [] };
-                        grouped[bountyId].domains.push(domainEntry);
-                    }
+                    if (entry.status === 'success' && entry.location) {
+                        const url = entry.url;
 
-                    // Add file entry
-                    domainEntry.files.push({
-                        path: filePath,
-                        title: '', // We don't have titles in the index, they're in .meta.yml files
-                        url: url
-                    });
-                    domainEntry.file_count++;
+                        // Extract domain from URL
+                        let domain;
+                        try {
+                            const urlObj = new URL(url);
+                            domain = urlObj.hostname;
+                        } catch {
+                            continue;
+                        }
+
+                        // Build file path from URL
+                        const urlObj = new URL(url);
+                        let filePath = urlObj.pathname;
+
+                        // Clean up path and add .html extension
+                        if (filePath === '/' || filePath === '') {
+                            filePath = 'index.html';
+                        } else {
+                            // Remove leading slash and clean up
+                            filePath = filePath.replace(/^\/+/, '');
+                            // Remove trailing slash
+                            filePath = filePath.replace(/\/+$/, '');
+                            // Add .html if no extension
+                            if (!filePath.includes('.')) {
+                                filePath += '.html';
+                            }
+                        }
+
+                        // Find or create domain entry
+                        let domainEntry = grouped[bountyId].domains.find(d => d.domain === domain);
+                        if (!domainEntry) {
+                            domainEntry = { domain, file_count: 0, files: [] };
+                            grouped[bountyId].domains.push(domainEntry);
+                        }
+
+                        // Add file entry
+                        domainEntry.files.push({
+                            path: filePath,
+                            title: '', // We don't have titles in the index, they're in .meta.yml files
+                            url: url
+                        });
+                        domainEntry.file_count++;
+                    } else if (entry.status !== 'success') {
+                        grouped[bountyId].errors.push({
+                            url: entry.url,
+                            error_code: entry.error_code || 'Unknown',
+                            error_message: entry.error_message || 'Unknown error'
+                        });
+                    }
                 }
 
                 scrapedIndex = grouped;
@@ -896,29 +959,38 @@
 
         function createScrapedSection(bountyId) {
             const scraped = scrapedIndex[bountyId];
-            if (!scraped || !scraped.domains || scraped.domains.length === 0) {
+            const hasDomains = scraped && scraped.domains && scraped.domains.length > 0;
+            const hasErrors = scraped && scraped.errors && scraped.errors.length > 0;
+
+            if (!hasDomains && !hasErrors) {
                 return '';
             }
 
-            const totalFiles = scraped.domains.reduce((sum, d) => sum + d.file_count, 0);
-            const domainCount = scraped.domains.length;
+            const totalFiles = hasDomains ? scraped.domains.reduce((sum, d) => sum + d.file_count, 0) : 0;
+            const domainCount = hasDomains ? scraped.domains.length : 0;
+            const errorCount = hasErrors ? scraped.errors.length : 0;
 
             return `
                 <div class="scraped-section">
                     <div class="scraped-header">
                         <span class="scraped-title">📄 Scraped Documentation</span>
-                        <span class="scraped-count">${domainCount} domain${domainCount > 1 ? 's' : ''}, ${totalFiles} file${totalFiles > 1 ? 's' : ''}</span>
+                        ${hasDomains ? `<span class="scraped-count">${domainCount} domain${domainCount > 1 ? 's' : ''}, ${totalFiles} file${totalFiles > 1 ? 's' : ''}</span>` : ''}
                     </div>
-                    <div class="scraped-domains">
-                        ${scraped.domains.slice(0, 3).map(d => `
+                    <div class="scraped-domains ${hasDomains ? '' : 'empty'}">
+                        ${hasDomains ? scraped.domains.slice(0, 3).map(d => `
                             <span class="domain-chip" onclick="openScrapedModal(${bountyId})">${d.domain}</span>
-                        `).join('')}
-                        ${scraped.domains.length > 3 ? `
+                        `).join('') : 'No scraped files available yet.'}
+                        ${hasDomains && scraped.domains.length > 3 ? `
                             <button class="view-all-btn" onclick="openScrapedModal(${bountyId})">
                                 View All (${scraped.domains.length})
                             </button>
                         ` : ''}
                     </div>
+                    ${hasErrors ? `
+                        <div class="scraped-errors">
+                            <span class="error-pill" onclick="openScrapedModal(${bountyId})">⚠️ ${errorCount} scrape issue${errorCount > 1 ? 's' : ''}</span>
+                        </div>
+                    ` : ''}
                 </div>
             `;
         }
@@ -934,7 +1006,10 @@
             document.getElementById('modalTitle').textContent = `Scraped Content - ${bountyName}`;
 
             const modalBody = document.getElementById('modalBody');
-            modalBody.innerHTML = scraped.domains.map(domain => `
+            const domains = scraped.domains || [];
+            const errors = scraped.errors || [];
+
+            const domainSections = domains.length ? domains.map(domain => `
                 <div class="domain-section">
                     <div class="domain-header">
                         🌐 ${domain.domain} (${domain.file_count} file${domain.file_count > 1 ? 's' : ''})
@@ -957,7 +1032,21 @@
                         }).join('')}
                     </div>
                 </div>
-            `).join('');
+            `).join('') : '<p>No scraped files are available yet.</p>';
+
+            const errorSection = errors.length ? `
+                <div class="error-section">
+                    <h4>Scrape errors</h4>
+                    ${errors.map(error => `
+                        <div class="error-item">
+                            <div class="error-url">${error.url}</div>
+                            <div class="error-detail">${error.error_code ? `HTTP ${error.error_code}` : ''}${error.error_code ? ' - ' : ''}${error.error_message}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : '';
+
+            modalBody.innerHTML = domainSections + errorSection;
 
             document.getElementById('scrapedModal').classList.add('active');
         }

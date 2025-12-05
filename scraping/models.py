@@ -137,6 +137,7 @@ class IndexEntry:
     status: str = "success"  # "success" or "failed"
     error_code: Optional[int] = None  # HTTP status code (404, 403, etc.)
     error_message: Optional[str] = None  # Error description
+    handler: str = "static_http"
 
     def __post_init__(self):
         """Validate data"""
@@ -167,7 +168,8 @@ class IndexEntry:
             discovered_at=data.get('discovered_at'),
             status=data.get('status', 'success'),
             error_code=data.get('error_code'),
-            error_message=data.get('error_message')
+            error_message=data.get('error_message'),
+            handler=data.get('handler', 'static_http')
         )
 
 
@@ -225,6 +227,7 @@ class ScrapeResult:
     type: str = "scrape"
     discovered_at: Optional[str] = None
     max_depth: Optional[int] = None
+    handler: Optional[str] = None
 
     def __post_init__(self):
         """Validate and normalize data"""
@@ -263,7 +266,8 @@ class ScrapeResult:
             categories=data.get('categories', ['other']),
             type=data.get('type', 'scrape'),
             discovered_at=data.get('discovered_at'),
-            max_depth=data.get('max_depth')
+            max_depth=data.get('max_depth'),
+            handler=data.get('handler')
         )
 
 
