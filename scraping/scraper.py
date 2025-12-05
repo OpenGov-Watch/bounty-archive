@@ -6,9 +6,6 @@ Scrapes documentation URLs for bounties and saves them in their original format.
 Reads configuration from scrape-queue.yml and outputs results to scrape-results.yml.
 """
 
-import os
-import re
-import sys
 import time
 import yaml
 from datetime import datetime, timezone
@@ -101,7 +98,7 @@ class PolkadotBountyScraper:
             return None, None, error_code, error_message, handler.handler_name
 
         page = handler.discover_links(page, base_url)
-        return page, page.extension, None, None, handler.handler_name
+        return page, page.extension, error_code, error_message, handler.handler_name
 
     def url_to_filepath(self, url: str, bounty_slug: str, extension: str) -> Path:
         """Convert URL to file path with appropriate extension"""
@@ -186,29 +183,40 @@ class PolkadotBountyScraper:
             page, extension, error_code, error_message, handler_name = self.scrape_page(url, job.url)
 
             if page:
-                # Success - save page
                 filepath = self.url_to_filepath(url, bounty_slug, extension)
+
+                # Save the response body for traceability regardless of status
                 self.save_page(page, filepath)
                 files_created.append(str(filepath.relative_to(self.project_root)))
 
-                # Track success
-                url_results[url] = {
-                    'status': 'success',
-                    'error_code': None,
-                    'error_message': None,
-                    'handler': handler_name
-                }
+                if page.status_code == 200:
+                    # Track success
+                    url_results[url] = {
+                        'status': 'success',
+                        'error_code': None,
+                        'error_message': None,
+                        'handler': handler_name
+                    }
 
-                # Collect links
-                all_internal.update(page.internal_links)
-                all_external.update(page.external_links)
-                all_social.update(page.social_links)
+                    # Collect links
+                    all_internal.update(page.internal_links)
+                    all_external.update(page.external_links)
+                    all_social.update(page.social_links)
 
-                # Queue internal links for next depth level
-                if depth < job.max_depth:
-                    for link in page.internal_links:
-                        if link.rstrip('/') not in visited:
-                            queue.append((link, depth + 1))
+                    # Queue internal links for next depth level
+                    if depth < job.max_depth:
+                        for link in page.internal_links:
+                            if link.rstrip('/') not in visited:
+                                queue.append((link, depth + 1))
+                else:
+                    # Non-200 response is recorded as a failure but does not block completion
+                    url_results[url] = {
+                        'status': 'failed',
+                        'error_code': error_code or page.status_code,
+                        'error_message': error_message or f'HTTP {page.status_code}',
+                        'handler': handler_name
+                    }
+                    errors.append(f"Non-200 response for {url}: HTTP {page.status_code}")
             else:
                 # Failed - create error marker file
                 error_filepath = self.url_to_filepath(url, bounty_slug, '.error.yml')
@@ -239,8 +247,17 @@ class PolkadotBountyScraper:
             # Rate limiting
             time.sleep(self.config.rate_limit_delay)
 
+        failed_results = [r for r in url_results.values() if r.get('status') == 'failed']
+        # Treat any HTTP response (indicated by presence of an error_code) as non-fatal
+        response_only_failures = bool(failed_results) and all(r.get('error_code') is not None for r in failed_results)
+
+        if files_created:
+            status = 'completed' if (not errors or response_only_failures) else 'partial'
+        else:
+            status = 'completed' if (response_only_failures or not errors) else 'failed'
+
         return {
-            'status': 'completed' if not errors or files_created else 'partial' if files_created else 'failed',
+            'status': status,
             'pages_scraped': len(files_created),
             'files_created': files_created,
             'visited_urls': sorted(visited),
@@ -261,7 +278,7 @@ class PolkadotBountyScraper:
             return {
                 'status': 'failed',
                 'error': f'Bounty folder not found for ID {job.bounty_id}',
-                'url_results': {}
+                'url_results': {},
             }
 
         page, extension, error_code, error_message, handler_name = self.scrape_page(job.url, job.url)
@@ -269,57 +286,43 @@ class PolkadotBountyScraper:
         url_results = {}
 
         if page:
-            # Save successful page
             filepath = self.url_to_filepath(job.url, bounty_slug, extension)
             self.save_page(page, filepath)
 
+            if page.status_code == 200:
+                url_results[job.url] = {
+                    'status': 'success',
+                    'error_code': None,
+                    'error_message': None,
+                    'handler': handler_name
+                }
+
+                return {
+                    'status': 'completed',
+                    'pages_scraped': 1,
+                    'files_created': [str(filepath.relative_to(self.project_root))],
+                    'visited_urls': [job.url],
+                    'url_results': url_results,
+                    'outgoing_urls': {
+                        'internal': sorted(page.internal_links),
+                        'external': sorted(page.external_links),
+                        'social': sorted(page.social_links)
+                    },
+                    'errors': [],
+                    'handler': handler_name
+                }
+
             url_results[job.url] = {
-                'status': 'success',
-                'error_code': None,
-                'error_message': None,
+                'status': 'failed',
+                'error_code': error_code or page.status_code,
+                'error_message': error_message or f'HTTP {page.status_code}',
                 'handler': handler_name
             }
 
             return {
                 'status': 'completed',
-                'pages_scraped': 1,
-                'files_created': [str(filepath.relative_to(self.project_root))],
-                'visited_urls': [job.url],
-                'url_results': url_results,
-                'outgoing_urls': {
-                    'internal': sorted(page.internal_links),
-                    'external': sorted(page.external_links),
-                    'social': sorted(page.social_links)
-                },
-                'errors': [],
-                'handler': handler_name
-            }
-        else:
-            # Create error marker file
-            error_filepath = self.url_to_filepath(job.url, bounty_slug, '.error.yml')
-            error_data = {
-                'url': job.url,
-                'error_code': error_code,
-                'error_message': error_message,
-                'attempted_at': datetime.now(timezone.utc).isoformat(),
-                'bounty_id': job.bounty_id
-            }
-
-            error_filepath.parent.mkdir(parents=True, exist_ok=True)
-            with open(error_filepath, 'w', encoding='utf-8') as f:
-                yaml.dump(error_data, f)
-
-            url_results[job.url] = {
-                'status': 'failed',
-                'error_code': error_code,
-                'error_message': error_message,
-                'handler': handler_name
-            }
-
-            return {
-                'status': 'failed',
                 'pages_scraped': 0,
-                'files_created': [],
+                'files_created': [str(filepath.relative_to(self.project_root))],
                 'visited_urls': [job.url],
                 'url_results': url_results,
                 'outgoing_urls': {
@@ -327,9 +330,48 @@ class PolkadotBountyScraper:
                     'external': [],
                     'social': []
                 },
-                'errors': [f'Failed to fetch {job.url}: {error_message}'],
+                'errors': [f'Non-200 response: HTTP {page.status_code}'],
                 'handler': handler_name
             }
+
+        # Create error marker file
+        error_filepath = self.url_to_filepath(job.url, bounty_slug, '.error.yml')
+        error_data = {
+            'url': job.url,
+            'error_code': error_code,
+            'error_message': error_message,
+            'attempted_at': datetime.now(timezone.utc).isoformat(),
+            'bounty_id': job.bounty_id
+        }
+
+        error_filepath.parent.mkdir(parents=True, exist_ok=True)
+        with open(error_filepath, 'w', encoding='utf-8') as f:
+            yaml.dump(error_data, f)
+
+        url_results[job.url] = {
+            'status': 'failed',
+            'error_code': error_code,
+            'error_message': error_message,
+            'handler': handler_name
+        }
+
+        # If we received an HTTP status code, treat it as non-fatal for queue clearing
+        result_status = 'completed' if error_code is not None else 'failed'
+
+        return {
+            'status': result_status,
+            'pages_scraped': 0,
+            'files_created': [],
+            'visited_urls': [job.url],
+            'url_results': url_results,
+            'outgoing_urls': {
+                'internal': [],
+                'external': [],
+                'social': []
+            },
+            'errors': [f'Failed to fetch {job.url}: {error_message}'],
+            'handler': handler_name
+        }
 
     def scrape_job(self, job: ScrapeJob) -> Dict:
         """Scrape a job from the queue"""

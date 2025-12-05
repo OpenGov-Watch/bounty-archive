@@ -20,10 +20,6 @@ class StaticHttpScraper(BaseScraper):
                 url, timeout=self.config.request_timeout, allow_redirects=True
             )
 
-            if response.status_code != 200:
-                error_msg = f"HTTP {response.status_code}"
-                return None, response.status_code, error_msg
-
             content_type = response.headers.get("content-type", "").lower()
             extension = self._get_file_extension(content_type, url)
             title = self._extract_title(response, url)
@@ -41,7 +37,14 @@ class StaticHttpScraper(BaseScraper):
                 extension=extension,
                 handler=self.handler_name,
             )
-            return page, None, None
+
+            error_code: Optional[int] = None
+            error_message: Optional[str] = None
+            if response.status_code != 200:
+                error_code = response.status_code
+                error_message = f"HTTP {response.status_code}"
+
+            return page, error_code, error_message
 
         except Exception as e:  # noqa: BLE001
             return None, None, str(e)
