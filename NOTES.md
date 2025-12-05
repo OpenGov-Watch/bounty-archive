@@ -1,5 +1,6 @@
 what doesn't work:
 - Google Docs
+- after cleanup.py reset-all and suggest.py, it says "already processed: 19" which shouldn't happen
 
 ## Code Review Findings - 2025-11-29
 

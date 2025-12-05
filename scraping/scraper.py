@@ -21,6 +21,8 @@ import requests
 from bs4 import BeautifulSoup
 
 from config import ScrapeConfig
+from data import ScrapeData
+from models import QueueEntry, IndexEntry, DiscoveredLink, ScrapeResult, ScrapeStatus, ScrapeMode
 
 
 @dataclass
@@ -56,10 +58,7 @@ class PolkadotBountyScraper:
         self.config = config
         self.bounties_dir = project_root / "bounties"
         self.scraping_dir = project_root / "scraping"
-        self.queue_file = self.scraping_dir / "scrape-queue.yml"
-        self.results_file = self.scraping_dir / "scrape-results.yml"
-        self.index_file = self.scraping_dir / "scrape-index.yml"
-        self.links_file = self.scraping_dir / "scrape-links.yml"
+        self.data = ScrapeData(self.scraping_dir)
 
         # Session for requests with proper headers
         self.session = requests.Session()
@@ -73,31 +72,19 @@ class PolkadotBountyScraper:
 
     def load_queue(self) -> List[ScrapeJob]:
         """Load scraping queue from YAML file"""
-        if not self.queue_file.exists():
-            print(f"Error: Queue file not found: {self.queue_file}")
+        queue = self.data.load_queue_typed()
+
+        if not queue:
+            print(f"Error: Queue is empty")
             return []
 
-        with open(self.queue_file, 'r', encoding='utf-8') as f:
-            data = yaml.safe_load(f)
-
-        # Handle empty YAML file (returns None)
-        if data is None:
-            data = {}
-
         jobs = []
-        queue = data.get('queue', [])
-        # Handle case where queue key exists but is None
-        if queue is None:
-            queue = []
-
         for item in queue:
-            if not item:  # Skip None/empty items
-                continue
             jobs.append(ScrapeJob(
-                bounty_id=item['bounty_id'],
-                url=item['url'],
-                mode=item.get('mode', 'single'),
-                max_depth=item.get('max_depth', 1)
+                bounty_id=item.bounty_id,
+                url=item.url,
+                mode=item.mode.value,
+                max_depth=item.max_depth
             ))
         return jobs
 
@@ -437,61 +424,19 @@ class PolkadotBountyScraper:
 
     def save_results(self, results: List[Dict]):
         """Save results to scrape-results.yml"""
-        # Load existing results if any
-        if self.results_file.exists():
-            with open(self.results_file, 'r', encoding='utf-8') as f:
-                existing = yaml.safe_load(f) or {}
-        else:
-            existing = {}
-
-        # Initialize structure
-        if 'scraped' not in existing or existing['scraped'] is None:
-            existing['scraped'] = []
-        if 'discovered_queue' not in existing or existing['discovered_queue'] is None:
-            existing['discovered_queue'] = []
-
-        # Add new results
-        existing['scraped'].extend(results)
-        existing['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-        existing['version'] = "1.0"
-
-        # Build discovered queue
-        for result in results:
-            if result.get('status') in ('completed', 'partial'):
-                outgoing = result.get('outgoing_urls', {})
-                for url in outgoing.get('external', []):
-                    # Check if already in queue
-                    if not any(item['url'] == url for item in existing['discovered_queue']):
-                        existing['discovered_queue'].append({
-                            'url': url,
-                            'found_on': result['url'],
-                            'bounty_id': result['bounty_id']
-                        })
-
-        # Save results
-        with open(self.results_file, 'w', encoding='utf-8') as f:
-            yaml.dump(existing, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-
-        print(f"\nResults saved to: {self.results_file.relative_to(self.project_root)}")
+        # Add results using data manager
+        self.data.add_results(results)
+        print(f"\nResults saved to: scraping/scrape-results.yml")
 
     def update_index(self, results: List[Dict]):
         """Update scrape-index.yml with successfully scraped URLs"""
-        # Load existing index
-        if self.index_file.exists():
-            with open(self.index_file, 'r', encoding='utf-8') as f:
-                index_data = yaml.safe_load(f) or {}
-        else:
-            index_data = {}
+        entries = []
 
-        # Initialize structure
-        if 'index' not in index_data or index_data['index'] is None:
-            index_data['index'] = []
-
-        # Add new successful scrapes to index
+        # Build index entries from results
         for result in results:
             if result.get('status') in ('completed', 'partial'):
                 # Extract location from first file created
-                location = None
+                location = ''
                 if result.get('files_created'):
                     # Get the directory path from the first file
                     first_file = result['files_created'][0]
@@ -507,95 +452,39 @@ class PolkadotBountyScraper:
                     urls_to_index = [result['url']]
 
                 for url in urls_to_index:
-                    # Check if URL already in index
-                    existing_entry = next((item for item in index_data['index'] if item['url'] == url), None)
+                    entry = IndexEntry(
+                        url=url,
+                        bounty_id=result['bounty_id'],
+                        scraped_at=result.get('scraped_at', ''),
+                        location=location,
+                        pages=1,  # Each URL is 1 page
+                        source=result.get('source', 'Unknown'),
+                        categories=result.get('categories', []),
+                        type=result.get('type', 'scrape'),
+                        discovered_at=result.get('discovered_at')
+                    )
+                    entries.append(entry)
 
-                    if existing_entry:
-                        # Update existing entry
-                        existing_entry['scraped_at'] = result.get('scraped_at', '')
-                        if location:
-                            existing_entry['location'] = location
-                        # Update metadata fields
-                        existing_entry['source'] = result.get('source', 'Unknown')
-                        existing_entry['categories'] = result.get('categories', [])
-                        existing_entry['type'] = result.get('type', 'scrape')
-                        if result.get('discovered_at'):
-                            existing_entry['discovered_at'] = result['discovered_at']
-                    else:
-                        # Add new entry (pages count is for the whole job, not per URL)
-                        entry = {
-                            'url': url,
-                            'bounty_id': result['bounty_id'],
-                            'scraped_at': result.get('scraped_at', ''),
-                            'location': location or '',
-                            'pages': 1,  # Each URL is 1 page
-                            'source': result.get('source', 'Unknown'),
-                            'categories': result.get('categories', []),
-                            'type': result.get('type', 'scrape')
-                        }
-                        # Only add discovered_at if it exists
-                        if result.get('discovered_at'):
-                            entry['discovered_at'] = result['discovered_at']
-                        index_data['index'].append(entry)
-
-        # Update metadata
-        index_data['version'] = "1.0"
-        index_data['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-
-        # Save index
-        with open(self.index_file, 'w', encoding='utf-8') as f:
-            yaml.dump(index_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-
-        print(f"Index updated: {self.index_file.relative_to(self.project_root)}")
+        # Add entries to index using data manager (handles deduplication and conversion)
+        if entries:
+            self.data.add_to_index(entries)
+            print(f"Index updated: scraping/scrape-index.yml")
 
     def clear_queue(self, results: List[Dict]):
         """Remove successfully scraped URLs from scrape-queue.yml"""
-        # Load current queue
-        if not self.queue_file.exists():
-            return
-
-        with open(self.queue_file, 'r', encoding='utf-8') as f:
-            queue_data = yaml.safe_load(f)
-
-        if queue_data is None:
-            queue_data = {}
-
-        if 'queue' not in queue_data or queue_data['queue'] is None:
-            queue_data['queue'] = []
-
         # Get URLs that were successfully scraped
-        successful_urls = set()
+        successful_urls = []
         for result in results:
             if result.get('status') in ('completed', 'partial'):
-                successful_urls.add(result['url'])
+                successful_urls.append(result['url'])
 
-        # Filter out successful URLs from queue
-        original_count = len(queue_data['queue'])
-        queue_data['queue'] = [
-            job for job in queue_data['queue']
-            if job.get('url') not in successful_urls
-        ]
-        removed_count = original_count - len(queue_data['queue'])
-
-        # Save updated queue
-        with open(self.queue_file, 'w', encoding='utf-8') as f:
-            yaml.dump(queue_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-
-        if removed_count > 0:
-            print(f"Queue cleared: removed {removed_count} completed job(s)")
+        if successful_urls:
+            self.data.remove_from_queue(successful_urls)
+            print(f"Queue cleared: removed {len(successful_urls)} completed job(s)")
 
     def save_links(self, results: List[Dict]):
         """Save extracted links to scrape-links.yml"""
-        # Load existing links if any
-        if self.links_file.exists():
-            with open(self.links_file, 'r', encoding='utf-8') as f:
-                links_data = yaml.safe_load(f) or {}
-        else:
-            links_data = {}
-
-        # Initialize structure
-        if 'discovered_links' not in links_data or links_data['discovered_links'] is None:
-            links_data['discovered_links'] = []
+        new_links = []
 
         # Extract and categorize links from results
         for result in results:
@@ -612,39 +501,27 @@ class PolkadotBountyScraper:
             all_links.update(outgoing.get('external', []))
             all_links.update(outgoing.get('social', []))
 
-            # Categorize each link and add to discovered_links
+            # Categorize each link and prepare for adding
             for url in all_links:
-                # Check if this link was already discovered from this source
-                existing = next(
-                    (item for item in links_data['discovered_links']
-                     if item['url'] == url and item['source_url'] == source_url),
-                    None
+                # Categorize the link
+                categories = self.categorize_link(url)
+
+                link = DiscoveredLink(
+                    url=url,
+                    source_url=source_url,
+                    bounty_id=bounty_id,
+                    categories=categories,
+                    discovered_at=result.get('scraped_at', '')
                 )
+                new_links.append(link)
 
-                if not existing:
-                    # Categorize the link
-                    categories = self.categorize_link(url)
-
-                    links_data['discovered_links'].append({
-                        'url': url,
-                        'source_url': source_url,
-                        'bounty_id': bounty_id,
-                        'categories': categories,
-                        'discovered_at': result.get('scraped_at', '')
-                    })
-
-        # Update metadata
-        links_data['version'] = "1.0"
-        links_data['last_updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-        links_data['total_links'] = len(links_data['discovered_links'])
-
-        # Save links
-        with open(self.links_file, 'w', encoding='utf-8') as f:
-            yaml.dump(links_data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-
-        new_links = len([item for item in links_data['discovered_links']
-                         if any(r['url'] == item['source_url'] for r in results)])
-        print(f"Links saved: {new_links} new links discovered")
+        # Add links using data manager (handles deduplication and conversion)
+        if new_links:
+            before_count = len(self.data.load_links())
+            self.data.add_links(new_links)
+            after_count = len(self.data.load_links())
+            added_count = after_count - before_count
+            print(f"Links saved: {added_count} new links discovered")
 
     def run(self):
         """Main execution"""

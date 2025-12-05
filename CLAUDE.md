@@ -231,7 +231,24 @@ Consider automating:
 - Schema validation
 - Duplicate detection
 
-### 12. Important Notes
+### 12. Automation-First Principle
+
+**CRITICAL: Always use provided scripts, never perform manual file operations**
+
+When working with this repository:
+- **ALWAYS** use Python scripts for scraping operations (`suggest.py`, `review.py`, `scraper.py`, `cleanup.py`)
+- **NEVER** manually edit auto-generated files (`scrape-index.yml`, `scrape-results.yml`, `scrape-links.yml`, `scrape-suggestions.yml`)
+- **NEVER** manually reset data files - use `python cleanup.py reset-all` instead
+- Scripts may require interactive input - this is expected and correct behavior
+- If a script requires confirmation, inform the user and let them run it
+
+**Why this matters:**
+- Scripts maintain data consistency and proper formatting
+- Scripts handle edge cases and validation
+- Manual edits can break the workflow
+- Scripts update timestamps and metadata correctly
+
+### 13. Important Notes
 
 **DO:**
 - Keep metadata and README in sync
@@ -240,6 +257,7 @@ Consider automating:
 - Mark uncertain information clearly
 - Follow the schema strictly
 - Commit frequently with clear messages
+- **Use scripts for all scraping operations**
 
 **DON'T:**
 - Guess or fabricate information
@@ -248,8 +266,9 @@ Consider automating:
 - Remove fields (use null instead)
 - Commit unverified information
 - Push to wrong branch names
+- **Manually edit auto-generated scraping files**
 
-### 13. Getting Help
+### 14. Getting Help
 
 If you encounter issues:
 1. Check [METADATA_SCHEMA.md](METADATA_SCHEMA.md) for schema reference
@@ -257,7 +276,7 @@ If you encounter issues:
 3. Validate YAML syntax online if needed
 4. Ask the user for clarification on uncertain data
 
-### 14. Future Enhancements
+### 15. Future Enhancements
 
 Areas for improvement:
 - Automated on-chain data syncing

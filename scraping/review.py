@@ -15,6 +15,8 @@ from typing import Dict, List, Optional
 from urllib.parse import urlparse
 
 from config import ScrapeConfig
+from data import ScrapeData
+from models import Suggestion, QueueEntry, ScrapeMode
 
 
 class SuggestionReviewer:
@@ -24,9 +26,7 @@ class SuggestionReviewer:
         self.project_root = project_root
         self.config = config
         self.scraping_dir = project_root / "scraping"
-        self.queue_file = self.scraping_dir / "scrape-queue.yml"
-        self.suggestions_file = self.scraping_dir / "scrape-suggestions.yml"
-        self.index_file = self.scraping_dir / "scrape-index.yml"
+        self.data = ScrapeData(self.scraping_dir)
 
         # Track changes
         self.accepted = []
@@ -46,13 +46,11 @@ class SuggestionReviewer:
 
     def load_scraped_urls(self) -> set:
         """Load URLs that have already been scraped from scrape-index.yml"""
-        index_data = self.load_yaml_file(self.index_file)
-        if not index_data or 'index' not in index_data:
-            return set()
+        index = self.data.load_index()
 
         # Store both normalized and original versions for matching
         urls = set()
-        for item in index_data['index']:
+        for item in index:
             if 'url' in item:
                 url = item['url']
                 urls.add(url)
@@ -165,26 +163,19 @@ class SuggestionReviewer:
 
     def add_to_queue(self, suggestion: Dict, mode: str, max_depth: int):
         """Add suggestion to scrape queue with all metadata preserved"""
-        queue_data = self.load_yaml_file(self.queue_file)
+        # Create typed QueueEntry
+        entry = QueueEntry(
+            bounty_id=suggestion['bounty_id'],
+            url=suggestion['url'],
+            mode=ScrapeMode(mode),
+            max_depth=max_depth,
+            source=suggestion.get('source', 'Unknown'),
+            categories=suggestion.get('categories', []),
+            type=suggestion.get('type', 'scrape'),
+            discovered_at=suggestion.get('discovered_at')
+        )
 
-        # Initialize queue if needed
-        if 'queue' not in queue_data or queue_data['queue'] is None:
-            queue_data['queue'] = []
-
-        # Preserve all fields from suggestion, add mode/max_depth
-        entry = {
-            'bounty_id': suggestion['bounty_id'],
-            'url': suggestion['url'],
-            'mode': mode,
-            'max_depth': max_depth,
-            'source': suggestion.get('source', 'Unknown'),
-            'categories': suggestion.get('categories', []),
-            'type': suggestion.get('type', 'scrape'),
-            'discovered_at': suggestion.get('discovered_at')
-        }
-
-        queue_data['queue'].append(entry)
-        self.save_yaml_file(self.queue_file, queue_data)
+        self.data.add_to_queue([entry])
 
     def add_to_ignore(self, suggestion: Dict, reason: Optional[str] = None):
         """Note: Ignored URLs are now managed in scrape-config.yml"""
@@ -373,9 +364,8 @@ class SuggestionReviewer:
         print("Polkadot Bounty Archive - Suggestion Reviewer")
         print("=" * 60)
 
-        # Load suggestions
-        suggestions_data = self.load_yaml_file(self.suggestions_file)
-        all_suggestions = suggestions_data.get('suggestions', [])
+        # Load suggestions from data manager
+        all_suggestions = self.data.load_suggestions()
 
         if not all_suggestions:
             print("\nNo suggestions to review.")
@@ -402,12 +392,7 @@ class SuggestionReviewer:
         if not suggestions:
             print("\nAll suggestions have already been scraped. Nothing to review.")
             # Clear suggestions file
-            suggestions_data = {
-                'version': "1.0",
-                'last_generated': None,
-                'suggestions': []
-            }
-            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            self.data.clear_suggestions()
             return
 
         print(f"Remaining to review: {len(suggestions)} suggestion(s).")
@@ -459,12 +444,7 @@ class SuggestionReviewer:
         if not manual_review_suggestions:
             print("\nAll suggestions processed via auto-accept. No manual review needed.")
             # Clear suggestions file since everything was auto-accepted
-            suggestions_data = {
-                'version': "1.0",
-                'last_generated': None,
-                'suggestions': []
-            }
-            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            self.data.clear_suggestions()
             self.print_summary(0)
             return
 
@@ -527,17 +507,10 @@ class SuggestionReviewer:
 
         # Update suggestions file with remaining suggestions
         if remaining_suggestions:
-            suggestions_data['suggestions'] = remaining_suggestions
-            suggestions_data['last_generated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
-            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            self.data.save_suggestions(remaining_suggestions)
         else:
             # Clear suggestions file
-            suggestions_data = {
-                'version': "1.0",
-                'last_generated': None,
-                'suggestions': []
-            }
-            self.save_yaml_file(self.suggestions_file, suggestions_data)
+            self.data.clear_suggestions()
 
         # Print summary
         self.print_summary(len(remaining_suggestions))
