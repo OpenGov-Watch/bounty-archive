@@ -77,45 +77,37 @@ class ScrapeConfig:
     # ========== URL Categorization ==========
 
     @property
-    def domain_categories(self) -> Dict[str, List[str]]:
-        """Get domain-based category mappings"""
-        return self._config.get('categorization', {}).get('domains', {})
-
-    @property
-    def path_categories(self) -> Dict[str, List[str]]:
-        """Get path-based category mappings"""
-        return self._config.get('categorization', {}).get('paths', {})
+    def categorization(self) -> Dict[str, List[str]]:
+        """Get category-first URL categorization (category -> [patterns])"""
+        return self._config.get('categorization', {})
 
     def categorize_url(self, url: str) -> List[str]:
-        """Categorize a URL based on domain and path patterns"""
-        categories = set()
+        """Categorize a URL based on domain pattern matching
 
+        Returns list containing the first matching category, or ['other'] if no match.
+        Patterns support substring matching (e.g., 'docs.' matches docs.substrate.io).
+        """
         try:
             parsed = urlparse(url)
             domain = parsed.netloc.lower()
-            path = parsed.path.lower()
 
-            # Check domain patterns
-            for pattern, cats in self.domain_categories.items():
-                if pattern.lower() in domain:
-                    if isinstance(cats, list):
-                        categories.update(cats)
-                    elif isinstance(cats, str):
-                        categories.add(cats)
+            # Check each category's patterns
+            for category, patterns in self.categorization.items():
+                # Skip type_mapping section
+                if category == 'type_mapping':
+                    continue
 
-            # Check path patterns
-            for pattern, cats in self.path_categories.items():
-                if pattern.lower() in path:
-                    if isinstance(cats, list):
-                        categories.update(cats)
-                    elif isinstance(cats, str):
-                        categories.add(cats)
+                if not isinstance(patterns, list):
+                    continue
 
-            # Default if no matches
-            if not categories:
-                categories.add('other')
+                for pattern in patterns:
+                    pattern_lower = pattern.lower()
+                    # Substring match in domain
+                    if pattern_lower in domain:
+                        return [category]
 
-            return sorted(list(categories))
+            # No match found
+            return ['other']
 
         except Exception:
             return ['other']
@@ -123,7 +115,7 @@ class ScrapeConfig:
     def get_suggestion_type(self, categories: List[str]) -> str:
         """Determine suggestion type (scrape/associated_url/social) from categories"""
         # Get type mapping from config
-        type_mapping = self._config.get('categorization', {}).get('type_mapping', {})
+        type_mapping = self._config.get('type_mapping', {})
 
         # Check each type in priority order
         for suggestion_type, category_list in type_mapping.items():
@@ -141,60 +133,66 @@ class ScrapeConfig:
         return self._config.get('ignored', [])
 
     def is_ignored(self, url: str) -> Tuple[bool, str]:
-        """Check if URL is ignored. Returns (is_ignored, reason)"""
+        """Check if URL is ignored. Returns (is_ignored, reason)
+
+        Supports:
+        - Full URLs: https://example.com/path
+        - Domain patterns: example.com (matches any URL on that domain)
+        - Subdomain matching: example.com matches www.example.com, api.example.com, etc.
+        """
         # Normalize URL for comparison
         url_normalized = url.rstrip('/')
 
+        try:
+            parsed = urlparse(url)
+            url_domain = parsed.netloc.lower()
+        except Exception:
+            return False, ''
+
         for item in self.ignored_urls:
             if isinstance(item, dict):
-                ignored_url = item.get('url', '').rstrip('/')
+                ignored_pattern = item.get('url', '').rstrip('/')
                 reason = item.get('reason', 'No reason provided')
             elif isinstance(item, str):
-                ignored_url = item.rstrip('/')
+                ignored_pattern = item.rstrip('/')
                 reason = 'No reason provided'
             else:
                 continue
 
-            # Exact match
-            if url_normalized == ignored_url:
+            # Exact URL match
+            if url_normalized == ignored_pattern:
                 return True, reason
 
             # Domain pattern match
             try:
-                parsed = urlparse(url)
-                ignored_parsed = urlparse(ignored_url)
-                if ignored_parsed.netloc and ignored_parsed.netloc in parsed.netloc:
-                    return True, reason
+                ignored_parsed = urlparse(ignored_pattern)
+
+                # If ignored_pattern has a netloc (like https://example.com)
+                if ignored_parsed.netloc:
+                    ignored_domain = ignored_parsed.netloc.lower()
+                    if ignored_domain == url_domain or url_domain.endswith('.' + ignored_domain):
+                        return True, reason
+
+                # If ignored_pattern is just a domain (like example.com)
+                else:
+                    ignored_domain = ignored_pattern.lower()
+                    if ignored_domain == url_domain or url_domain.endswith('.' + ignored_domain):
+                        return True, reason
+
             except Exception:
                 pass
 
         return False, ''
 
-    # ========== Link Categories (for scraper link extraction) ==========
+    # ========== Social Domains (derived from categorization) ==========
 
     @property
-    def link_categories(self) -> Dict[str, List[str]]:
-        """Get link categorization patterns for scraper"""
-        return self._config.get('link_categories', {})
+    def social_domains(self) -> Set[str]:
+        """Get set of social media domains from categorization
 
-    def categorize_extracted_link(self, url: str) -> List[str]:
-        """Categorize an extracted link based on link_categories config"""
-        categories = []
-        parsed = urlparse(url)
-        domain = parsed.netloc.lower()
-        path = parsed.path.lower()
-        full_url = url.lower()
-
-        # Check each category's patterns
-        for category, patterns in self.link_categories.items():
-            for pattern in patterns:
-                pattern_lower = pattern.lower()
-                # Check if pattern appears in domain or full URL
-                if pattern_lower in domain or pattern_lower in full_url or pattern_lower in path:
-                    categories.append(category)
-                    break  # Only add category once
-
-        return categories if categories else ['other']
+        Extracts all patterns from the 'social' category.
+        """
+        return set(self.categorization.get('social', []))
 
     # ========== Rate Limiting ==========
 

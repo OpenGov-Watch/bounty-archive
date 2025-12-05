@@ -137,7 +137,15 @@ class SuggestionReviewer:
                 print("Invalid input. Please enter a number 0-9.")
 
     def get_user_choice(self, suggestion_type: str = 'scrape') -> str:
-        """Get user's choice for a suggestion"""
+        """Get user's choice for a suggestion
+
+        Returns:
+            - 'A' for accept
+            - '0'-'9' for accept with that depth (scrape type only)
+            - 'I' for ignore
+            - 'S' for skip
+            - 'Q' for quit
+        """
         while True:
             print("\nActions:")
             if suggestion_type in ['social', 'associated_url']:
@@ -148,18 +156,19 @@ class SuggestionReviewer:
                 print("  [Q] Quit - Exit reviewer")
                 valid_choices = ['A', 'I', 'S', 'Q']
             else:
-                print("  [A] Accept - Add to scrape queue")
+                print("  [0-9] Accept with depth N (0=single, 1-9=recursive)")
+                print("  [A] Accept (will prompt for depth)")
                 print("  [I] Ignore - Add to ignore list")
                 print("  [S] Skip - Leave for later")
                 print("  [Q] Quit - Exit reviewer")
-                valid_choices = ['A', 'I', 'S', 'Q']
+                valid_choices = ['A', 'I', 'S', 'Q', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
             choice = input("\nYour choice: ").strip().upper()
 
             if choice in valid_choices:
                 return choice
 
-            print(f"Invalid choice. Please enter {', '.join(valid_choices)}.")
+            print(f"Invalid choice. Please enter {', '.join(sorted(set(valid_choices)))}.")
 
     def add_to_queue(self, suggestion: Dict, mode: str, max_depth: int):
         """Add suggestion to scrape queue with all metadata preserved"""
@@ -468,7 +477,18 @@ class SuggestionReviewer:
                     suggestion['type'] = 'associated_url'  # Update for consistency
             choice = self.get_user_choice(suggestion_type)
 
-            if choice == 'A':
+            # Check if choice is a digit (0-9) - means accept with that depth
+            if choice.isdigit():
+                depth = int(choice)
+                if depth == 0:
+                    mode, max_depth = 'single', 1
+                else:
+                    mode, max_depth = 'recursive', depth
+                self.add_to_queue(suggestion, mode, max_depth)
+                self.accepted.append(suggestion['url'])
+                print(f"\n[+] Added to scrape queue (mode: {mode}, depth: {max_depth})")
+
+            elif choice == 'A':
                 # Accept
                 if suggestion_type == 'social':
                     # Add to metadata (associated_socials)

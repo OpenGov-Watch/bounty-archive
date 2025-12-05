@@ -67,8 +67,8 @@ class PolkadotBountyScraper:
         })
 
     def categorize_link(self, url: str) -> List[str]:
-        """Categorize a URL based on configured link_categories"""
-        return self.config.categorize_extracted_link(url)
+        """Categorize a URL based on configured categorization rules"""
+        return self.config.categorize_url(url)
 
     def load_queue(self) -> List[ScrapeJob]:
         """Load scraping queue from YAML file"""
@@ -162,13 +162,18 @@ class PolkadotBountyScraper:
             if normalized == base_url.rstrip('/'):
                 continue
 
+            # Skip ignored URLs
+            is_ignored, _ = self.config.is_ignored(normalized)
+            if is_ignored:
+                continue
+
             # Categorize link
-            if parsed.netloc in self.SOCIAL_DOMAINS:
+            if parsed.netloc in self.config.social_domains:
                 social_links.add(normalized)
             elif parsed.netloc == base_parsed.netloc and parsed.path.startswith(base_path):
                 # Internal: same domain and same base path
                 internal_links.add(normalized)
-            elif parsed.netloc not in self.EXCLUDE_DOMAINS:
+            else:
                 # External: different domain or different base path
                 external_links.add(normalized)
 

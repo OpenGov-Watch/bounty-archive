@@ -45,90 +45,53 @@ auto_accept:
 
 # ========== URL Categorization ==========
 
-# Rules for categorizing URLs (used by suggest.py)
+# Category-first structure: each category contains list of domain patterns
+# Patterns support substring matching (e.g., "docs." matches docs.substrate.io)
 categorization:
-  # Domain-based categorization
-  domains:
-    # Social media
-    "twitter.com": ["social", "twitter"]
-    "x.com": ["social", "twitter"]
-    "t.me": ["social", "telegram"]
-    "telegram.org": ["social", "telegram"]
-    "discord.gg": ["social", "discord"]
-    "discord.com": ["social", "discord"]
-    "matrix.to": ["social", "matrix"]
-
-    # Code repositories
-    "github.com": ["github"]
-
-    # Documentation & Forms
-    "docs.google.com": ["documentation", "form"]
-    "forms.google.com": ["form"]
-    "forms.gle": ["form"]
-    "forms.monday.com": ["form"]
-    "form.typeform.com": ["form"]
-    "typeform.com": ["form"]
-    "notion.site": ["documentation"]
-    "notion.so": ["documentation"]
-
-    # Governance platforms
-    "subsquare.io": ["governance"]
-    "polkassembly.io": ["governance"]
-
-  # Path-based categorization
-  paths:
-    "/forms/": ["form"]
-    "/form/": ["form"]
-    "/docs/": ["documentation"]
-    "/doc/": ["documentation"]
-    "/wiki/": ["documentation"]
-    "/guide/": ["documentation"]
-    "/blog/": ["documentation"]
-    "/proposal": ["governance"]
-    "/referenda": ["governance"]
-    "/treasury": ["governance"]
-    "/bounty": ["governance"]
-
-  # Type mapping: determines if URL should be scraped or just linked in metadata
-  # Priority order: social > associated_url > scrape (default)
-  type_mapping:
-    social: ["social", "discord", "telegram", "matrix", "twitter"]
-    associated_url: ["github"]
-    # Everything else defaults to "scrape"
-
-# ========== Link Categorization ==========
-
-# Categories for extracted links (used by scraper.py when extracting links from pages)
-link_categories:
   social:
     - "twitter.com"
     - "x.com"
-    - "telegram.org"
     - "t.me"
+    - "telegram.org"
+    - "telegram.me"
     - "discord.gg"
     - "discord.com"
     - "matrix.to"
-    - "youtube.com"
+    - "matrix.org"
+
+  github:
+    - "github.com"
+
   documentation:
-    - "docs."
-    - "wiki."
+    - "docs.google.com"
     - "notion.site"
-    - ".gitbook.io"
+    - "notion.so"
+    - "docs."              # Matches docs.* subdomains
+    - "wiki."              # Matches wiki.* subdomains
+    - ".gitbook.io"        # Matches *.gitbook.io
+
+  form:
+    - "forms.google.com"
+    - "forms.gle"
+    - "forms.monday.com"
+    - "form.typeform.com"
+    - "typeform.com"
+
   governance:
     - "subsquare.io"
     - "polkassembly.io"
-  github:
-    - "github.com"
-  forms:
-    - "forms.gle"
-    - "google.com/forms"
-    - "typeform.com"
-    - "forms.monday.com"
-    - "airtable.com/shr"
+
+# Type mapping: determines if URL should be scraped or just linked in metadata
+# Priority order: social > associated_url > scrape (default)
+type_mapping:
+  social: ["social"]
+  associated_url: ["github"]
+  # Everything else defaults to "scrape"
 
 # ========== Ignored URLs ==========
 
-# URLs that should never be scraped
+# URLs and domains that should never be scraped or suggested
+# Supports both specific URLs and domain patterns (use domain without https://)
 ignored:
   - url: https://polkassembly.io
     reason: On-chain data - not documentation

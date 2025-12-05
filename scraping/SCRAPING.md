@@ -44,7 +44,8 @@ python suggest.py --source=links   # From scraped content
 **review.py** - Interactive review
 - Auto-accepts URLs matching rules in config
 - Manual review for everything else
-- Press [A]ccept, [I]gnore, [S]kip, [Q]uit
+- Quick actions: [0-9] Accept with depth, [A]ccept (prompt for depth), [I]gnore, [S]kip, [Q]uit
+- Depth: 0=single page, 1-9=recursive with max depth N
 
 **scraper.py** - Main scraper
 - Single mode: Just the URL
@@ -92,16 +93,39 @@ auto_accept:
     mode: "recursive"
     max_depth: 2
 
-# Categorize discovered links
-link_categories:
-  social: ["twitter.com", "x.com", "t.me", "discord.gg"]
-  github: ["github.com"]
-  documentation: ["docs.", "wiki.", "notion.site", ".gitbook.io"]
+# Categorize URLs - category-first structure
+categorization:
+  social:
+    - "twitter.com"
+    - "x.com"
+    - "discord.gg"
+  github:
+    - "github.com"
+  documentation:
+    - "docs.google.com"
+    - "notion.site"
+    - "docs."           # Pattern: matches docs.* subdomains
+    - "wiki."           # Pattern: matches wiki.* subdomains
+    - ".gitbook.io"     # Pattern: matches *.gitbook.io
+  form:
+    - "forms.gle"
+    - "typeform.com"
 
-# Never suggest these
+# Type mapping - determines URL handling
+type_mapping:
+  social: ["social"]           # Added to metadata, not scraped
+  associated_url: ["github"]   # Added to metadata, not scraped
+  # All other categories default to "scrape"
+
+# Ignore URLs/domains - never scraped or suggested
+# Supports domain patterns (google.com) and specific URLs
 ignored:
-  - url: "https://youtube.com"
-    reason: "Video content"
+  - url: google.com              # Domain pattern - matches all google.com URLs
+    reason: Search engine
+  - url: youtube.com
+    reason: Video platform
+  - url: https://polkadot.js.org  # Specific URL
+    reason: App interface
 ```
 
 ## File Structure
@@ -195,6 +219,9 @@ pip install -r requirements.txt
 
 - Start with single mode, switch to recursive if needed
 - Use auto-accept rules for trusted domains
+- Add broad domain filters to `ignored` list (e.g., google.com, youtube.com)
+- Add specific problematic URLs to `ignored` with reasons
 - Check stats regularly with `cleanup.py stats`
 - Never edit auto-generated YAML files manually
 - Use cleanup.py to remove URLs before re-scraping
+- All configuration should be in YAML files, never hardcoded
