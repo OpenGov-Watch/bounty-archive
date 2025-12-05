@@ -1,5 +1,5 @@
 version: '1.0'
-last_updated: '2025-12-05T12:18:55.465642Z'
+last_updated: '2025-12-05T14:15:41.164704Z'
 scraped:
 - status: completed
   pages_scraped: 1
@@ -1839,3 +1839,32 @@ scraped:
   type: scrape
   discovered_at: '2025-12-05T12:13:29.170916Z'
   scraped_at: '2025-12-05T12:18:53.994070Z'
+- status: completed
+  pages_scraped: 0
+  files_created:
+  - bounties\44-polkadot-kusama-bridge-security-bounty\scraped\polkadot.com\bridges-bug-bounty.html
+  visited_urls:
+  - https://polkadot.com/bridges-bug-bounty/
+  url_results:
+    https://polkadot.com/bridges-bug-bounty/:
+      status: failed
+      error_code: 404
+      error_message: HTTP 404
+      handler: static_http
+  outgoing_urls:
+    internal: []
+    external: []
+    social: []
+  errors:
+  - 'Non-200 response: HTTP 404'
+  handler: static_http
+  bounty_id: 44
+  url: https://polkadot.com/bridges-bug-bounty/
+  mode: single
+  max_depth: null
+  source: metadata.links.website
+  categories:
+  - other
+  type: scrape
+  discovered_at: '2025-12-05T12:13:29.162911Z'
+  scraped_at: '2025-12-05T14:15:40.827046Z'

@@ -1,10 +1,1 @@
-queue:
-- bounty_id: 44
-  url: https://polkadot.com/bridges-bug-bounty/
-  mode: single
-  max_depth: 1
-  source: metadata.links.website
-  categories:
-  - other
-  type: scrape
-  discovered_at: '2025-12-05T12:13:29.162911Z'
+queue: []
