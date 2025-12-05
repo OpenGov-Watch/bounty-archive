@@ -104,9 +104,8 @@ class PolkadotBountyScraper:
         """Fetch URL and return (response, error_code, error_message)
 
         Returns:
-            - (response, None, None) on success
-            - (None, status_code, message) on HTTP error
-            - (None, None, message) on network error
+            - (response, None, None) when a response is received (any HTTP status)
+            - (None, None, message) on network error / exception
         """
         try:
             print(f"  Fetching: {url}")
@@ -116,12 +115,10 @@ class PolkadotBountyScraper:
             if urlparse(response.url).netloc != urlparse(url).netloc:
                 print(f"  Warning: Redirected to different host: {response.url}")
 
-            if response.status_code == 200:
-                return response, None, None
-            else:
-                error_msg = f"HTTP {response.status_code}"
-                print(f"  Error: {error_msg}")
-                return None, response.status_code, error_msg
+            if response.status_code != 200:
+                print(f"  Received HTTP {response.status_code}")
+
+            return response, None, None
 
         except requests.exceptions.Timeout:
             error_msg = "Request timeout"
@@ -349,28 +346,38 @@ class PolkadotBountyScraper:
             page, extension, error_code, error_message = self.scrape_page(url, job.url)
 
             if page:
-                # Success - save page
                 filepath = self.url_to_filepath(url, bounty_slug, extension)
+
+                # Save the response body for traceability regardless of status
                 self.save_page(page, filepath)
                 files_created.append(str(filepath.relative_to(self.project_root)))
 
-                # Track success
-                url_results[url] = {
-                    'status': 'success',
-                    'error_code': None,
-                    'error_message': None
-                }
+                if page.status_code == 200:
+                    # Track success
+                    url_results[url] = {
+                        'status': 'success',
+                        'error_code': None,
+                        'error_message': None
+                    }
 
-                # Collect links
-                all_internal.update(page.internal_links)
-                all_external.update(page.external_links)
-                all_social.update(page.social_links)
+                    # Collect links
+                    all_internal.update(page.internal_links)
+                    all_external.update(page.external_links)
+                    all_social.update(page.social_links)
 
-                # Queue internal links for next depth level
-                if depth < job.max_depth:
-                    for link in page.internal_links:
-                        if link.rstrip('/') not in visited:
-                            queue.append((link, depth + 1))
+                    # Queue internal links for next depth level
+                    if depth < job.max_depth:
+                        for link in page.internal_links:
+                            if link.rstrip('/') not in visited:
+                                queue.append((link, depth + 1))
+                else:
+                    # Non-200 response is recorded as a failure but does not block completion
+                    url_results[url] = {
+                        'status': 'failed',
+                        'error_code': page.status_code,
+                        'error_message': f'HTTP {page.status_code}'
+                    }
+                    errors.append(f"Non-200 response for {url}: HTTP {page.status_code}")
             else:
                 # Failed - create error marker file
                 error_filepath = self.url_to_filepath(url, bounty_slug, '.error.yml')
@@ -400,8 +407,17 @@ class PolkadotBountyScraper:
             # Rate limiting
             time.sleep(self.config.rate_limit_delay)
 
+        failed_results = [r for r in url_results.values() if r.get('status') == 'failed']
+        # Treat any HTTP response (indicated by presence of an error_code) as non-fatal
+        response_only_failures = bool(failed_results) and all(r.get('error_code') is not None for r in failed_results)
+
+        if files_created:
+            status = 'completed' if (not errors or response_only_failures) else 'partial'
+        else:
+            status = 'completed' if (response_only_failures or not errors) else 'failed'
+
         return {
-            'status': 'completed' if not errors or files_created else 'partial' if files_created else 'failed',
+            'status': status,
             'pages_scraped': len(files_created),
             'files_created': files_created,
             'visited_urls': sorted(visited),
@@ -429,29 +445,49 @@ class PolkadotBountyScraper:
         url_results = {}
 
         if page:
-            # Save successful page
             filepath = self.url_to_filepath(job.url, bounty_slug, extension)
             self.save_page(page, filepath)
 
-            url_results[job.url] = {
-                'status': 'success',
-                'error_code': None,
-                'error_message': None
-            }
+            if page.status_code == 200:
+                url_results[job.url] = {
+                    'status': 'success',
+                    'error_code': None,
+                    'error_message': None
+                }
 
-            return {
-                'status': 'completed',
-                'pages_scraped': 1,
-                'files_created': [str(filepath.relative_to(self.project_root))],
-                'visited_urls': [job.url],
-                'url_results': url_results,
-                'outgoing_urls': {
-                    'internal': sorted(page.internal_links),
-                    'external': sorted(page.external_links),
-                    'social': sorted(page.social_links)
-                },
-                'errors': []
-            }
+                return {
+                    'status': 'completed',
+                    'pages_scraped': 1,
+                    'files_created': [str(filepath.relative_to(self.project_root))],
+                    'visited_urls': [job.url],
+                    'url_results': url_results,
+                    'outgoing_urls': {
+                        'internal': sorted(page.internal_links),
+                        'external': sorted(page.external_links),
+                        'social': sorted(page.social_links)
+                    },
+                    'errors': []
+                }
+            else:
+                url_results[job.url] = {
+                    'status': 'failed',
+                    'error_code': page.status_code,
+                    'error_message': f'HTTP {page.status_code}'
+                }
+
+                return {
+                    'status': 'completed',
+                    'pages_scraped': 0,
+                    'files_created': [str(filepath.relative_to(self.project_root))],
+                    'visited_urls': [job.url],
+                    'url_results': url_results,
+                    'outgoing_urls': {
+                        'internal': [],
+                        'external': [],
+                        'social': []
+                    },
+                    'errors': [f'Non-200 response: HTTP {page.status_code}']
+                }
         else:
             # Create error marker file
             error_filepath = self.url_to_filepath(job.url, bounty_slug, '.error.yml')
@@ -473,8 +509,11 @@ class PolkadotBountyScraper:
                 'error_message': error_message
             }
 
+            # If we received an HTTP status code, treat it as non-fatal for queue clearing
+            result_status = 'completed' if error_code is not None else 'failed'
+
             return {
-                'status': 'failed',
+                'status': result_status,
                 'pages_scraped': 0,
                 'files_created': [],
                 'visited_urls': [job.url],
